@@ -78,15 +78,9 @@ public class ArmylistEditorModelUpdatePanel extends javax.swing.JPanel {
                 this.update.addWeapon((String)iterator.next());
             }            
         }
-        try
-        {
-            this.update.addStatModification(this.statPanel.modifications());
-        }
-        catch(java.lang.NullPointerException e)
-        {
-            System.out.println("Null pointer exception when saving !!!!!");
-        }
-        
+        if(this.statPanel == null)
+            return;
+            this.update.addStatModification(this.statPanel.modifications());      
     }
     
     public ArmylistModelUpdate getModelUpdate()

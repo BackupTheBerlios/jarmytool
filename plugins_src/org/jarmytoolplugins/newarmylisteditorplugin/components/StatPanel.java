@@ -10,6 +10,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Map.Entry;
 import org.jArmyTool.data.dataBeans.armylist.ArmylistArmy;
 import org.jArmyTool.data.dataBeans.armylist.ArmylistWeapon;
@@ -69,15 +70,16 @@ public class StatPanel extends javax.swing.JPanel
         updatePanel.updateUI();
     }
     
-    public HashMap modifications()
+    public Map modifications()
     {
-        HashMap map = new HashMap();
+        Map map = new HashMap();
         Iterator i = panels.iterator();
         while(i.hasNext())
         {
             map.putAll(((StatSelectPanel)i.next()).modification());
         }
-        return map;
+        
+        return java.util.Collections.unmodifiableMap(map);
     }
     
     /** This method is called from within the constructor to
