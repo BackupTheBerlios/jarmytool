@@ -7,8 +7,8 @@ import org.jArmyTool.data.dataBeans.gameSystem.*;
 
 import org.jArmyTool.data.dataBeans.util.*;
 /**
- *
- * @author  pasi
+ * This class is the base of single armylist in jArmyTool.
+ * @author Pasi Lehtimäki
  */
 public class ArmylistArmy implements Serializable {
     
@@ -46,7 +46,11 @@ public class ArmylistArmy implements Serializable {
     private String email = "";
     private String web = "";
     
-    /** Creates a new instance of Army */
+    /**
+     * Creates a new instance of Army
+     * @param name Name of this armylist
+     * @param gameSystem This list's game system
+     */
     public ArmylistArmy(String name, GameSystem gameSystem) {
         this.name = name;
         this.units = new LinkedList();
@@ -65,6 +69,8 @@ public class ArmylistArmy implements Serializable {
      * This constructor is un finished... won't copy all internal data.. only links.<br>
      *
      * THIS CONSTRUCTOR DOESN'T WORK!!!!
+     * @param name Name of cloned list
+     * @param clone The list from where the data is copied
      */
     public ArmylistArmy(String name, ArmylistArmy clone){
         this.name = name;
@@ -95,14 +101,29 @@ public class ArmylistArmy implements Serializable {
     
 
     
+    /**
+     * Use this to get all unit update IDs in use
+     * @return Collection containing Integer objects
+     */    
     public Collection getAllUnitUpdateIds(){
         return this.allUnitUpdates.keySet();
     }
 
+    /**
+     * Use this to obtain unit update using it's ID
+     * @param id ID of the unit update
+     * @return UnitUpdate corresponding the ID. If the ID is not found then <I>null</I>
+     * is returned.
+     */    
     public ArmylistUnitUpdate getUnitUpdate(int id){
         return (ArmylistUnitUpdate)this.allUnitUpdates.get(new Integer(id));
     }
     
+    /**
+     * This method will add unit update to this list
+     * @param update Update to add
+     * @return ID which is assosiated to thi update from here on.
+     */    
     public int mapUnitUpdate(ArmylistUnitUpdate update){
         int assosiatedId = this.nextUnitUpdateId ++;
         
@@ -111,8 +132,17 @@ public class ArmylistArmy implements Serializable {
         return assosiatedId;
     }
     
-    /** CAUTION! id might already be in use. Use carefully.
+    /**
+     * Used to add unit update to armylist using selected ID.
      *
+     * CAUTION! id might already be in use and this method
+     * does not check it.
+     * Use mapUnitUpdate(ArmylistUnitUpdate) instead in normal case.
+     *
+     * Use only if you know what you're doing.
+     * @param update Update to be added
+     * @param id Selected id
+     * @return ID assosiated to this update
      */
     public int mapUnitUpdate(ArmylistUnitUpdate update, int id){
         if(this.nextUnitUpdateId <= id)
