@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE armylist SYSTEM "../DTD/armylist.dtd">
+<armylist>
+<armyHeader id="header" gameSystem="Warhammer 40.000">
+<name value="Exodites">
+</name>
+<comment value="" writer="Philip Bowles and Agis Neugebauer" email="" web="http://www.agisn.de/html/codex_exodites.html">
+</comment>
+</armyHeader>
+<wargear>
+<wargearGroup name="One-handed Weapons">
+<wargearItem name="Blast Pistol" pointcost="1.0" weapon="Blast Pistol">
+</wargearItem>
+<wargearItem name="Close Combat Weapon " pointcost="1.0" weapon="">
+</wargearItem>
+<wargearItem name="Power Weapon" pointcost="12.0" weapon="">
+</wargearItem>
+<wargearItem name="Soulblade" pointcost="25.0" weapon="">
+</wargearItem>
+<wargearItem name="Witchblade (visionaries only)" pointcost="15.0" weapon="">
+</wargearItem>
+</wargearGroup>
+<wargearGroup name="Two-handed Weapons">
+<wargearItem name="Blast Carbine (cavalry only)" pointcost="1.0" weapon="">
+</wargearItem>
+<wargearItem name="Lasblaster" pointcost="2.0" weapon="Lasblaster">
+</wargearItem>
+<wargearItem name="Laser Lance (cavalry  only)" pointcost="10.0" weapon="Laser Lance">
+</wargearItem>
+<wargearItem name="Singing Spear (visionaries only)" pointcost="18.0" weapon="">
+</wargearItem>
+</wargearGroup>
+<wargearGroup name="Wargear">
+<wargearItem name="Haywire Grenade" pointcost="3.0" weapon="">
+</wargearItem>
+<wargearItem name="Plasma Grenade" pointcost="2.0" weapon="">
+</wargearItem>
+<wargearItem name="Powerblades" pointcost="15.0" weapon="">
+</wargearItem>
+<wargearItem name="Salamander" pointcost="6.0" weapon="">
+</wargearItem>
+<wargearItem name="Spirit Field (3+)" pointcost="20.0" weapon="">
+</wargearItem>
+<wargearItem name="Spirit Field (4+)" pointcost="15.0" weapon="">
+</wargearItem>
+<wargearItem name="Spirit Field (5+)" pointcost="10.0" weapon="">
+</wargearItem>
+</wargearGroup>
+<wargearGroup name="Visionary Wargear">
+<wargearItem name="Ghosthelm" pointcost="5.0" weapon="">
+</wargearItem>
+<wargearItem name="Spirit Stones" pointcost="40.0" weapon="">
+</wargearItem>
+<wargearItem name="Spirit Token" pointcost="5.0" weapon="">
+</wargearItem>
+</wargearGroup>
+<wargearGroup name="Psychic Powers">
+<wargearItem name="Executioner" pointcost="15.0" weapon="">
+</wargearItem>
+<wargearItem name="Fortune" pointcost="20.0" weapon="">
+</wargearItem>
+<wargearItem name="Heal" pointcost="20.0" weapon="">
+</wargearItem>
+<wargearItem name="Improve" pointcost="25.0" weapon="">
+</wargearItem>
+</wargearGroup>
+<wargearGroup name="Exodite Mounts">
+<wargearItem name="Dragon" pointcost="30.0" weapon="">
+</wargearItem>
+<wargearItem name="Dragon w/ Wraithbone helmet" pointcost="35.0" weapon="">
+</wargearItem>
+<wargearItem name="Pterosaurus" pointcost="25.0" weapon="">
+</wargearItem>
+<wargearItem name="Raptor" pointcost="30.0" weapon="">
+</wargearItem>
+</wargearGroup>
+</wargear>
+<weapons>
+<weapon name="Blast Carbine" profileName="Ranged" profile="12&quot;,3,6,Assault 2">
+</weapon>
+<weapon name="Blast Pistol" profileName="Ranged" profile="12&quot;,3,6,Pistol">
+</weapon>
+<weapon name="Bright Lance" profileName="Ranged" profile="36&quot;,8,2,Assault 1">
+</weapon>
+<weapon name="Fusion Gun" profileName="Ranged" profile="12&quot;,6,1,Assault 1">
+</weapon>
+<weapon name="Lasblaster" profileName="Ranged" profile="24&quot;,3,6,Assault 2">
+</weapon>
+<weapon name="Laser Lance" profileName="Ranged" profile="N/A,5,5,Assault 1">
+</weapon>
+<weapon name="Neuro Disruptor" profileName="Ranged" profile="Template,(8),-,Assault 1">
+</weapon>
+<weapon name="Plasma Carbine" profileName="Ranged" profile="18&quot;,4,3,Assault 1">
+</weapon>
+<weapon name="Psychic Carbine / Blaster" profileName="Ranged" profile="Template,(8),-,Assault 1">
+</weapon>
+<weapon name="Scatter Laser" profileName="Ranged" profile="36&quot;,6,6,Heavy D6">
+</weapon>
+<weapon name="Shock Lance" profileName="Ranged" profile="N/A,6,5,Assault 1">
+</weapon>
+<weapon name="Star Lance - Burst" profileName="Ranged" profile="36&quot;,4,5,Heavy 1 Blast">
+</weapon>
+<weapon name="Star Lance - Single Shot" profileName="Ranged" profile="36&quot;,9,2,Heavy 1">
+</weapon>
+<weapon name="Starcannon" profileName="Ranged" profile="36&quot;,6,2,Heavy 3">
+</weapon>
+<weapon name="Thermal Lance" profileName="Ranged" profile="12&quot;,7,1,Assault 1">
+</weapon>
+<weapon name="Web Carbine" profileName="Ranged" profile="12&quot;,-,-,Assault 1">
+</weapon>
+</weapons>
+<unit name="Exodite Baron Lord" minCount="0" maxCount="1" maxUnitSize="-1" minUnitSize="0" unitType="HQ">
+<allowedModels value="model1">
+</allowedModels>
+<allowedUpdates value="">
+</allowedUpdates>
+</unit>
+<unit name="Exodite Baron Hero" minCount="0" maxCount="-1" maxUnitSize="-1" minUnitSize="0" unitType="HQ">
+<allowedModels value="model2">
+</allowedModels>
+<allowedUpdates value="">
+</allowedUpdates>
+</unit>
+<unit name="Exodite Visionary" minCount="0" maxCount="-1" maxUnitSize="-1" minUnitSize="0" unitType="HQ">
+<allowedModels value="model3">
+</allowedModels>
+<allowedUpdates value="">
+</allowedUpdates>
+</unit>
+<unit name="Household Retinue" minCount="0" maxCount="-1" maxUnitSize="10" minUnitSize="5" unitType="HQ">
+<allowedModels value="model4,model5">
+</allowedModels>
+<allowedUpdates value="unitUpdate1,unitUpdate2">
+</allowedUpdates>
+</unit>
+<unit name="Exodite Dragoons" minCount="0" maxCount="1" maxUnitSize="10" minUnitSize="2" unitType="Elite">
+<allowedModels value="model6,model7">
+</allowedModels>
+<allowedUpdates value="unitUpdate3">
+</allowedUpdates>
+</unit>
+<unit name="Lethosaur Knights" minCount="0" maxCount="-1" maxUnitSize="10" minUnitSize="4" unitType="Elite">
+<allowedModels value="model8,model9">
+</allowedModels>
+<allowedUpdates value="unitUpdate4,unitUpdate6,unitUpdate7">
+</allowedUpdates>
+</unit>
+<unit name="Fusiliers" minCount="0" maxCount="-1" maxUnitSize="20" minUnitSize="5" unitType="Troop">
+<allowedModels value="model10,model11,model12">
+</allowedModels>
+<allowedUpdates value="unitUpdate8,unitUpdate9">
+</allowedUpdates>
+</unit>
+<unit name="Dragon Knights" minCount="0" maxCount="-1" maxUnitSize="10" minUnitSize="3" unitType="Troop">
+<allowedModels value="model13,model14">
+</allowedModels>
+<allowedUpdates value="unitUpdate10,unitUpdate11,unitUpdate12">
+</allowedUpdates>
+</unit>
+<unit name="Exodite Warriors" minCount="0" maxCount="-1" maxUnitSize="20" minUnitSize="5" unitType="Troop">
+<allowedModels value="model15,model16,model17">
+</allowedModels>
+<allowedUpdates value="unitUpdate13,unitUpdate14,unitUpdate15,unitUpdate16">
+</allowedUpdates>
+</unit>
+<unit name="Pterosaur Knights" minCount="0" maxCount="-1" maxUnitSize="10" minUnitSize="3" unitType="Fast Attack">
+<allowedModels value="model18,model19">
+</allowedModels>
+<allowedUpdates value="unitUpdate18,unitUpdate19,unitUpdate20,unitUpdate21">
+</allowedUpdates>
+</unit>
+<unit name="Raptor Knights" minCount="0" maxCount="-1" maxUnitSize="10" minUnitSize="4" unitType="Fast Attack">
+<allowedModels value="model20,model21">
+</allowedModels>
+<allowedUpdates value="">
+</allowedUpdates>
+</unit>
+<unit name="Megadon" minCount="0" maxCount="-1" maxUnitSize="-1" minUnitSize="0" unitType="Heavy Support">
+<allowedModels value="model22">
+</allowedModels>
+<allowedUpdates value="unitUpdate22,unitUpdate23,unitUpdate24,unitUpdate25">
+</allowedUpdates>
+</unit>
+<unit name="Scout Walker Squadron" minCount="0" maxCount="1" maxUnitSize="3" minUnitSize="1" unitType="Heavy Support">
+<allowedModels value="model23,model24,model25">
+</allowedModels>
+<allowedUpdates value="">
+</allowedUpdates>
+</unit>
+<unit name="Exo-suit" minCount="0" maxCount="1" maxUnitSize="-1" minUnitSize="0" unitType="Heavy Support">
+<allowedModels value="model26">
+</allowedModels>
+<allowedUpdates value="unitUpdate26,unitUpdate27,unitUpdate28,unitUpdate29">
+</allowedUpdates>
+</unit>
+<unitUpdate id="unitUpdate15" name="Fusion Gun" pointcostPerModel="false" pointcost="4.0" minCount="0" maxCount="4" defaultSelectedAmount="0" weapon="">
+</unitUpdate>
+<unitUpdate id="unitUpdate8" name="Bright Lance" pointcostPerModel="false" pointcost="10.0" minCount="0" maxCount="2" defaultSelectedAmount="0" weapon="">
+</unitUpdate>
+<unitUpdate id="unitUpdate23" name="Scatter Laser" pointcostPerModel="false" pointcost="25.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="Scatter Laser">
+</unitUpdate>
+<unitUpdate id="unitUpdate16" name="Psychic Blaster" pointcostPerModel="false" pointcost="3.0" minCount="0" maxCount="4" defaultSelectedAmount="0" weapon="">
+</unitUpdate>
+<unitUpdate id="unitUpdate7" name="Haywire Grenades" pointcostPerModel="true" pointcost="3.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</unitUpdate>
+<unitUpdate id="unitUpdate22" name="Starcannon" pointcostPerModel="false" pointcost="35.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="Starcannon">
+</unitUpdate>
+<unitUpdate id="unitUpdate9" name="Scatter Laser" pointcostPerModel="false" pointcost="10.0" minCount="0" maxCount="2" defaultSelectedAmount="0" weapon="Scatter Laser">
+</unitUpdate>
+<unitUpdate id="unitUpdate21" name="Web Carbine" pointcostPerModel="false" pointcost="3.0" minCount="0" maxCount="3" defaultSelectedAmount="0" weapon="Web Carbine">
+</unitUpdate>
+<unitUpdate id="unitUpdate6" name="Plasma Grenades" pointcostPerModel="true" pointcost="2.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</unitUpdate>
+<unitUpdate id="unitUpdate1" name="Plasma Grenades" pointcostPerModel="true" pointcost="2.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</unitUpdate>
+<unitUpdate id="unitUpdate29" name="Star Lance" pointcostPerModel="false" pointcost="40.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="Star Lance - Single Shot,Star Lance - Burst">
+</unitUpdate>
+<unitUpdate id="unitUpdate14" name="Haywire Grenades" pointcostPerModel="true" pointcost="3.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</unitUpdate>
+<unitUpdate id="unitUpdate24" name="Bright Lance" pointcostPerModel="false" pointcost="35.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="Bright Lance">
+</unitUpdate>
+<unitUpdate id="unitUpdate4" name="Web Carbine" pointcostPerModel="false" pointcost="3.0" minCount="0" maxCount="2" defaultSelectedAmount="0" weapon="Web Carbine">
+</unitUpdate>
+<unitUpdate id="unitUpdate19" name="Haywire Grenades" pointcostPerModel="true" pointcost="3.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</unitUpdate>
+<unitUpdate id="unitUpdate26" name="Starcannon" pointcostPerModel="false" pointcost="45.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="Starcannon">
+</unitUpdate>
+<unitUpdate id="unitUpdate11" name="Thermal Lance" pointcostPerModel="false" pointcost="6.0" minCount="0" maxCount="2" defaultSelectedAmount="0" weapon="Thermal Lance">
+</unitUpdate>
+<unitUpdate id="unitUpdate18" name="Plasma Grenades" pointcostPerModel="true" pointcost="2.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</unitUpdate>
+<unitUpdate id="unitUpdate3" name="Thermal Lance" pointcostPerModel="false" pointcost="2.0" minCount="0" maxCount="5" defaultSelectedAmount="0" weapon="">
+</unitUpdate>
+<unitUpdate id="unitUpdate12" name="Psychic Carbine" pointcostPerModel="false" pointcost="3.0" minCount="0" maxCount="-1" defaultSelectedAmount="0" weapon="Psychic Carbine / Blaster">
+</unitUpdate>
+<unitUpdate id="unitUpdate27" name="Scatter Laser" pointcostPerModel="false" pointcost="30.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="Scatter Laser">
+</unitUpdate>
+<unitUpdate id="unitUpdate2" name="Haywire Grenades" pointcostPerModel="true" pointcost="3.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</unitUpdate>
+<unitUpdate id="unitUpdate13" name="Plasma Grenades" pointcostPerModel="true" pointcost="2.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</unitUpdate>
+<unitUpdate id="unitUpdate28" name="Bright Lance" pointcostPerModel="false" pointcost="40.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="Bright Lance">
+</unitUpdate>
+<unitUpdate id="unitUpdate20" name="Blast Pistol &amp; CCW" pointcostPerModel="true" pointcost="1.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</unitUpdate>
+<unitUpdate id="unitUpdate25" name="Wraithbone Armour Plates" pointcostPerModel="false" pointcost="10.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</unitUpdate>
+<unitUpdate id="unitUpdate10" name="Blast Carbines" pointcostPerModel="true" pointcost="1.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="Blast Carbine">
+</unitUpdate>
+<model id="model15" name="Exodeite Warrior" pointcost="8.0" minCount="4" maxCount="20" defaultSelectedAmount="10" counted="true" isLinked="false" statType="infantry" statValues="3,3,3,3,1,4,1,8,5+">
+<allowedUpdates value="modelUpdate56,modelUpdate57">
+</allowedUpdates>
+</model>
+<model id="model8" name="Lethosaur Knight" pointcost="20.0" minCount="3" maxCount="10" defaultSelectedAmount="4" counted="true" isLinked="false" statType="infantry" statValues="3,3,3,3,1,4,1,8,5+">
+<allowedUpdates value="modelUpdate7">
+</allowedUpdates>
+</model>
+<model id="model23" name="Scout Walker" pointcost="30.0" minCount="1" maxCount="1" defaultSelectedAmount="1" counted="true" isLinked="false" statType="walker" statValues="3,3,5,10,10,9,4,2">
+<allowedUpdates value="modelUpdate26,modelUpdate27,modelUpdate28,modelUpdate29,modelUpdate30,modelUpdate31">
+</allowedUpdates>
+</model>
+<model id="model16" name="Warrior Leader" pointcost="16.0" minCount="0" maxCount="1" defaultSelectedAmount="0" counted="true" isLinked="false" statType="infantry" statValues="3,3,3,3,1,4,2,9,5+">
+<allowedUpdates value="modelUpdate19,modelUpdate64">
+</allowedUpdates>
+</model>
+<model id="model7" name="Exodite Dragoon Leader" pointcost="50.0" minCount="0" maxCount="1" defaultSelectedAmount="0" counted="true" isLinked="false" statType="infantry" statValues="5,3,3,4,1,7,3,9,3+">
+<allowedUpdates value="modelUpdate3,modelUpdate4,modelUpdate5,modelUpdate6,modelUpdate49,modelUpdate50">
+</allowedUpdates>
+</model>
+<model id="model22" name="Megadon" pointcost="55.0" minCount="1" maxCount="1" defaultSelectedAmount="1" counted="true" isLinked="false" statType="infantry" statValues="3,3,6,6,4,1,2,10,4+">
+<allowedUpdates value="">
+</allowedUpdates>
+</model>
+<model id="model9" name="Lethosaur Knight Leader" pointcost="30.0" minCount="0" maxCount="1" defaultSelectedAmount="1" counted="true" isLinked="false" statType="infantry" statValues="3,3,3,3,1,4,1,8,5+">
+<allowedUpdates value="modelUpdate8,modelUpdate9,modelUpdate10,modelUpdate11">
+</allowedUpdates>
+</model>
+<model id="model21" name="Raptor Leader" pointcost="30.0" minCount="0" maxCount="1" defaultSelectedAmount="0" counted="true" isLinked="false" statType="infantry" statValues="4,3,3,3,1,6,4,9,5+">
+<allowedUpdates value="modelUpdate22,modelUpdate23,modelUpdate24,modelUpdate25,modelUpdate62,modelUpdate63">
+</allowedUpdates>
+</model>
+<model id="model6" name="Exodite Dragoon" pointcost="35.0" minCount="1" maxCount="10" defaultSelectedAmount="2" counted="true" isLinked="false" statType="infantry" statValues="5,3,3,4,1,6,2,9,3+">
+<allowedUpdates value="modelUpdate47,modelUpdate48">
+</allowedUpdates>
+</model>
+<model id="model1" name="Exodite Lord" pointcost="50.0" minCount="1" maxCount="1" defaultSelectedAmount="1" counted="true" isLinked="false" statType="infantry" statValues="5,5,3,3,3,7,3,10,5+">
+<allowedUpdates value="">
+</allowedUpdates>
+<allowedWargear value="100.0">
+</allowedWargear>
+<allowedWargearGroups value="One-handed Weapons,Two-handed Weapons,Wargear,Exodite Mounts">
+</allowedWargearGroups>
+</model>
+<model id="model14" name="Dragon Leader" pointcost="35.0" minCount="0" maxCount="1" defaultSelectedAmount="0" counted="true" isLinked="false" statType="infantry" statValues="4,3,3,4,1,5,3,9,4+">
+<allowedUpdates value="modelUpdate14,modelUpdate15,modelUpdate16,modelUpdate17,modelUpdate55">
+</allowedUpdates>
+</model>
+<model id="model24" name="Scout Walker" pointcost="30.0" minCount="0" maxCount="1" defaultSelectedAmount="1" counted="true" isLinked="false" statType="walker" statValues="3,3,5,10,10,9,4,2">
+<allowedUpdates value="modelUpdate32,modelUpdate33,modelUpdate34,modelUpdate35,modelUpdate36,modelUpdate37">
+</allowedUpdates>
+</model>
+<model id="model4" name="Household Guard" pointcost="12.0" minCount="4" maxCount="10" defaultSelectedAmount="5" counted="true" isLinked="false" statType="infantry" statValues="3,3,3,3,1,5,2,8,4+">
+<allowedUpdates value="modelUpdate45">
+</allowedUpdates>
+</model>
+<model id="model19" name="Pterosaur Leader" pointcost="27.0" minCount="0" maxCount="1" defaultSelectedAmount="0" counted="true" isLinked="false" statType="infantry" statValues="3,3,3,3,1,5,2,9,5+">
+<allowedUpdates value="modelUpdate20,modelUpdate21,modelUpdate59">
+</allowedUpdates>
+</model>
+<model id="model26" name="Exo-suit" pointcost="85.0" minCount="1" maxCount="1" defaultSelectedAmount="1" counted="true" isLinked="false" statType="infantry" statValues="4,4,7,7,3,5,3,10,3+">
+<allowedUpdates value="">
+</allowedUpdates>
+</model>
+<model id="model11" name="Exodite Leader" pointcost="16.0" minCount="0" maxCount="1" defaultSelectedAmount="0" counted="true" isLinked="false" statType="infantry" statValues="3,3,3,3,1,4,2,9,5+">
+<allowedUpdates value="modelUpdate12,modelUpdate52">
+</allowedUpdates>
+</model>
+<model id="model18" name="Pterosaur Knight" pointcost="12.0" minCount="2" maxCount="10" defaultSelectedAmount="3" counted="true" isLinked="false" statType="infantry" statValues="3,3,3,3,1,4,1,8,5+">
+<allowedUpdates value="modelUpdate58">
+</allowedUpdates>
+</model>
+<model id="model3" name="Exodite Visionary" pointcost="50.0" minCount="1" maxCount="1" defaultSelectedAmount="1" counted="true" isLinked="false" statType="infantry" statValues="5,5,3,4,3,5,1,10,4+">
+<allowedUpdates value="modelUpdate44">
+</allowedUpdates>
+<allowedWargear value="100.0">
+</allowedWargear>
+<allowedWargearGroups value="One-handed Weapons,Two-handed Weapons,Wargear,Visionary Wargear,Psychic Powers,Exodite Mounts">
+</allowedWargearGroups>
+</model>
+<model id="model12" name="Exodite Shaman" pointcost="15.0" minCount="0" maxCount="1" defaultSelectedAmount="0" counted="false" isLinked="false" statType="infantry" statValues="3,3,3,3,1,4,1,8,5+">
+<allowedUpdates value="modelUpdate13,modelUpdate53">
+</allowedUpdates>
+</model>
+<model id="model17" name="Exodite Shaman" pointcost="15.0" minCount="0" maxCount="1" defaultSelectedAmount="0" counted="false" isLinked="false" statType="infantry" statValues="3,3,3,3,1,4,1,8,5+">
+<allowedUpdates value="modelUpdate18">
+</allowedUpdates>
+</model>
+<model id="model2" name="Exodite Hero" pointcost="30.0" minCount="1" maxCount="1" defaultSelectedAmount="1" counted="true" isLinked="false" statType="infantry" statValues="4,4,3,3,2,6,3,9,5+">
+<allowedUpdates value="">
+</allowedUpdates>
+<allowedWargear value="100.0">
+</allowedWargear>
+<allowedWargearGroups value="One-handed Weapons,Two-handed Weapons,Wargear,Exodite Mounts">
+</allowedWargearGroups>
+</model>
+<model id="model13" name="Dragon Knight" pointcost="25.0" minCount="2" maxCount="10" defaultSelectedAmount="3" counted="true" isLinked="false" statType="infantry" statValues="4,3,3,4,1,4,2,8,4+">
+<allowedUpdates value="modelUpdate54">
+</allowedUpdates>
+</model>
+<model id="model20" name="Raptor Knight" pointcost="20.0" minCount="3" maxCount="10" defaultSelectedAmount="4" counted="true" isLinked="false" statType="infantry" statValues="4,3,3,3,1,5,3,8,5+">
+<allowedUpdates value="modelUpdate60,modelUpdate61">
+</allowedUpdates>
+</model>
+<model id="model25" name="Scout Walker" pointcost="30.0" minCount="0" maxCount="1" defaultSelectedAmount="1" counted="true" isLinked="false" statType="walker" statValues="3,3,5,10,10,9,4,2">
+<allowedUpdates value="modelUpdate38,modelUpdate39,modelUpdate40,modelUpdate41,modelUpdate42,modelUpdate43">
+</allowedUpdates>
+</model>
+<model id="model10" name="Exodite Fusilier" pointcost="8.0" minCount="4" maxCount="20" defaultSelectedAmount="10" counted="true" isLinked="false" statType="infantry" statValues="3,3,3,3,1,4,1,8,5+">
+<allowedUpdates value="modelUpdate51">
+</allowedUpdates>
+</model>
+<model id="model5" name="Household Guard Captain" pointcost="22.0" minCount="0" maxCount="1" defaultSelectedAmount="0" counted="true" isLinked="false" statType="infantry" statValues="3,3,3,3,1,5,2,8,4+">
+<allowedUpdates value="modelUpdate1,modelUpdate46">
+</allowedUpdates>
+</model>
+<modelUpdate id="modelUpdate62" name="Blast pistol" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="Blast Pistol">
+</modelUpdate>
+<modelUpdate id="modelUpdate15" name="Plasma Grenades" pointcostPerModel="true" pointcost="2.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate30" name="Targeter for Scatter Laser" pointcostPerModel="true" pointcost="5.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate43" name="Targeter for Bright Lance" pointcostPerModel="true" pointcost="5.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate31" name="Targeter for Bright Lance" pointcostPerModel="true" pointcost="5.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate16" name="CCW and Powerblades" pointcostPerModel="true" pointcost="7.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate48" name="Shock lance" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="Shock Lance">
+</modelUpdate>
+<modelUpdate id="modelUpdate59" name="Blast carbine" pointcostPerModel="true" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="Blast Carbine">
+</modelUpdate>
+<modelUpdate id="modelUpdate34" name="Bright Lance" pointcostPerModel="true" pointcost="35.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="Bright Lance">
+</modelUpdate>
+<modelUpdate id="modelUpdate32" name="Starcannon" pointcostPerModel="true" pointcost="35.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="Starcannon">
+</modelUpdate>
+<modelUpdate id="modelUpdate41" name="Targeter for Starcannon" pointcostPerModel="true" pointcost="10.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate60" name="Blast pistol" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate61" name="ccw" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate1" name="ccw and powerblades" pointcostPerModel="true" pointcost="10.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate29" name="Targeter for Starcannon" pointcostPerModel="true" pointcost="10.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate14" name="Haywire Grenades" pointcostPerModel="true" pointcost="3.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate47" name="Plasma carbine" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="Plasma Carbine">
+</modelUpdate>
+<modelUpdate id="modelUpdate58" name="Blast carbine" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="Blast Carbine">
+</modelUpdate>
+<modelUpdate id="modelUpdate63" name="ccw" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate18" name="Salamander" pointcostPerModel="true" pointcost="6.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate3" name="Haywire Grenades" pointcostPerModel="true" pointcost="3.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate12" name="Powerblades" pointcostPerModel="true" pointcost="15.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate44" name="Spirit Armour" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate27" name="Scatter Laser" pointcostPerModel="true" pointcost="25.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="Scatter Laser">
+</modelUpdate>
+<modelUpdate id="modelUpdate64" name="Blast pistol" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="Blast Pistol">
+</modelUpdate>
+<modelUpdate id="modelUpdate17" name="Salamander" pointcostPerModel="true" pointcost="6.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate13" name="Salamander" pointcostPerModel="true" pointcost="6.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate38" name="Starcannon" pointcostPerModel="true" pointcost="35.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="Starcannon">
+</modelUpdate>
+<modelUpdate id="modelUpdate28" name="Bright Lance" pointcostPerModel="true" pointcost="35.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="Bright Lance">
+</modelUpdate>
+<modelUpdate id="modelUpdate57" name="ccw" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate37" name="Targeter for Bright Lance" pointcostPerModel="true" pointcost="5.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate51" name="Lasblaster" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate8" name="Blast Carbine" pointcostPerModel="true" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="Blast Carbine">
+</modelUpdate>
+<modelUpdate id="modelUpdate23" name="Plasma Grenades" pointcostPerModel="true" pointcost="2.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate40" name="Bright Lance" pointcostPerModel="true" pointcost="35.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="Bright Lance">
+</modelUpdate>
+<modelUpdate id="modelUpdate35" name="Targeter for Starcannon" pointcostPerModel="true" pointcost="10.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate7" name="Blast Carbine" pointcostPerModel="true" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="Blast Carbine">
+</modelUpdate>
+<modelUpdate id="modelUpdate54" name="Laser lance" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="Laser Lance">
+</modelUpdate>
+<modelUpdate id="modelUpdate49" name="Plasma carbine" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="Plasma Carbine">
+</modelUpdate>
+<modelUpdate id="modelUpdate22" name="Haywire Grenades" pointcostPerModel="true" pointcost="3.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate53" name="Blast pistol" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate9" name="ccw and powerblades" pointcostPerModel="true" pointcost="15.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate21" name="Neuro Disruptor" pointcostPerModel="true" pointcost="20.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="Neuro Disruptor">
+</modelUpdate>
+<modelUpdate id="modelUpdate33" name="Scatter Laser" pointcostPerModel="true" pointcost="25.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="Scatter Laser">
+</modelUpdate>
+<modelUpdate id="modelUpdate6" name="Salamander" pointcostPerModel="true" pointcost="6.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate52" name="Lasblaster" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate24" name="Powerblades" pointcostPerModel="true" pointcost="15.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate42" name="Targeter for Scatter Laser" pointcostPerModel="true" pointcost="5.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate4" name="Plasma Grenades" pointcostPerModel="true" pointcost="2.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate19" name="Powerblades" pointcostPerModel="true" pointcost="15.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate36" name="Targeter for Scatter Laser" pointcostPerModel="true" pointcost="5.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate26" name="Starcannon" pointcostPerModel="true" pointcost="35.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="Starcannon">
+</modelUpdate>
+<modelUpdate id="modelUpdate55" name="Laser lance" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="Laser Lance">
+</modelUpdate>
+<modelUpdate id="modelUpdate11" name="Salamander" pointcostPerModel="true" pointcost="6.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate50" name="Shock lance" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="0" weapon="Shock Lance">
+</modelUpdate>
+<modelUpdate id="modelUpdate39" name="Scatter Laser" pointcostPerModel="true" pointcost="25.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="Scatter Laser">
+</modelUpdate>
+<modelUpdate id="modelUpdate45" name="Lasblaster" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="Lasblaster">
+</modelUpdate>
+<modelUpdate id="modelUpdate20" name="Powerblades" pointcostPerModel="true" pointcost="15.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate46" name="Lasblaster" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="Lasblaster">
+</modelUpdate>
+<modelUpdate id="modelUpdate25" name="Salamander" pointcostPerModel="true" pointcost="6.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate10" name="Neuro Disruptor" pointcostPerModel="true" pointcost="20.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate56" name="Blast pistol" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="Blast Pistol">
+</modelUpdate>
+<modelUpdate id="modelUpdate5" name="CCW and Powerblades" pointcostPerModel="true" pointcost="0.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</modelUpdate>
+</armylist>
