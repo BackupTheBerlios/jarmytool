@@ -91,7 +91,7 @@ public class WeaponPanel extends javax.swing.JPanel {
 
         add(selectedWeaponsPanel, java.awt.BorderLayout.NORTH);
 
-        weaponsPanel.setLayout(new java.awt.GridLayout());
+        weaponsPanel.setLayout(new java.awt.GridLayout(1, 0));
 
         add(weaponsPanel, java.awt.BorderLayout.CENTER);
 

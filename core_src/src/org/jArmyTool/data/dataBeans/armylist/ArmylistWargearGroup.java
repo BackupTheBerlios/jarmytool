@@ -20,6 +20,8 @@ public class ArmylistWargearGroup implements Serializable{
     
     private LinkedList subGroups;
     
+    private LinkedList requiredItems;
+    
     /**
      * Creates a new instance of ArmylistWargearGroup
      * @param name Name of this group.
@@ -30,6 +32,7 @@ public class ArmylistWargearGroup implements Serializable{
         this.name = name;
         this.items = new LinkedList();
         this.subGroups = new LinkedList();
+        this.requiredItems = new LinkedList();
     }
     
     /**
@@ -74,6 +77,32 @@ public class ArmylistWargearGroup implements Serializable{
     public void removeItem(ArmylistWargearItem item){
         this.items.remove(item);
     }
+    
+    
+    /**
+     * Add new required wargear item into this group
+     * @param item The item to be added
+     */    
+    public void addRequiredItem(String item){
+        this.requiredItems.add(item);
+    }
+    
+    /**
+     * Remove one item from this group
+     * @param item Item to be removed
+     */    
+    public void removeRequiredItem(String item){
+        this.requiredItems.remove(item);
+    }    
+    
+    /**
+     * Get all items in this group
+     * @return Collection of ArmylistWargearItem objects.
+     */    
+    public Collection getRequiredItems(){
+        return Collections.unmodifiableCollection(this.requiredItems);
+    }
+    
     
     /**
      * Get all items in this group

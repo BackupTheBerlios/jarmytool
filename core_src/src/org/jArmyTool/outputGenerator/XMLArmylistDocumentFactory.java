@@ -123,6 +123,15 @@ public class XMLArmylistDocumentFactory {
         Element wgGroup = this.document.createElement("wargearGroup");
         wgGroup.setAttribute("name", group.getName());
         
+        Iterator required = group.getRequiredItems().iterator();
+        String requiredSt = "";
+        while(required.hasNext()){
+            requiredSt = requiredSt + (String)required.next();  
+            if(required.hasNext())
+                requiredSt = requiredSt + ",";
+        }
+        wgGroup.setAttribute("requiredItems", requiredSt);
+        
         Iterator iterator = group.getSubGroups().iterator();
         while(iterator.hasNext()){
             ArmylistWargearGroup subGroup = (ArmylistWargearGroup)iterator.next();

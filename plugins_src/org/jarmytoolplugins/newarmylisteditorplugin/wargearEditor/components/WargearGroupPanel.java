@@ -6,7 +6,15 @@
 
 package org.jarmytoolplugins.newarmylisteditorplugin.wargearEditor.components;
 
+import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.util.Iterator;
+import java.util.LinkedList;
+import javax.swing.JLabel;
 import org.jArmyTool.data.dataBeans.armylist.ArmylistWargearGroup;
+import org.jArmyTool.data.dataBeans.armylist.ArmylistWargearItem;
+import org.jArmyTool.internaldata.GUICommands;
+import org.jarmytoolplugins.newarmylisteditorplugin.util.VerticalFlowLayout;
 
 /**
  *
@@ -14,15 +22,21 @@ import org.jArmyTool.data.dataBeans.armylist.ArmylistWargearGroup;
  */
 public class WargearGroupPanel extends javax.swing.JPanel {
     
+    private static final String DEFAULT_TEXT = "select to add";
+    
     private ArmylistWargearGroup group;
     private WargearEditorMainWindow parent;
+    
+    private LinkedList requiredSelectedlist;
     
     
     /** Creates new form WargearGroupPanel */
     public WargearGroupPanel(ArmylistWargearGroup group, WargearEditorMainWindow parent) {
         this.group = group;
         this.parent = parent;
+        this.requiredSelectedlist = new LinkedList();
         initComponents();
+        this.requiredSelectedPanel.setLayout(new VerticalFlowLayout());
         this.initData();
     }
     
@@ -30,10 +44,82 @@ public class WargearGroupPanel extends javax.swing.JPanel {
         if(group.getName() == null)
             group.setName("no name");
         this.nameField.setText(group.getName());
+        this.initRequired();
+    }
+    
+    
+    private void initRequired(){
+        this.requiredAvailBox.addItem(DEFAULT_TEXT);
+        
+        Iterator iterator = this.parent.getArmylistArmy().getWargearGroups().iterator();
+        while(iterator.hasNext()){
+            ArmylistWargearGroup group = (ArmylistWargearGroup)iterator.next();
+            this.addGroupToBox(group, "");
+        }
+        
+        Iterator selectedRequired = this.group.getRequiredItems().iterator();
+        while(selectedRequired.hasNext()){
+            String item = (String)selectedRequired.next();
+            this.addRequiredItemLabel(item);
+            this.requiredSelectedlist.add(item);
+        }
+        
+        
+    }
+    
+    private void addGroupToBox(ArmylistWargearGroup group, String parent){
+        Iterator items = group.getItems().iterator();
+        while(items.hasNext()){
+            ArmylistWargearItem item = (ArmylistWargearItem)items.next();
+            this.requiredAvailBox.addItem(parent + group.getName() + "." + item.getName());
+        }
+        Iterator subGroups = group.getSubGroups().iterator();
+        while(subGroups.hasNext()){
+            ArmylistWargearGroup subGroup = (ArmylistWargearGroup)subGroups.next();
+            this.addGroupToBox(subGroup, parent + group.getName() + ".");
+        }  
     }
     
     public void saveData(){
         this.group.setName(this.nameField.getText());
+    }
+    
+    private void addRequiredItem(){
+        String item = (String)this.requiredAvailBox.getSelectedItem();
+        if(!this.requiredSelectedlist.contains(item)){
+            this.group.addRequiredItem(item);
+            this.addRequiredItemLabel(item);
+            this.requiredSelectedlist.add(item);
+        }
+        this.requiredAvailBox.setSelectedIndex(0);
+        
+    }
+    
+    private void addRequiredItemLabel(final String item){
+        final JLabel label = new JLabel(item);
+        
+        label.addMouseListener(new MouseAdapter(){
+                    public void mouseExited(java.awt.event.MouseEvent evt) {
+                        label.setFont(new Font(label.getFont().getName(), Font.PLAIN, label.getFont().getSize()));
+                    }
+                    public void mouseEntered(java.awt.event.MouseEvent evt) {
+                        label.setFont(new Font(label.getFont().getName(), Font.BOLD, label.getFont().getSize()));
+                    }        
+                    public void mouseClicked(java.awt.event.MouseEvent evt) {
+                        removeRequireedItem(item, label);
+                    }                
+                });
+        
+        label.setCursor(GUICommands.getInstance().getXCursor());
+        this.requiredSelectedPanel.add(label);
+        this.requiredSelectedPanel.updateUI();
+    }
+    
+    private void removeRequireedItem(String item, JLabel label){
+        this.requiredSelectedlist.remove(item);;
+        this.group.removeRequiredItem(item);
+        this.requiredSelectedPanel.remove(label);
+        this.requiredSelectedPanel.updateUI();
     }
     
     /** This method is called from within the constructor to
@@ -47,6 +133,9 @@ public class WargearGroupPanel extends javax.swing.JPanel {
         nameField = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         deleteButton = new javax.swing.JButton();
+        requiredPanel = new javax.swing.JPanel();
+        requiredAvailBox = new javax.swing.JComboBox();
+        requiredSelectedPanel = new javax.swing.JPanel();
 
         setLayout(new java.awt.GridBagLayout());
 
@@ -78,7 +167,36 @@ public class WargearGroupPanel extends javax.swing.JPanel {
         gridBagConstraints.gridy = 0;
         add(deleteButton, gridBagConstraints);
 
+        requiredPanel.setLayout(new java.awt.GridBagLayout());
+
+        requiredPanel.setBorder(new javax.swing.border.TitledBorder("Required Items"));
+        requiredAvailBox.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                requiredAvailBoxItemStateChanged(evt);
+            }
+        });
+
+        requiredPanel.add(requiredAvailBox, new java.awt.GridBagConstraints());
+
+        requiredSelectedPanel.setBorder(new javax.swing.border.TitledBorder("Selected"));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        requiredPanel.add(requiredSelectedPanel, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        add(requiredPanel, gridBagConstraints);
+
     }//GEN-END:initComponents
+
+    private void requiredAvailBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_requiredAvailBoxItemStateChanged
+        if(this.requiredAvailBox.getSelectedItem() != this.DEFAULT_TEXT)
+            this.addRequiredItem();
+    }//GEN-LAST:event_requiredAvailBoxItemStateChanged
 
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
         this.parent.deleteCurrentGroup();
@@ -89,6 +207,9 @@ public class WargearGroupPanel extends javax.swing.JPanel {
     private javax.swing.JButton deleteButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField nameField;
+    private javax.swing.JComboBox requiredAvailBox;
+    private javax.swing.JPanel requiredPanel;
+    private javax.swing.JPanel requiredSelectedPanel;
     // End of variables declaration//GEN-END:variables
     
 }

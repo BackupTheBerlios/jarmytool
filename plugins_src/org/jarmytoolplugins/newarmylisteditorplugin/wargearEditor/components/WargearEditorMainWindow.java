@@ -324,6 +324,10 @@ public class WargearEditorMainWindow extends javax.swing.JFrame {
         this.wargearTree.updateUI();        
     }
     
+    public ArmylistArmy getArmylistArmy(){
+        return this.armylistArmy;
+    }
+    
     
     /** This method is called from within the constructor to
      * initialize the form.

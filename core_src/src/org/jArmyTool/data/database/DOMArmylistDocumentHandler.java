@@ -160,6 +160,12 @@ public class DOMArmylistDocumentHandler {
     private void parseWargearGroup(Element group, ArmylistArmy army, ArmylistWargearGroup parent){
         ArmylistWargearGroup grp = new ArmylistWargearGroup(group.getAttribute("name"));
         
+        String req = group.getAttribute("requiredItems");
+        StringTokenizer required = new StringTokenizer(req, ",");
+        while(required.hasMoreTokens()){
+            grp.addRequiredItem(required.nextToken());
+        }
+        
         NodeList list = group.getChildNodes();
 
         for(int i = 0; i < list.getLength(); ++i){
