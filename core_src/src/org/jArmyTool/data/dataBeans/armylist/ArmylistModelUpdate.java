@@ -142,14 +142,7 @@ public class ArmylistModelUpdate implements Serializable{
     
     public Iterator getStatModificationTreeIterator()
     {
-        LinkedList StatModTrees = new LinkedList();
-        Iterator i = this.statModificationTrees.entrySet().iterator();
-        while(i.hasNext())
-        {
-            Map.Entry entry = (Map.Entry)i.next();
-            StatModTrees.add(new statCalc((statCalc)entry.getValue()));
-        }
-        return StatModTrees.iterator();
+        return this.statModificationTrees.entrySet().iterator();
     }
     
     /**
