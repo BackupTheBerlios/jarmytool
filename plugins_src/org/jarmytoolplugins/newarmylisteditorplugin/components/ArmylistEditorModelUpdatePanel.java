@@ -7,6 +7,7 @@
 package org.jarmytoolplugins.newarmylisteditorplugin.components;
 
 import java.util.Iterator;
+import java.util.Map.Entry;
 import org.jArmyTool.data.dataBeans.armylist.ArmylistModelUpdate;
 import org.jArmyTool.data.dataBeans.armylist.ArmylistWeapon;
 import org.jArmyTool.internaldata.GUICommands;
@@ -20,6 +21,7 @@ public class ArmylistEditorModelUpdatePanel extends javax.swing.JPanel {
     private ArmylistModelUpdate update;
     private ArmylistEditorModelPanel modelPanel;
     private WeaponPanel weaponPanel;
+    private StatPanel statPanel;
     
     /** Creates new form ArmylistEditorModelUpdatePanel */
     public ArmylistEditorModelUpdatePanel(ArmylistModelUpdate update, ArmylistEditorModelPanel modelPanel) {
@@ -30,7 +32,6 @@ public class ArmylistEditorModelUpdatePanel extends javax.swing.JPanel {
         
         this.moveDownButton.setIcon(GUICommands.getInstance().getMovedDownArrow());
         this.moveUpButton.setIcon(GUICommands.getInstance().getMoveUpArrow());        
-        
     }
     
     private void initData(){
@@ -50,6 +51,11 @@ public class ArmylistEditorModelUpdatePanel extends javax.swing.JPanel {
         
         if(!this.update.getWeapons().isEmpty()){
             this.showWeaponList();
+        }
+        
+        if(!this.update.getStatModifications().isEmpty())
+        {
+            this.showUpdateSelector();
         }
     }
     
@@ -72,12 +78,50 @@ public class ArmylistEditorModelUpdatePanel extends javax.swing.JPanel {
                 this.update.addWeapon((String)iterator.next());
             }            
         }
+        try
+        {
+            this.update.addStatModification(this.statPanel.modifications());
+        }
+        catch(java.lang.NullPointerException e)
+        {
+            System.out.println("Null pointer exception when saving !!!!!");
+        }
+        
     }
     
-    public ArmylistModelUpdate getModelUpdate(){
+    public ArmylistModelUpdate getModelUpdate()
+    {
         return this.update;
     }
     
+    public void removeUpdateSelector()
+    {
+        this.updatePanelPanel.removeAll();
+        this.statPanel = null;
+        this.updatePanelPanel.add(this.isStatUpdatePanel);
+        this.updatePanelPanel.updateUI();
+    }
+    
+    private void showUpdateSelector()
+    {
+        this.updatePanelPanel.remove(this.isStatUpdatePanel);
+        this.statPanel = new StatPanel(this, this.modelPanel.getArmylistArmy(), this.modelPanel.getModel());
+        
+        if(!this.update.getStatModifications().isEmpty())
+        {
+            Iterator i = this.update.getStatModifications().entrySet().iterator();
+            while(i.hasNext())
+            {
+                Entry e = ((Entry)i.next());
+                this.statPanel.addStatPanel(((String)e.getKey()), ((String)e.getValue()));
+            }
+        }
+        else
+            this.statPanel.addStatPanel();
+        
+        this.updatePanelPanel.add(this.statPanel);
+        this.updatePanelPanel.updateUI();
+    }
     
     private void showWeaponList(){
         this.weaponPanelPanel.remove(this.isWeaponBoxPanel);
@@ -113,8 +157,11 @@ public class ArmylistEditorModelUpdatePanel extends javax.swing.JPanel {
         weaponPanelPanel = new javax.swing.JPanel();
         isWeaponBoxPanel = new javax.swing.JPanel();
         isWeaponCheckBox = new javax.swing.JCheckBox();
+        updatePanelPanel = new javax.swing.JPanel();
+        isStatUpdatePanel = new javax.swing.JPanel();
+        isStatCheckBox = new javax.swing.JCheckBox();
 
-        setLayout(new java.awt.BorderLayout());
+        setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.Y_AXIS));
 
         setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0)));
         dataPanel.setLayout(new java.awt.GridBagLayout());
@@ -165,8 +212,8 @@ public class ArmylistEditorModelUpdatePanel extends javax.swing.JPanel {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 4);
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 4);
         dataPanel.add(jLabel3, gridBagConstraints);
 
         pointcostField.setText("jTextField1");
@@ -236,7 +283,7 @@ public class ArmylistEditorModelUpdatePanel extends javax.swing.JPanel {
         gridBagConstraints.gridheight = 2;
         dataPanel.add(moveButtonsPanel, gridBagConstraints);
 
-        add(dataPanel, java.awt.BorderLayout.NORTH);
+        add(dataPanel);
 
         weaponPanelPanel.setLayout(new java.awt.BorderLayout());
 
@@ -251,9 +298,27 @@ public class ArmylistEditorModelUpdatePanel extends javax.swing.JPanel {
 
         weaponPanelPanel.add(isWeaponBoxPanel, java.awt.BorderLayout.CENTER);
 
-        add(weaponPanelPanel, java.awt.BorderLayout.CENTER);
+        add(weaponPanelPanel);
+
+        isStatCheckBox.setText("is stat update");
+        isStatCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                isStatCheckBoxActionPerformed(evt);
+            }
+        });
+
+        isStatUpdatePanel.add(isStatCheckBox);
+
+        updatePanelPanel.add(isStatUpdatePanel);
+
+        add(updatePanelPanel);
 
     }//GEN-END:initComponents
+
+    private void isStatCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_isStatCheckBoxActionPerformed
+       this.saveData();
+       this.showUpdateSelector();
+    }//GEN-LAST:event_isStatCheckBoxActionPerformed
 
     private void moveDownButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moveDownButtonActionPerformed
         this.modelPanel.moveUpdateDown(this);
@@ -277,6 +342,8 @@ public class ArmylistEditorModelUpdatePanel extends javax.swing.JPanel {
     private javax.swing.JPanel dataPanel;
     private javax.swing.JSpinner defaultCounterSpinner;
     private javax.swing.JButton delButton;
+    private javax.swing.JCheckBox isStatCheckBox;
+    private javax.swing.JPanel isStatUpdatePanel;
     private javax.swing.JPanel isWeaponBoxPanel;
     private javax.swing.JCheckBox isWeaponCheckBox;
     private javax.swing.JLabel jLabel1;
@@ -291,7 +358,9 @@ public class ArmylistEditorModelUpdatePanel extends javax.swing.JPanel {
     private javax.swing.JTextField nameField;
     private javax.swing.JTextField pointcostField;
     private javax.swing.JCheckBox pointcostPerModelCheckbox;
+    private javax.swing.JPanel updatePanelPanel;
     private javax.swing.JPanel weaponPanelPanel;
     // End of variables declaration//GEN-END:variables
     
 }
+
