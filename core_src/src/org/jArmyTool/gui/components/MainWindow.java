@@ -36,6 +36,7 @@ import org.jArmyTool.gui.util.PointcostProgressBar;
 import org.jArmyTool.gui.util.UnitListCellRenderer;
 import org.jArmyTool.gui.util.UnitTreeCellRenderer;
 import org.jArmyTool.gui.util.UnitTypeJToggleButton;
+import org.jArmyTool.gui.components.util.RemainingIndicatorPanel;
 
 /**
  *
@@ -95,7 +96,7 @@ public class MainWindow extends javax.swing.JFrame {
     private Color pointsRemainingNormal= Color.black;
     private Color pointsRemainingExeeded = Color.red;
     
-    private PointcostProgressBar pointcostProgressBar;
+    private RemainingIndicatorPanel remainingIndicatorPanel;
    
     
     /** Creates new form MainWindow */
@@ -121,9 +122,10 @@ public class MainWindow extends javax.swing.JFrame {
         this.namedUnitsAddButton.setIcon(PLUS_ICON);
         
         
-        this.pointcostProgressBar = new PointcostProgressBar(pointsRemainingNormal);
-        this.progressBarPanel.add(this.pointcostProgressBar);    
-        this.pointcostProgressBar.setPreferredSize(PROGRESS_BAR_SIZE);
+	this.remainingIndicatorPanel = new RemainingIndicatorPanel(1500);
+        //this.pointcostProgressBar = new PointcostProgressBar(pointsRemainingNormal);
+        this.progressBarPanel.add(this.remainingIndicatorPanel);    
+        this.remainingIndicatorPanel.setPreferredSize(PROGRESS_BAR_SIZE);
         //this.progressBarPanel.setMinimumSize(PROGRESS_BAR_SIZE);
         
         this.filterHeaderPanel.setBackground(TITLE_BACKGROUND);
@@ -917,27 +919,24 @@ public class MainWindow extends javax.swing.JFrame {
     public void setPointcostTotal(double pointcost, double remaining){
         if(pointcost == (int)pointcost && remaining == (int)remaining){
             this.pointcostTotalLabel.setText(""+(int)pointcost);
-            this.pointcostProgressBar.setString(""+(int)remaining + " remaining");
+            //this.pointcostProgressBar.setString(""+(int)remaining + " remaining");
             //this.pointcostRemainingLabel.setText(""+(int)remaining);
-            this.pointcostTargetLabel.setText(""+(int)(pointcost + remaining));
-            this.pointcostProgressBar.repaint();
+            this.pointcostTargetLabel.setText(""+(int)remaining);
+           // this.pointcostProgressBar.repaint();
         }else{
             this.pointcostTotalLabel.setText(""+pointcost);
             //this.pointcostRemainingLabel.setText(""+remaining);
-            this.pointcostProgressBar.setString(""+remaining + " remaining");
-            this.pointcostTargetLabel.setText(""+(pointcost + remaining));
+            //this.pointcostProgressBar.setString(""+remaining + " remaining");
+            this.pointcostTargetLabel.setText(""+remaining);
         }
         
-        if(remaining < 0){
-             this.pointcostProgressBar.setColor(this.pointsRemainingExeeded);
-            //this.pointcostRemainingLabel.setForeground(this.pointsRemainingExeeded);
-        }else{
-            this.pointcostProgressBar.setColor(this.pointsRemainingNormal);
-            //this.pointcostRemainingLabel.setForeground(this.pointsRemainingNormal);
-        }
         
-        this.pointcostProgressBar.setMaximum( (int)(pointcost+remaining) );
-        this.pointcostProgressBar.setValue( (int)pointcost );
+        this.remainingIndicatorPanel.setMax(pointcost+remaining);
+        this.remainingIndicatorPanel.setCurrent(pointcost);
+        this.remainingIndicatorPanel.repaint();
+        
+        //this.pointcostProgressBar.setMaximum( (int)(pointcost+remaining) );
+        //this.pointcostProgressBar.setValue( (int)pointcost );
     }
     
     /**
