@@ -76,7 +76,8 @@ public class WargearItemPanel extends javax.swing.JPanel {
         
         this.item.setName(this.name.getText());
         this.item.setPointcost(Double.parseDouble(this.points.getText()));
-        this.group.removeItem(this.item);
+        
+        //this.group.removeItem(this.item);
 
         if(this.weaponsPanel != null){
             this.item.emptyWeapons();

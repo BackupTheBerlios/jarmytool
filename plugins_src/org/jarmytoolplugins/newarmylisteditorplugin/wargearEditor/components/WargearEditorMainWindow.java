@@ -185,7 +185,7 @@ public class WargearEditorMainWindow extends javax.swing.JFrame {
     }
     
     public void deleteCurrentItem(){
-        System.out.println(this.currentContainer.getItemGroup().getName() + " - " +this.currentContainer.getItem());
+        System.out.println("Deleting item "+this.currentContainer.getItemGroup().getName() + " - " +this.currentContainer.getItem());
         
         if(this.currentContainer == null || this.currentItemPanel == null)
             return;
@@ -202,6 +202,7 @@ public class WargearEditorMainWindow extends javax.swing.JFrame {
     }
     
     private void newGroup(){
+        this.saveData();
         if(this.currentContainer == null)
             return;
         
