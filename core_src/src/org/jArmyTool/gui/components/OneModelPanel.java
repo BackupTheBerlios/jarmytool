@@ -53,6 +53,8 @@ public class OneModelPanel extends javax.swing.JPanel {
         this.totalPointcostPanel.setBackground(MainWindow.TITLE_BACKGROUND);
         
         this.expandUpdatesButton.setIcon(new ImageIcon(EXPAND_ICON_LOCATION));
+        
+        this.updateWithUpgrades();
     }
     
     private void initUpdates(){
