@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : armylist.dtd
+    Created on : 25 March 2003, 00:14
+    Author     : pasi
+    Description:
+        Purpose of the document follows.
+-->
+
+
+<!ELEMENT armylist (armyHeader|weapons|wargear|unit|model|unitUpdate|modelUpdate|modelStatGroups)* >
+<!ELEMENT armyHeader (name,comment?)>
+ <!ATTLIST armyHeader id ID #REQUIRED>
+ <!ATTLIST armyHeader gameSystem CDATA #REQUIRED>
+ 
+ <!ELEMENT name EMPTY>
+  <!ATTLIST name value CDATA "">
+
+ <!ELEMENT comment EMPTY>
+  <!ATTLIST comment writer CDATA "">    
+  <!ATTLIST comment email CDATA "">    
+  <!ATTLIST comment web CDATA "">    
+  <!ATTLIST comment value CDATA "">    
+  
+<!ELEMENT weapons (weapon)* >
+ <!ELEMENT weapon EMPTY >
+  <!ATTLIST weapon name CDATA #REQUIRED>
+  <!ATTLIST weapon profileName CDATA #REQUIRED>
+  <!ATTLIST weapon profile CDATA "">
+
+<!ELEMENT wargear (wargearGroup)* >
+ <!ELEMENT wargearGroup (wargearItem)* >
+  <!ELEMENT wargearItem EMPTY>
+   <!ATTLIST wargearItem name CDATA "">
+   <!ATTLIST wargearItem pointcost CDATA "">
+   <!ATTLIST wargearItem weapon CDATA "">
+   
+<!ELEMENT unit (allowedModels, allowedUpdates, exclusiveModels+)>
+ <!ATTLIST unit name CDATA "">
+ <!ATTLIST unit minCount CDATA "">
+ <!ATTLIST unit maxCount CDATA "">
+ <!ATTLIST unit unitType CDATA "">
+ <!ATTLIST unit minUnitSize CDATA "0">
+ <!ATTLIST unit maxUnitSize CDATA "-1"> 
+ 
+  
+ <!ELEMENT allowedModels EMPTY>
+  <!ATTLIST allowedModels value CDATA "">
+ 
+ <!ELEMENT allowedUpdates EMPTY>
+  <!ATTLIST allowedUpdates value CDATA "">  
+  
+  
+ <!ELEMENT exclusiveModels EMPTY>
+  <!ATTLIST exclusiveModels modelId CDATA #REQUIRED>  
+  <!ATTLIST exclusiveModels otherModelIds CDATA #REQUIRED>  
+  <!ATTLIST exclusiveModels inclusive CDATA "FALSE">  
+   
+  
+  
+<!ELEMENT model (allowedUpdates, allowedWargearGroups?, allowedWargear?)>
+ <!ATTLIST model id ID #REQUIRED>
+ <!ATTLIST model name CDATA "">  
+ <!ATTLIST model pointcost CDATA "">  
+ <!ATTLIST model minCount CDATA "">  
+ <!ATTLIST model maxCount CDATA "">  
+ <!ATTLIST model statType CDATA "">
+ <!ATTLIST model statValues CDATA "">
+ <!ATTLIST model counted CDATA "true">
+ <!ATTLIST model defaultSelectedAmount CDATA "0">
+ <!ATTLIST model isLinked CDATA "FALSE">
+ 
+ <!ELEMENT allowedUpdates EMPTY>
+  <!ATTLIST allowedUpdates value CDATA "">
+ 
+ <!ELEMENT allowedWargear EMPTY>
+  <!ATTLIST allowdWargear value CDATA ""> 
+
+<!ELEMENT unitUpdate EMPTY>
+ <!ATTLIST unitUpdate id ID #REQUIRED>  
+ <!ATTLIST unitUpdate name CDATA "">
+ <!ATTLIST unitUpdate pointcost CDATA "">
+ <!ATTLIST unitUpdate pointcostPerModel CDATA "false">
+ <!ATTLIST unitUpdate minCount CDATA "">
+ <!ATTLIST unitUpdate maxCount CDATA "">
+ <!ATTLIST unitUpdate defaultSelectedAmount CDATA "0">
+ <!ATTLIST unitUpdate weapon CDATA "">
+  
+<!ELEMENT modelUpdate EMPTY>
+ <!ATTLIST modelUpdate id ID #REQUIRED>  
+ <!ATTLIST modelUpdate name CDATA "">
+ <!ATTLIST modelUpdate pointcost CDATA "">
+ <!ATTLIST modelUpdate pointcostPerModel CDATA "false">
+ <!ATTLIST modelUpdate minCount CDATA "">
+ <!ATTLIST modelUpdate maxCount CDATA ""> 
+ <!ATTLIST modelUpdate defaultSelectedAmount CDATA "0">
+ <!ATTLIST modelUpdate weapon CDATA "">
+ 
