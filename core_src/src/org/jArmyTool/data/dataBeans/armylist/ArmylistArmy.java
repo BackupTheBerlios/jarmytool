@@ -152,10 +152,21 @@ public class ArmylistArmy implements Serializable {
         return id;
     }
     
+    /**
+     * Use this to get model update usind ID
+     * @param id Id of the  model update
+     * @return ArmylistModelUpdate assosiated to the ID. <I>null</I> if no update is found by
+     * that id.
+     */    
     public ArmylistModelUpdate getModelUpdate(int id){
         return (ArmylistModelUpdate)this.allModelUpdates.get(new Integer(id));
     }
     
+    /**
+     * This method adds a model update to this list
+     * @param update Update to be added
+     * @return ID assosiated to this update from now on.
+     */    
     public int mapModelUpdate(ArmylistModelUpdate update){
         int assosiatedId = this.nextModelUpdateId ++;
         
@@ -164,6 +175,18 @@ public class ArmylistArmy implements Serializable {
         return assosiatedId;
     }
     
+    /**
+     * Used to add model update to armylist using selected ID.
+     *
+     * CAUTION! id might already be in use and this method
+     * does not check it.
+     * Use mapModelUpdate(ArmylistModelUpdate) instead in normal case.
+     *
+     * Use only if you know what you're doing.
+     * @param update Update to be added
+     * @param id ID to be used
+     * @return Id assosiated to this update from now on
+     */    
     public int mapModelUpdate(ArmylistModelUpdate update, int id){
         if(this.nextModelUpdateId <= id)
             this.nextModelUpdateId = id + 1;
@@ -172,15 +195,29 @@ public class ArmylistArmy implements Serializable {
         return id;
     }
     
+    /**
+     * Use thios to get all model updates
+     * @return Collection containing Integer objects presenting all IDs of model updates.
+     */    
     public Collection getAllModelUpdateIds(){
         return this.allModelUpdates.keySet();
     }
 
 
+    /**
+     * GEt model using id
+     * @param id Id of model
+     * @return ArmylistModel for that id. <I>null</I> if no model is found by that id
+     */    
     public ArmylistModel getModel(int id){
         return (ArmylistModel)this.allModels.get(new Integer(id));
     }
     
+    /**
+     * Add model to this list
+     * @param update update to be added
+     * @return Id assoiated to this model from now on.
+     */    
     public int mapModel(ArmylistModel update){
         int assosiatedId = this.nextModelId ++;
         
@@ -189,6 +226,18 @@ public class ArmylistArmy implements Serializable {
         return assosiatedId;
     }
     
+    /**
+     * Used to add model to armylist using selected ID.
+     *
+     * CAUTION! id might already be in use and this method
+     * does not check it.
+     * Use mapModel(ArmylistModel) instead in normal case.
+     *
+     * Use only if you know what you're doing.
+     * @param update update to be added
+     * @param id id to be used
+     * @return id assosiated to this model from now on
+     */    
     public int mapModel(ArmylistModel update, int id){
         if(this.nextModelId <= id)
             this.nextModelId = id + 1;
@@ -197,23 +246,45 @@ public class ArmylistArmy implements Serializable {
         return id;
     }    
     
+    /**
+     * Use this to get all models in this list
+     * @return Collection containing Integer objects presenting IDs of all models in this list
+     */    
     public Collection getAllModelIds(){
         return this.allModels.keySet();
     }
     
     
+    /**
+     * This method adds a root wargear group to the list
+     * @param group Group to be added
+     */    
     public void addWargearGroup(ArmylistWargearGroup group){
         this.wargearGroups.add(group);
     }
     
+    /**
+     * This method removes a root wargear group from armylist
+     * @param group group to be removed
+     */    
     public void removeargearGroup(ArmylistWargearGroup group){
         this.wargearGroups.remove(group);
     }
     
+    /**
+     * Get all root wargear groups.
+     * @return Collection containing ArmylistWargearGroup objects.
+     */    
     public Collection getWargearGroups(){
         return Collections.unmodifiableCollection(this.wargearGroups);
     }
     
+    /**
+     * This method returns first matching item entry in root wargear groups.
+     * @param name Item name
+     * @return First matching wargear item
+     * @deprecated This method does not use new wargear hierarchy
+     */    
     public ArmylistWargearItem getWargearItemByName(String name){
         Iterator iterator = this.getWargearGroups().iterator();
         
@@ -228,10 +299,20 @@ public class ArmylistArmy implements Serializable {
         return null;
     }
     
+    /**
+     * This method clears all root wargear groups.
+     */    
     public void emptyWargearGroups(){
         this.wargearGroups.clear();
     }
     
+    /**
+     * returns wargear item with matching name in specified root wargear group
+     * @param group Name of the group
+     * @param itemName Name of the item
+     * @return found wargear item. <I>null</I> if none found
+     * @deprecated This method does not use new wargear hierarchy
+     */    
     public ArmylistWargearItem getWargearItem(String group, String itemName){
         Iterator iterator = this.getWargearGroupbyName(group).getItems().iterator();
         
@@ -243,6 +324,12 @@ public class ArmylistArmy implements Serializable {
         return null;
     }
     
+    /**
+     * Returns root wargear group with matching name
+     * @param name name of the group
+     * @return wargear group with matching name. <I>null</I> if none found.
+     * @deprecated This method does not use the new wargear hierarchy.
+     */    
     public ArmylistWargearGroup getWargearGroupbyName(String name){
         Iterator iterator = this.wargearGroups.iterator();
         while(iterator.hasNext()){
@@ -253,14 +340,29 @@ public class ArmylistArmy implements Serializable {
         return null;
     }
     
+    /**
+     * Change name of this list.
+     *
+     * Use carefully. Changing name of armylist can render saved armies
+     * invalid since they look armylist by name.
+     * @param name New name
+     */    
     public void setName(String name){
         this.name = name;
     }
     
+    /**
+     * Name of this list
+     * @return name of this list
+     */    
     public String getName(){
         return this.name;
     }
     
+    /**
+     * Remove unit form this list
+     * @param unit unit to remove
+     */    
     public void removeUnit(ArmylistUnit unit){
         this.units.remove(unit);
         
@@ -269,6 +371,10 @@ public class ArmylistArmy implements Serializable {
             list.remove(unit);
     }
     
+    /**
+     * Add new unit to this list
+     * @param unit unti to be added
+     */    
     public void addUnit(ArmylistUnit unit){
         this.units.add(unit);
         LinkedList list = (LinkedList)this.unitsByType.get(unit.getUnitType());
@@ -276,6 +382,12 @@ public class ArmylistArmy implements Serializable {
     }
     
     
+    /**
+     * This method is used to correct intrernal data structure once unit's type gets
+     * changed
+     * @param fromType old type
+     * @param unit the unit
+     */    
     protected void unitTypeChanged(String fromType, ArmylistUnit unit){
         
         LinkedList list = ((LinkedList)this.unitsByType.get(fromType));
@@ -285,10 +397,19 @@ public class ArmylistArmy implements Serializable {
         }
     }
     
+    /**
+     * Get all units in this list
+     * @return Collection containing ArmylistUnit objects
+     */    
     public Collection getUnits(){
         return Collections.unmodifiableCollection(this.units);
     }
     
+    /**
+     * This method returns all units in this army which have the selected type
+     * @param type wanted type
+     * @return Collection ArmylitUnit objects. <I>null</I> if provided type is not found.
+     */    
     public Collection getUnitsByType(String type){
         LinkedList list = ((LinkedList)this.unitsByType.get(type));
         if(list == null)
@@ -296,6 +417,10 @@ public class ArmylistArmy implements Serializable {
         return Collections.unmodifiableCollection(list);
     }
     
+    /**
+     * Get all unit updates of this list
+     * @return Set containing ArmylistUnitUpdate objects
+     */    
     public Set getAllUnitUpdates(){
         HashSet set = new HashSet();
         Iterator iterator = this.allUnitUpdates.keySet().iterator();
@@ -307,10 +432,20 @@ public class ArmylistArmy implements Serializable {
         
     }
     
+    /**
+     * Get gamesystem used by this list
+     * @return This list's game system
+     */    
     public GameSystem getGameSystem(){
         return this.gameSystem;
     }
     
+    /**
+     * Set the game system.
+     * Use carefully. Changing the system once list already contain
+     * data can break internal data sructure.
+     * @param gameSystem new game system
+     */    
     public void setGameSystem(GameSystem gameSystem){
         if(gameSystem == null)
             return;
@@ -323,6 +458,11 @@ public class ArmylistArmy implements Serializable {
         this.initUnitByType();
     }
     
+    /**
+     * This method tells which id is assosiated to given model
+     * @param model model
+     * @return id assosiated to given model
+     */    
     public int getIdForModel(ArmylistModel model){
         Iterator iterator = this.allModels.keySet().iterator();
         while(iterator.hasNext()){
@@ -333,6 +473,11 @@ public class ArmylistArmy implements Serializable {
         return -1;
     }
     
+    /**
+     * This method tells which id is assosiated to given model update
+     * @param modelUpdate model update
+     * @return id assosiated to given model update
+     */    
     public int getIdForModelUpdate(ArmylistModelUpdate modelUpdate){
         Iterator iterator = this.allModelUpdates.keySet().iterator();
         while(iterator.hasNext()){
@@ -344,6 +489,11 @@ public class ArmylistArmy implements Serializable {
     }    
     
 
+    /**
+     * This method tells which id is assosiated to given unit update
+     * @param unitUpdate unit update
+     * @return id assosiated to given unti update
+     */    
     public int getIdForUnitUpdate(ArmylistUnitUpdate unitUpdate){
         Iterator iterator = this.allUnitUpdates.keySet().iterator();
         while(iterator.hasNext()){
@@ -354,6 +504,12 @@ public class ArmylistArmy implements Serializable {
         return -1;
     }     
     
+    /**
+     * Add new weapon to this list
+     * @param profileName Weapon profile name. This should be one of the names used in the game system of this
+     * list.
+     * @param weapon weapon to be added
+     */    
     public void addWeapon(String profileName, ArmylistWeapon weapon){
         LinkedList list = (LinkedList)this.weaponsByProfileName.get(profileName);
         int index = 0;
@@ -380,6 +536,11 @@ public class ArmylistArmy implements Serializable {
         this.allWeapons.add(index, weapon);
     }
     
+    /**
+     * Obtain weapons by profile name
+     * @param profileName Name of profile
+     * @return Collection of ArmylistWeapon objects
+     */    
     public Collection getWeapons(String profileName){
         LinkedList ret = ((LinkedList)this.weaponsByProfileName.get(profileName));
         if(ret != null)
@@ -387,6 +548,10 @@ public class ArmylistArmy implements Serializable {
         return null;
     }
     
+    /**
+     * Empties all weapons whit given profile
+     * @param profileName name of the profile
+     */    
     public void emptyWeapons(String profileName){
         LinkedList list = ((LinkedList)this.weaponsByProfileName.get(profileName));
         if(list != null){
@@ -395,6 +560,11 @@ public class ArmylistArmy implements Serializable {
         }
     }
     
+    /**
+     * Get first weapon with matching name
+     * @param name name of weaapon
+     * @return weapon with given name. <I>null</I> if none found
+     */    
     public ArmylistWeapon getWeaponByName(String name){
         Iterator iterator = this.allWeapons.iterator();
         while(iterator.hasNext()){
@@ -405,34 +575,66 @@ public class ArmylistArmy implements Serializable {
         return null;
     }
     
+    /**
+     * list comment field
+     * @return comment of this list
+     */    
     public String getComments(){
          return this.comments;
     }
     
+    /**
+     * change comment
+     * @param newComment new comment
+     */    
     public void setComments(String newComment){
         this.comments = newComment;
     }
     
+    /**
+     * Writer of this list
+     * @return writer of this list
+     */    
     public String getWriter(){
          return this.writer;
     }
     
+    /**
+     * change writer
+     * @param writer new writer
+     */    
     public void setWriter(String writer){
         this.writer = writer;
     }
     
+    /**
+     * e-mail info of writer
+     * @return e-mail
+     */    
     public String getEmail(){
          return this.email;
     }
     
+    /**
+     * change e-mail
+     * @param email new e-mail
+     */    
     public void setEmail(String email){
         this.email = email;
     }
     
+    /**
+     * URL of this list
+     * @return URL of this list web site
+     */    
     public String getWeb(){
          return this.web;
     }
     
+    /**
+     * change URL
+     * @param web new URL
+     */    
     public void setWeb(String web){
         this.web = web;
     }
