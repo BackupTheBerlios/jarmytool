@@ -137,6 +137,7 @@ public class OneModelUpdatesCollapsed extends javax.swing.JPanel {
                         target.setText(update.getName() + " " + ((update.getPointcost() == 0)? "" : "(" + pointcost+ ")") );
                     }
                 }
+                this.parent.updateWithUpgrades();
                 this.updatesContainer.updateUI();
                 this.parent.refrashParentPointcost();
                 this.parent.refreshPointcost();

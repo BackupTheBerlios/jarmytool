@@ -42,7 +42,7 @@ public class OneModelPanel extends javax.swing.JPanel {
     public OneModelPanel(Model model, UnitPanel parent) {
         this.parent = parent;
         
-        this.model = new Model(model);
+        this.model = model;
         initComponents();
         this.refreshPointcost();
         this.collapsedStatsPanel = new OneModelStatsCollapsedPanel(this.model, this);
@@ -207,32 +207,7 @@ public class OneModelPanel extends javax.swing.JPanel {
         }
         this.collapsedStatsPanel.showStatModifications();
     }
- /*   public void removeStatUpdate(ModelUpdate modelUpdate)
-    {
-        
-        HashMap modifications = new HashMap(modelUpdate.getArmylistModelUpdate().getStatModifications());
-        Model modeltomodify = this.getModel();
-        Iterator i = modifications.entrySet().iterator();
-        while(i.hasNext())
-        {
-            Map.Entry entry = (Map.Entry)(i.next());
-            String stat = (String)entry.getKey();
-            Iterator i2 = modeltomodify.getStats().iterator();
-            while(i2.hasNext())
-            {
-                ModelStatHolder holder = (ModelStatHolder)i2.next();
-                if(holder.getStat().getSymbol().equalsIgnoreCase(stat))
-                {
-//                    System.out.print("removing statupdates from: ");
-//                    System.out.println(stat);
-                    holder.removeCalc(modelUpdate.statcalc);
-                    modelUpdate.statcalc = null; 
-                }
-            }
-        }
-        this.collapsedStatsPanel.showStatModifications();
-    }
-  */  
+ 
     
     public void showStatModifications()
     {
