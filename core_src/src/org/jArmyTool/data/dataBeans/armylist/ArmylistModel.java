@@ -24,6 +24,7 @@ public class ArmylistModel implements Serializable{
     private double allowedWargear;
     private LinkedList allowedWargearGroups;
     private boolean isLinked;
+    private HashMap subWGGroupAllowedAmounts;
    
     
     //reference to armylistArmy's stat types
@@ -53,6 +54,7 @@ public class ArmylistModel implements Serializable{
         this.stats = new LinkedList();
         this.maxCount = -1;
         this.allowedWargearGroups = new LinkedList();
+        this.subWGGroupAllowedAmounts = new HashMap();
     }
     
     /**
@@ -215,10 +217,24 @@ public class ArmylistModel implements Serializable{
         return this.allowedWargear;
     }
     
+
+    public void setSubWGGroupAllowedAmount(String name, double amount){
+        this.subWGGroupAllowedAmounts.put(name, new Double(amount));
+    }
+    
+    public double getSubWGGroupAllowedAmount(String name){
+        Double temp = (Double)this.subWGGroupAllowedAmounts.get(name);
+        if(temp != null)
+            return temp.doubleValue();
+        return -1;
+    }
+    
+
     /**
      * Add allowed root wargear group into this model.
      * @param name Name of wargear group defined in armylist
      */    
+
     public void addWargearGroup(String name){
         this.allowedWargearGroups.add(name);
     }
