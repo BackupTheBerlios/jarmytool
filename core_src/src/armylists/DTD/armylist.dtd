@@ -74,8 +74,12 @@
  <!ELEMENT allowedUpdates EMPTY>
   <!ATTLIST allowedUpdates value CDATA "">
  
- <!ELEMENT allowedWargear EMPTY>
+ <!ELEMENT allowedWargear (subWGGroupsAllowed*)>
   <!ATTLIST allowdWargear value CDATA ""> 
+  
+ <!ELEMENT subWGGroupsAllowed EMPTY>
+  <!ATTLIST subWGGroupsAllowed groupName CDATA ""> 
+  <!ATTLIST subWGGroupsAllowed allowed CDATA "-1"> 
 
 <!ELEMENT unitUpdate EMPTY>
  <!ATTLIST unitUpdate id ID #REQUIRED>  

@@ -383,10 +383,19 @@ public class DOMArmylistDocumentHandler {
         if(list.getLength() > 0){
             Element allowedWG = (Element)list.item(0);
             model.setAllowedWargear(Double.parseDouble(allowedWG.getAttribute("value")));
+            
+            list = allowedWG.getElementsByTagName("subWGGroupsAllowed");
+            for(int i = 0; i < list.getLength(); ++i){
+                Element subGroup = (Element)list.item(i);
+                model.setSubWGGroupAllowedAmount(subGroup.getAttribute("groupName"), Double.parseDouble(subGroup.getAttribute("allowed")) );
+            }
+            
+            
         }
             
         this.models.put(idToSave, model);
         return;
     }    
+    
     
 }

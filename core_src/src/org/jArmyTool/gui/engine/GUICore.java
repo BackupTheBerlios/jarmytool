@@ -42,7 +42,7 @@ import org.jArmyTool.util.Config;
  */
 public class GUICore {
     private static final String SOFTWARE_NAME = "jArmyTool";
-    private static final String VERSION = "0.5 dev3";
+    private static final String VERSION = "0.5 dev4";
     
     public static final String USER_SAVE_DIRECTORY_KEY = "save_directory";
     //private static String AUTOSAVE_ARMY_DIRECTORY= "autosave";

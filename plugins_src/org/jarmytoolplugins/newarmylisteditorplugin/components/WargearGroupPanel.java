@@ -45,7 +45,7 @@ public class WargearGroupPanel extends javax.swing.JPanel {
         this.selectionBox.setSelected(this.selected);
         String depthSt = "";
         for(int i = depth; i > 0; --i){
-            depthSt = depthSt + "-";
+            depthSt = depthSt + " -";
         }
         this.depthLabel.setText(depthSt);
         

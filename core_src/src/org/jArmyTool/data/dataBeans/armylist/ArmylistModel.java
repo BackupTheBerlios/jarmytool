@@ -229,6 +229,10 @@ public class ArmylistModel implements Serializable{
         return -1;
     }
     
+    public Collection getSubWGGroupAllowedGroups(){
+        return this.subWGGroupAllowedAmounts.keySet();
+    }
+    
 
     /**
      * Add allowed root wargear group into this model.

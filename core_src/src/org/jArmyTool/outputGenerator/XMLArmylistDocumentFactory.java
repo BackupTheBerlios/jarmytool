@@ -314,6 +314,7 @@ public class XMLArmylistDocumentFactory {
        if(model.getAllowedWargear() > 0){
            Element wg = this.document.createElement("allowedWargear");
            wg.setAttribute("value", ""+ model.getAllowedWargear());
+           this.createSubWGGroupAllowances(wg, model);
            modelEl.appendChild(wg);
            
             String wgGroups = "";
@@ -325,11 +326,24 @@ public class XMLArmylistDocumentFactory {
             }
             Element wgGroupsEl = this.document.createElement("allowedWargearGroups");
             wgGroupsEl.setAttribute("value", wgGroups);
+            
             modelEl.appendChild(wgGroupsEl);
             
        }
        
        this.rootElement.appendChild(modelEl);
+    }
+    
+    private void createSubWGGroupAllowances(Element wgGroupsEl, ArmylistModel model){
+        Iterator subGroups = model.getSubWGGroupAllowedGroups().iterator();
+        while(subGroups.hasNext()){
+            String name = (String)subGroups.next();
+            Element subGroupAllowed = this.document.createElement("subWGGroupsAllowed");
+            subGroupAllowed.setAttribute("groupName", name);
+            subGroupAllowed.setAttribute("allowed", ""+model.getSubWGGroupAllowedAmount(name));
+            wgGroupsEl.appendChild(subGroupAllowed);
+        }
+        
     }
  
     private void createModelUpdates(){
