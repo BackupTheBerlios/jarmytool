@@ -84,8 +84,11 @@ public class Model implements Serializable {
     
     public boolean selectWargear(String group, ArmylistWargearItem item){
         LinkedList temp = (LinkedList)this.wargear.get(group);
-        if(temp == null)
-            return false;
+        if(temp == null){
+            temp = new LinkedList();
+            this.wargear.put(group, temp);
+        }
+            
         temp.add(item);
         return true;
     }

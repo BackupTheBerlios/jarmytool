@@ -18,6 +18,9 @@ public class RemainingIndicatorPanel extends JPanel {
     private double max;
     private double current;
     
+    private static final Color FIRST_COLOR = new Color(28, 28, 147);
+    private static final Color SECOND_COLOR = new Color(224, 35, 115);
+    
     /** Creates new form RemainingIndicatorPanel */
     public RemainingIndicatorPanel(double max) {
         this.max = max;
@@ -44,12 +47,12 @@ public class RemainingIndicatorPanel extends JPanel {
         
         double persentWidth = (this.current / this.max) * width;
         
-        g2.setColor(Color.RED);
+        g2.setColor(SECOND_COLOR);
         
         //Rectangle rec = new Rectangle(0,0, (int)persentWidth, (int)height);
         g2.fill3DRect(0,0, (int)persentWidth, (int)height, true);
         
-        g2.setColor(Color.GREEN);
+        g2.setColor(FIRST_COLOR);
         g2.fill3DRect((int)persentWidth,0, (int)width, (int)height, true);
 
         
