@@ -22,6 +22,12 @@ import org.jArmyTool.gui.engine.GUICore;
  * @author  Pasi Lehtimäki
  */
 public class GUICommands {
+    
+    
+    public static final ImageIcon WARGEAR_GROUP_ICON = new ImageIcon("images/wargearGroupIcon.jpg");
+    public static final ImageIcon WARGEAR_ITEM_ICON = new ImageIcon("images/wargearItemIcon.jpg");
+    
+    
     private static GUICommands instance;
     
     private GUICore core;
@@ -118,4 +124,13 @@ public class GUICommands {
     public ImageIcon getMovedDownArrow(){
         return UnitPanel.DOWN_ARROW;
     }    
+    
+    public ImageIcon getWargearGroupIcon(){
+        return WARGEAR_GROUP_ICON;
+    }
+    
+    public ImageIcon getWargearItemIcon(){
+        return WARGEAR_ITEM_ICON;
+    }    
+    
 }
