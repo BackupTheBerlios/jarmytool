@@ -164,6 +164,11 @@ public class OneModelWargearPanel extends javax.swing.JPanel {
        
     }
     
+    
+    private void initSubWGGroups(String path, int depth, ArmylistWargearGroup group){
+        
+    }
+    
     private void addWG(final String group, final ArmylistWargearItem item, final JPanel selectedGroupPanel, final JCheckBox box){
         this.model.selectWargear(group, item);
         final JLabel selectedLabel;
@@ -242,6 +247,9 @@ public class OneModelWargearPanel extends javax.swing.JPanel {
         selectedWG = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         allWG = new javax.swing.JPanel();
+        totalPanel = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        totalLabel = new javax.swing.JLabel();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -258,6 +266,14 @@ public class OneModelWargearPanel extends javax.swing.JPanel {
 
         jPanel1.add(jScrollPane2, java.awt.BorderLayout.CENTER);
 
+        jLabel1.setText("Total wargear: ");
+        totalPanel.add(jLabel1);
+
+        totalLabel.setText("0");
+        totalPanel.add(totalLabel);
+
+        jPanel1.add(totalPanel, java.awt.BorderLayout.NORTH);
+
         add(jPanel1, java.awt.BorderLayout.CENTER);
 
     }//GEN-END:initComponents
@@ -265,10 +281,13 @@ public class OneModelWargearPanel extends javax.swing.JPanel {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel allWG;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JPanel selectedWG;
+    private javax.swing.JLabel totalLabel;
+    private javax.swing.JPanel totalPanel;
     // End of variables declaration//GEN-END:variables
     
 }
