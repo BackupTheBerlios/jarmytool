@@ -176,10 +176,19 @@ public class DOMArmylistDocumentHandler {
         }        
         
         
-        list = group.getElementsByTagName("wargearItem");
+        //list = group.getElementsByTagName("wargearItem");
+        list = group.getChildNodes();
         
         for(int i = 0; i < list.getLength(); ++i){
-            Element item = (Element)list.item(i);
+            Element item;
+            try{
+                item = (Element)list.item(i);
+            }catch(ClassCastException e){
+                continue;
+            }
+            if(!item.getNodeName().equalsIgnoreCase("wargearItem"))
+                continue;
+            
             ArmylistWargearItem aItem = new ArmylistWargearItem(item.getAttribute("name"), this.armyInProgress);
             aItem.setPointcost(Double.parseDouble(item.getAttribute("pointcost")));
             StringTokenizer st = new StringTokenizer(item.getAttribute("weapon"), ",");
