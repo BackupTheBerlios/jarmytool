@@ -248,7 +248,7 @@ public class OneModelUpdatesCollapsed extends javax.swing.JPanel {
                 
             }
             
-             System.out.println("--------- "+allowed);
+            // System.out.println("--------- "+allowed);
             if(!allowed)
                 return;
         
@@ -295,7 +295,7 @@ public class OneModelUpdatesCollapsed extends javax.swing.JPanel {
             Collection selectedInGroup = this.model.getSelectedWargear(path + group.getName());
             
             
-            System.out.println("check selected for: " + path + group.getName() + " got: "+selectedInGroup);
+           // System.out.println("check selected for: " + path + group.getName() + " got: "+selectedInGroup);
             
             Iterator itemsInGroup = group.getItems().iterator();
             while(itemsInGroup.hasNext()){

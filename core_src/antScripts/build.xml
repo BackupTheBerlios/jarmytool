@@ -11,7 +11,7 @@
   <!-- global properties for this build -->
   <property name="app.name" value="jArmyTool"/>
   <property name="src.dir" value="../src"/>
-  <property name="plugins.src.dir" value="../plugins-src"/>
+  <property name="plugins.src.dir" value="../../plugins_src"/>
   
   <property name="build.dir" value="../classes"/>
   <property name="plugins.build.dir" value="../plugins-classes"/>

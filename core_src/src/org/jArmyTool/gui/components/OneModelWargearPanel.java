@@ -17,6 +17,7 @@ import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.LinkedList;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -24,6 +25,8 @@ import javax.swing.JScrollBar;
 import org.jArmyTool.data.dataBeans.army.Model;
 import org.jArmyTool.data.dataBeans.armylist.ArmylistWargearGroup;
 import org.jArmyTool.data.dataBeans.armylist.ArmylistWargearItem;
+import org.jArmyTool.data.util.WargearUtil;
+import org.jArmyTool.gui.components.util.WargearPanelContainer;
 import org.jArmyTool.gui.layout.VerticalFlowLayout;
 
 /**
@@ -46,10 +49,13 @@ public class OneModelWargearPanel extends javax.swing.JPanel {
     private OneModelUpdatesExpanded updatesPanel;
     private Model model;
     
+    private LinkedList allPanels;
+    
     /** Creates new form OneModelWargearPanel */
     public OneModelWargearPanel(OneModelUpdatesExpanded updates, Model model) {
         this.updatesPanel = updates;
         this.model = model;
+        this.allPanels = new LinkedList();
         initComponents();
         this.allWG.setLayout(new VerticalFlowLayout());
         this.selectedWG.setLayout(new VerticalFlowLayout());
@@ -68,7 +74,9 @@ public class OneModelWargearPanel extends javax.swing.JPanel {
                 JScrollBar sb = jScrollPane2.getVerticalScrollBar();
                 sb.setValue(sb.getValue() + (e.getWheelRotation() * MainWindow.WHEEL_STEPS) );
             }
-        });        
+        }); 
+        
+        this.refreshAllowed();
     }
     
     private void initData(){
@@ -80,6 +88,10 @@ public class OneModelWargearPanel extends javax.swing.JPanel {
             final ArmylistWargearGroup group = this.model.getArmylistModel().getArmylistArmy().getWargearGroupbyName((String)groups.next());
             if(group == null)
                 continue;
+            JPanel oneGroupPanel = new JPanel();
+            oneGroupPanel.setLayout(new VerticalFlowLayout());
+            
+            
             JPanel groupHeaderPanelAll = new JPanel();
             groupHeaderPanelAll.add(new JLabel(group.getName()));
             groupHeaderPanelAll.setBackground(new Color(WG_GROUP_ROOT_COLOR_R, WG_GROUP_ROOT_COLOR_G, WG_GROUP_ROOT_COLOR_B));
@@ -90,7 +102,7 @@ public class OneModelWargearPanel extends javax.swing.JPanel {
             groupHeaderPanelSelected.setBackground(new Color(WG_GROUP_ROOT_COLOR_R, WG_GROUP_ROOT_COLOR_G, WG_GROUP_ROOT_COLOR_B));
             groupHeaderPanelSelected.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0)));
             
-            this.allWG.add(groupHeaderPanelAll);
+            oneGroupPanel.add(groupHeaderPanelAll);
             
             final JPanel selectedPanelGroup = new JPanel();
             selectedPanelGroup.setLayout(new VerticalFlowLayout());
@@ -168,8 +180,10 @@ public class OneModelWargearPanel extends javax.swing.JPanel {
                     }                    
                 });
                 
-                this.allWG.add(box); 
+                oneGroupPanel.add(box); 
             }
+            
+            
             //Process subGroups:
             Iterator subGroups = group.getSubGroups().iterator();
             while(subGroups.hasNext()){
@@ -178,9 +192,11 @@ public class OneModelWargearPanel extends javax.swing.JPanel {
                 JPanel subAllParentPanel = new JPanel();
 
                 this.initSubWGGroups(group.getName()+".", 1, subGroup, subSelectedParentPanel, subAllParentPanel);
-                this.allWG.add(subAllParentPanel);
+                oneGroupPanel.add(subAllParentPanel);
                 this.selectedWG.add(subSelectedParentPanel);
             }
+            this.allPanels.add(new WargearPanelContainer(oneGroupPanel, group));
+            this.allWG.add(oneGroupPanel);
         }
        
     }
@@ -192,7 +208,7 @@ public class OneModelWargearPanel extends javax.swing.JPanel {
             boolean allowed = false;
             while(allowedSubs.hasNext()){
                 String temp = (String)allowedSubs.next();
-                System.out.println(temp + " - " + path+group.getName());
+               // System.out.println(temp + " - " + path+group.getName());
                 
                 if( (temp).compareToIgnoreCase(path+group.getName()) == 0 ){
                     allowed = true;
@@ -204,11 +220,12 @@ public class OneModelWargearPanel extends javax.swing.JPanel {
                 
             }
             
-             System.out.println("--------- "+allowed);
+             //System.out.println("--------- "+allowed);
             if(!allowed)
                 return;
         
             final JPanel allWGPanelSub = new JPanel();
+            this.allPanels.add(new WargearPanelContainer(allWGPanelSub, group));
             JPanel tabPanel = new JPanel();
             tabPanel.setPreferredSize(new Dimension(depth * SUB_WG_GROUP_TAB , 0));
             tabPanel.setMaximumSize(new Dimension(depth * SUB_WG_GROUP_TAB , 0));
@@ -251,7 +268,7 @@ public class OneModelWargearPanel extends javax.swing.JPanel {
             Collection selectedInGroup = this.model.getSelectedWargear(path + group.getName());
             
             
-            System.out.println("check selected for: " + path + group.getName() + " got: "+selectedInGroup);
+        //    System.out.println("check selected for: " + path + group.getName() + " got: "+selectedInGroup);
             
             Iterator itemsInGroup = group.getItems().iterator();
             while(itemsInGroup.hasNext()){
@@ -344,8 +361,8 @@ public class OneModelWargearPanel extends javax.swing.JPanel {
     
     private void addWG(final String group, final ArmylistWargearItem item, final JPanel selectedGroupPanel, final JCheckBox box){
         
-        System.out.println("add wg:"+ group + " item "+ item);
-        System.out.println(this.model.selectWargear(group, item));
+        //System.out.println("add wg:"+ group + " item "+ item);
+        this.model.selectWargear(group, item);
         
         
         
@@ -404,6 +421,7 @@ public class OneModelWargearPanel extends javax.swing.JPanel {
                     }                    
          });
          this.updatesPanel.refreshPointcost();
+         this.refreshAllowed();
     }
     
     private void removeWG(JPanel selectedGroupPanel, JLabel itemLabel, String group, ArmylistWargearItem item, final JCheckBox box ){
@@ -412,6 +430,26 @@ public class OneModelWargearPanel extends javax.swing.JPanel {
         box.setSelected(false);
         selectedGroupPanel.updateUI();
         this.updatesPanel.refreshPointcost();
+        this.refreshAllowed();
+    }
+    
+    
+    public void refreshAllowed(){
+        Iterator panels = this.allPanels.iterator();
+        while(panels.hasNext()){
+            WargearPanelContainer container = (WargearPanelContainer)panels.next();
+            JPanel panel = container.getPanel();
+            ArmylistWargearGroup group = container.getGroup();
+            
+            if(!WargearUtil.checkIfAllowed(this.model, group)){
+                panel.setVisible(false);
+                this.updateUI();
+            }else{
+                panel.setVisible(true);
+                this.updateUI();
+            }
+        }
+        
     }
     
     /** This method is called from within the constructor to
