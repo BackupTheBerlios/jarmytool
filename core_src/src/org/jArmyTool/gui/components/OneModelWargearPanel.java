@@ -94,11 +94,12 @@ public class OneModelWargearPanel extends javax.swing.JPanel {
                 final ArmylistWargearItem item = (ArmylistWargearItem)itemsInGroup.next();
                 String name;
                 
-                
+                boolean needEndHTML = false;
                 if(item.getName().length() > MAX_NAME_LENGTH){
                     int space = item.getName().substring(SEARCH_START_INDEX, MAX_NAME_LENGTH).lastIndexOf(" ") + SEARCH_START_INDEX;
                     if(space != -1){
-                        name = "<html>"+ item.getName().substring(0, space) +"<p>" +item.getName().substring(space+1, item.getName().length()) + "</html>";
+                        name = "<html>"+ item.getName().substring(0, space) +"<p>" +item.getName().substring(space+1, item.getName().length());
+                        needEndHTML = true;
                     }else{
                         name = item.getName().substring(0, MAX_NAME_LENGTH) + "..";
                     }
@@ -110,11 +111,20 @@ public class OneModelWargearPanel extends javax.swing.JPanel {
                 
                 if(item.getPointcost() == (int)item.getPointcost()){
                     box = new JCheckBox(name+ " " + ((int)item.getPointcost()));
-                    selectedLabel = new JLabel(name+ " " + ((int)item.getPointcost()));
+                    if(needEndHTML){
+                        selectedLabel = new JLabel(name+ " " + ((int)item.getPointcost()) + "</html>");
+                    }else{
+                        selectedLabel = new JLabel(name+ " " + ((int)item.getPointcost()));
+                    }
                 }else{
                     box = new JCheckBox(name+ " " + item.getPointcost());
-                    selectedLabel = new JLabel(name + " " + item.getPointcost());
+                    if(needEndHTML){
+                        selectedLabel = new JLabel(name + " " + item.getPointcost() + "</html>");
+                    }else{
+                        selectedLabel = new JLabel(name + " " + item.getPointcost());
+                    }
                 }
+                    
                 box.setToolTipText(item.getName());
                 selectedLabel.setToolTipText(item.getName());
                 
@@ -159,10 +169,12 @@ public class OneModelWargearPanel extends javax.swing.JPanel {
         final JLabel selectedLabel;
         
         String name;
+        boolean needEndHTML = false;
         if(item.getName().length() > MAX_NAME_LENGTH){
             int space = item.getName().substring(SEARCH_START_INDEX, MAX_NAME_LENGTH).lastIndexOf(" ") + SEARCH_START_INDEX;
             if(space != -1){
-                name = "<html>"+ item.getName().substring(0, space) +"<p>" +item.getName().substring(space+1, item.getName().length()) + "</html>";
+                name = "<html>"+ item.getName().substring(0, space) +"<p>" +item.getName().substring(space+1, item.getName().length());
+                needEndHTML = true;
             }else{
                 name = item.getName().substring(0, MAX_NAME_LENGTH) + "..";
             }
@@ -171,9 +183,18 @@ public class OneModelWargearPanel extends javax.swing.JPanel {
         }
         
         if(item.getPointcost() == (int)item.getPointcost()){
-            selectedLabel = new JLabel(name+ " " + ((int)item.getPointcost()));
+            if(needEndHTML){
+                selectedLabel = new JLabel(name+ " " + ((int)item.getPointcost()) + "</html>");
+            }else{
+                selectedLabel = new JLabel(name+ " " + ((int)item.getPointcost()));
+            }
+            
         }else{
-            selectedLabel = new JLabel(name+ " " + item.getPointcost());
+            if(needEndHTML){
+                selectedLabel = new JLabel(name+ " " + item.getPointcost() + "</html>");
+            }else{
+                selectedLabel = new JLabel(name+ " " + item.getPointcost());
+            }
         }
         selectedLabel.setToolTipText(item.getName());
         selectedLabel.setCursor(MainWindow.DEL_CURSOR);
