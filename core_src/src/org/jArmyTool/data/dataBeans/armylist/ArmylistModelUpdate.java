@@ -1,5 +1,6 @@
 package org.jArmyTool.data.dataBeans.armylist;
 import java.util.*;
+import org.jArmyTool.data.util.statCalc;
 import java.io.Serializable;
 /**
  * This class describes
@@ -12,6 +13,7 @@ public class ArmylistModelUpdate implements Serializable{
     private String longExplanation;
     private double pointcost;
     private HashMap statModifications;
+    private HashMap statModificationTrees;
     private int maxCount;
     private int minCount;
     private int defaultCount;
@@ -33,6 +35,7 @@ public class ArmylistModelUpdate implements Serializable{
         this.maxCount = -1;
         this.weapons = new LinkedList();
         this.statModifications = new HashMap();
+        this.statModificationTrees = new HashMap();
     }
     
     /**
@@ -54,6 +57,10 @@ public class ArmylistModelUpdate implements Serializable{
         //NOTE! this does not clone the actual modifications!
         if(toClone.statModifications != null)
             this.statModifications = (HashMap)toClone.statModifications.clone();
+        
+        // Nor does this. No need to have an excess of trees around, that would make this code a jungle..
+        if(toClone.statModificationTrees != null)
+            this.statModificationTrees = (HashMap)toClone.statModificationTrees.clone();
         
         this.weapons = (LinkedList)toClone.weapons.clone();
     }
@@ -115,11 +122,34 @@ public class ArmylistModelUpdate implements Serializable{
      */    
     public void addStatModification(String stat, String modification){
         this.statModifications.put(stat, modification);
+        statCalc statmodtree = new statCalc("", null);
+        statmodtree.parse(modification);
+        this.statModificationTrees.put(stat, statmodtree);
     }
     
     public void addStatModification(Map map)
     {
-            this.statModifications.putAll(map);
+        this.statModifications.putAll(map);
+        Iterator i = map.entrySet().iterator();
+        while(i.hasNext())
+        {
+            Map.Entry entry = (Map.Entry)i.next();
+            statCalc statmodtree = new statCalc("", null);
+            statmodtree.parse((String)entry.getValue());
+            this.statModificationTrees.put(entry.getKey(), statmodtree);
+        }
+    }
+    
+    public Iterator getStatModificationTreeIterator()
+    {
+        LinkedList StatModTrees = new LinkedList();
+        Iterator i = this.statModificationTrees.entrySet().iterator();
+        while(i.hasNext())
+        {
+            Map.Entry entry = (Map.Entry)i.next();
+            StatModTrees.add(new statCalc((statCalc)entry.getValue()));
+        }
+        return StatModTrees.iterator();
     }
     
     /**
