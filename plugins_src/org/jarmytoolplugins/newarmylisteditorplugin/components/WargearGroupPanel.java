@@ -56,6 +56,9 @@ public class WargearGroupPanel extends javax.swing.JPanel {
             this.model.addWargearGroup(this.hierarchyName);
             System.out.println("adding: "+this.hierarchyName);
             
+        }else{
+            this.model.removeWargearGroup(this.hierarchyName);
+            System.out.println("removing: "+this.hierarchyName);
         }
         this.model.setSubWGGroupAllowedAmount(this.hierarchyName, Double.parseDouble(this.allowedAmountField.getText()) );
     }

@@ -187,6 +187,27 @@ public class OneModelWargearPanel extends javax.swing.JPanel {
     
     
     private void initSubWGGroups(final String path, int depth, final ArmylistWargearGroup group, final JPanel selectedParent, JPanel allParent){
+            
+            Iterator allowedSubs = this.model.getArmylistModel().getAllowedWargearGroups().iterator();
+            boolean allowed = false;
+            while(allowedSubs.hasNext()){
+                String temp = (String)allowedSubs.next();
+                System.out.println(temp + " - " + path+group.getName());
+                
+                if( (temp).compareToIgnoreCase(path+group.getName()) == 0 ){
+                    allowed = true;
+                    break;
+                }
+                
+                
+                    
+                
+            }
+            
+             System.out.println("--------- "+allowed);
+            if(!allowed)
+                return;
+        
             final JPanel allWGPanelSub = new JPanel();
             JPanel tabPanel = new JPanel();
             tabPanel.setPreferredSize(new Dimension(depth * SUB_WG_GROUP_TAB , 0));
@@ -228,6 +249,9 @@ public class OneModelWargearPanel extends javax.swing.JPanel {
             
             
             Collection selectedInGroup = this.model.getSelectedWargear(path + group.getName());
+            
+            
+            System.out.println("check selected for: " + path + group.getName() + " got: "+selectedInGroup);
             
             Iterator itemsInGroup = group.getItems().iterator();
             while(itemsInGroup.hasNext()){
@@ -319,7 +343,12 @@ public class OneModelWargearPanel extends javax.swing.JPanel {
     }
     
     private void addWG(final String group, final ArmylistWargearItem item, final JPanel selectedGroupPanel, final JCheckBox box){
-        this.model.selectWargear(group, item);
+        
+        System.out.println("add wg:"+ group + " item "+ item);
+        System.out.println(this.model.selectWargear(group, item));
+        
+        
+        
         final JLabel selectedLabel;
         
         String name;

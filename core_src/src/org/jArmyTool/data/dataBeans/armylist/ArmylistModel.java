@@ -243,6 +243,11 @@ public class ArmylistModel implements Serializable{
         this.allowedWargearGroups.add(name);
     }
     
+    public void removeWargearGroup(String name){
+        System.out.println("removing? "+this.allowedWargearGroups.remove(name));
+    }    
+    
+    
     /**
      * get all allowed root wargear groups
      * @return Collection containing String objects of root wargear group names

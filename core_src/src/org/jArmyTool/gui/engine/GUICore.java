@@ -88,6 +88,7 @@ public class GUICore {
     /** Creates a new instance of GUICore */
     public GUICore() { 
         this.logger.debug("---- Starting jArmyTool ----");
+        this.logger.debug("version: "+VERSION);
         
         this.activeFilter = "";
         
