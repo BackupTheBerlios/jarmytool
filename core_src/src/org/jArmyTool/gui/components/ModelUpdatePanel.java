@@ -7,7 +7,10 @@
 package org.jArmyTool.gui.components;
 
 import org.jArmyTool.data.dataBeans.army.*;
-
+import org.jArmyTool.data.dataBeans.util.ModelStatHolder;
+import org.jArmyTool.data.util.statCalc;
+import java.util.Map.Entry;
+import java.util.*;
 /**
  *
  * @author  pasi
@@ -34,6 +37,70 @@ public class ModelUpdatePanel extends javax.swing.JPanel {
         
         //this.initState();
         
+    }
+    
+    public void applyStatModifications()
+    {
+        
+        System.out.println("applyStatModifications in ModelUpdatePanel called");
+        HashMap modifications = new HashMap(this.modelUpdate.getArmylistModelUpdate().getStatModifications());
+        Model modeltomodify = this.oneModelPanel.getModel();
+        
+        Iterator i = modifications.entrySet().iterator();
+        while(i.hasNext())
+        {
+            Map.Entry entry = (Map.Entry)(i.next());
+            String s = (String)entry.getValue();
+            String stat = (String)entry.getKey();
+            System.out.print("applying mod to: ");
+            System.out.println(stat);
+            statCalc c = new statCalc("", null);
+            HashMap m = new HashMap();
+            ModelStatHolder modify = null;
+            Iterator i2 = modeltomodify.getStats().iterator();
+            while(i2.hasNext())
+            {
+                ModelStatHolder holder = (ModelStatHolder)i2.next();
+                m.put(holder.getStat().getSymbol(), holder.calcValue());
+                if(holder.getStat().getSymbol().equalsIgnoreCase(stat))
+                    modify = holder;
+            }
+            Iterator i3 = this.oneModelPanel.getModel().getArmylistModel().getStats().iterator();
+            while(i3.hasNext())
+            {
+                ModelStatHolder mstat = (ModelStatHolder)i3.next();
+                if(mstat.getStat().getSymbol().equalsIgnoreCase(stat))
+                {
+                    m.put("oldvalue", mstat.getValue());
+                }
+            }
+            c.parse(s, m);
+            modify.setCalc(c);
+
+
+        }
+        this.oneModelPanel.showStatModifications();
+        
+    }
+    
+    public void removeStatModifications()
+    {
+        HashMap modifications = new HashMap(this.modelUpdate.getArmylistModelUpdate().getStatModifications());
+        Model modeltomodify = this.oneModelPanel.getModel();
+        Iterator i = modifications.entrySet().iterator();
+        while(i.hasNext())
+        {
+            Map.Entry entry = (Map.Entry)(i.next());
+            String stat = (String)entry.getKey();
+            Iterator i2 = modeltomodify.getStats().iterator();
+            while(i2.hasNext())
+            {
+                ModelStatHolder holder = (ModelStatHolder)i2.next();
+                if(holder.getStat().getSymbol().equalsIgnoreCase(stat))
+                    holder.clearCalc();
+            }
+        }
+        this.oneModelPanel.showStatModifications();
     }
     
     private void initCount(){
@@ -189,11 +256,16 @@ public class ModelUpdatePanel extends javax.swing.JPanel {
     }//GEN-END:initComponents
 
     private void modelUpdateCountCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modelUpdateCountCheckBoxActionPerformed
-        if(this.modelUpdateCountCheckBox.isSelected()){
+        if(this.modelUpdateCountCheckBox.isSelected())
+        {
+            this.applyStatModifications();
             this.modelUpdate.setSelectedCount(1);
-        }else{
+        }else
+        {
             this.modelUpdate.setSelectedCount(0);
+            this.removeStatModifications();
         }
+        
         this.refreshPointcost();
         this.oneModelPanel.refrashParentPointcost();
         this.oneModelPanel.refreshPointcost();

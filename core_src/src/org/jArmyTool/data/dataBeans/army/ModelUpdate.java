@@ -19,7 +19,7 @@ public class ModelUpdate implements Update, Serializable{
     private Model model;
     private String name;
     private int selectedCount;
-    
+   
     public ModelUpdate(ArmylistModelUpdate armylistModelUpdate, Model model){
         this.armylistModelUpdate = armylistModelUpdate;
         this.model = model;

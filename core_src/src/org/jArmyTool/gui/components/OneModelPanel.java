@@ -37,7 +37,7 @@ public class OneModelPanel extends javax.swing.JPanel {
     public OneModelPanel(Model model, UnitPanel parent) {
         this.parent = parent;
         
-        this.model = model;
+        this.model = new Model(model);
         initComponents();
         this.refreshPointcost();
         this.collapsedStatsPanel = new OneModelStatsCollapsedPanel(this.model, this);
@@ -93,6 +93,16 @@ public class OneModelPanel extends javax.swing.JPanel {
         }
         
         return true;
+    }
+    
+    public void showStatModifications()
+    {
+        this.collapsedStatsPanel.showStatModifications();
+    }
+    
+    public Model getModel()
+    {
+        return model;
     }
     
     public void refreshPointcost(){

@@ -38,12 +38,19 @@ public class OneModelStatsCollapsedPanel extends javax.swing.JPanel {
     }
     
     private void initStats(){
-        OneModelStatsPanel stats = new OneModelStatsPanel(this.model.getArmylistModel());
+        OneModelStatsPanel stats = new OneModelStatsPanel(this.model);
         this.statsPanel.add(stats);
     }
     
     public void refreshArmylistData(){
         this.nameLabel.setText(this.model.getName());
+    }
+    
+    public void showStatModifications()
+    {
+        this.statsPanel.removeAll();
+        OneModelStatsPanel stats = new OneModelStatsPanel(this.parent.getModel());
+        this.statsPanel.add(stats);
     }
     
     private void initCount(){

@@ -2,12 +2,13 @@ package org.jArmyTool.data.dataBeans.army;
 
 import org.jArmyTool.data.factories.*;
 import org.jArmyTool.data.dataBeans.armylist.*;
+import org.jArmyTool.data.dataBeans.util.ModelStatHolder;
 import java.util.*;
 import java.io.Serializable;
 /**
  * Model-class is armylist model instance in an army.
  * A model can have updates
- * @author  Pasi Lehtimäki
+ * @author  Pasi Lehtim?ki
  */
 public class Model implements Serializable {
     
@@ -23,6 +24,8 @@ public class Model implements Serializable {
     
     private HashMap wargear;
     
+    private LinkedList stats;
+    
     /** Creates a new instance of Model */
     public Model(ArmylistModel armylistModel) {
         this.armylistModel = armylistModel;
@@ -32,6 +35,7 @@ public class Model implements Serializable {
         this.initUpdates();
         this.initWargear();
         
+        this.stats = new LinkedList(this.armylistModel.getStats());
         
         this.selectedModelCount = this.armylistModel.getDefaultSelectedAmount();
     }
@@ -47,9 +51,40 @@ public class Model implements Serializable {
             this.updates.add(new ModelUpdate((ModelUpdate)iterator.next()));
         }   
         this.wargear = (HashMap)toClone.wargear.clone();
-        
+        this.stats = new LinkedList(this.armylistModel.getStats());
     }
     
+   public Collection getStats()
+   {
+        return Collections.unmodifiableCollection(this.stats);
+   }
+   
+   public void setStat(String Stat, double value)
+   {
+       Iterator i = this.stats.iterator();
+       while(i.hasNext())
+       {
+           ModelStatHolder st = (ModelStatHolder)i.next();
+           if(st.getStat().getSymbol().equalsIgnoreCase(Stat))
+           {
+               st.setValue(String.valueOf(value));
+           }
+       }
+   }
+    
+      public void setStat(String Stat, String value)
+   {
+       Iterator i = this.stats.iterator();
+       while(i.hasNext())
+       {
+           ModelStatHolder st = (ModelStatHolder)i.next();
+           if(st.getStat().getSymbol().equalsIgnoreCase(Stat))
+           {
+               st.setValue(value);
+           }
+       }
+   }
+   
     private void initWargear(){
         this.wargear = new HashMap();
         Iterator iterator = this.armylistModel.getAllowedWargearGroups().iterator();

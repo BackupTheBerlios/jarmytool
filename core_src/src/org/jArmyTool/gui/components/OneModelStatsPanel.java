@@ -86,7 +86,7 @@ public class OneModelStatsPanel extends javax.swing.JPanel {
         }
         Iterator stats = values_short.iterator();
         while(stats.hasNext()){
-            String value = ((ModelStatHolder)stats.next()).getValue();
+            String value = ((ModelStatHolder)stats.next()).calcValue();
             JLabel valueL = new JLabel(value);
             valueL.setFont(new java.awt.Font("Dialog", 0, 9));
             this.statsPanel.add(valueL);
@@ -106,7 +106,7 @@ public class OneModelStatsPanel extends javax.swing.JPanel {
             headerL.setFont(new java.awt.Font("Dialog", 1, 9));
             this.statsPanel1.add(headerL);
 
-            String value = ((ModelStatHolder)values_long.get(j++)).getValue();
+            String value = ((ModelStatHolder)values_long.get(j++)).calcValue();
             JLabel valueL = new JLabel(value);
             valueL.setFont(new java.awt.Font("Dialog", 0, 9));
             this.statsPanel1.add(valueL);

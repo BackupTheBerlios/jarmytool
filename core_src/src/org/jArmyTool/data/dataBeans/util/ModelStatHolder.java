@@ -6,6 +6,7 @@
 
 package org.jArmyTool.data.dataBeans.util;
 
+import org.jArmyTool.data.util.statCalc;
 /**
  *
  * @author  pasleh
@@ -13,11 +14,13 @@ package org.jArmyTool.data.dataBeans.util;
 public class ModelStatHolder {
     
     private ModelStat stat;
+    private statCalc statcalc;
     
     private String value;
     /** Creates a new instance of ModelStatHolder */
     public ModelStatHolder(ModelStat stat) {
         this.stat = stat;
+        this.statcalc = null;
     }
     
     public ModelStatHolder(ModelStatHolder toClone) {
@@ -36,4 +39,36 @@ public class ModelStatHolder {
     public ModelStat getStat(){
         return this.stat;
     }
+    
+    public void setCalc(statCalc s)
+    {
+        this.statcalc = s;
+        System.out.println("setCalc called");
+    }
+    
+    public void calculate()
+    {
+        if(statcalc != null)
+        {
+            this.statcalc.calculate();
+            this.value = this.statcalc.getStat();
+        }
+    }
+    
+    public String calcValue()
+    {
+        //System.out.println("calcValue called");
+        if(statcalc != null)
+        {
+            this.statcalc.calculate();
+            return this.statcalc.getStat();
+        }
+        return getValue();
+    }
+    
+    public void clearCalc()
+    {
+        this.statcalc = null;
+    }
+    
 }
