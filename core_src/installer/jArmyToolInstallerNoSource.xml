@@ -1,0 +1,86 @@
+<installation version="1.0">
+    <info>
+        <appname>jArmyTool</appname>
+        <appversion>0.4 dev14</appversion>
+        <authors>
+            <author email="pjlehtim@cs.helsinki.fi" name="Pasi Lehtim&#xe4;ki"/>
+        </authors>
+        <url>www.cs.helsinki.fi/u/pjlehtim/jArmyTool</url>
+    </info>
+    <guiprefs height="480" resizable="no" width="640"/>
+    <locale>
+        <langpack iso3="eng"/>
+    </locale>
+    <resources>
+     <res src="shortcutSpec.xml" id="shortcutSpec.xml"/>
+    </resources>
+    <native type="izpack" name="ShellLink.dll"/>
+    <panels>
+        <panel classname="HelloPanel"/>
+        <panel classname="TargetPanel"/>
+        <panel classname="PacksPanel"/>
+        <panel classname="InstallPanel"/>
+        <panel classname="ShortcutPanel"/>
+        <!--panel classname="FinishPanel"/-->
+    </panels>
+    <packs>
+        <pack name="core" required="yes">
+            <description>core software</description>
+            <file targetdir="$INSTALL_PATH" src="../dist/jArmyTool.jar"/>
+            <fileset dir="../src/armylists" targetdir="$INSTALL_PATH/armylists">
+             <exlude name="**/CVS"/>
+            </fileset>
+            
+            <fileset dir="../src/autosave" targetdir="$INSTALL_PATH/autosave">
+             <exlude name="**/CVS"/>
+            </fileset>
+
+            <fileset dir="../src/conf" targetdir="$INSTALL_PATH/conf">
+             <exlude name="**/CVS"/>
+            </fileset>
+            
+            <fileset dir="../src/gameSystems" targetdir="$INSTALL_PATH/gameSystems">
+             <exlude name="**/CVS"/>
+            </fileset>                        
+            
+            <fileset dir="../src/images" targetdir="$INSTALL_PATH/images">
+             <exlude name="**/CVS"/>
+            </fileset>
+            
+            <fileset dir="../src/rosterTemplates" targetdir="$INSTALL_PATH/rosterTemplates">
+             <exlude name="**/CVS"/>
+            </fileset>
+            
+            <fileset dir="../src/user" targetdir="$INSTALL_PATH/user">
+             <exlude name="**/CVS"/>
+            </fileset>
+            
+            <fileset dir="../lib" targetdir="$INSTALL_PATH/lib">
+             <exlude name="compiler.jar"/>
+            </fileset>
+            
+            <fileset dir="../src/themepacks" targetdir="$INSTALL_PATH/themepacks">
+             <exlude name="**/*"/>
+            </fileset>
+            
+            <fileset dir="../src/plugins/" targetdir="$INSTALL_PATH/plugins">
+             <exlude name="**/CVS"/>
+            </fileset>
+            
+            <fileset dir="../src/log/" targetdir="$INSTALL_PATH/log">
+            <exlude name="**/CVS"/>
+            </fileset>
+            
+            <file targetdir="$INSTALL_PATH/bin" src="../bin/runJArmyTool.sh" os="unix"/>
+            <executable targetfile="$INSTALL_PATH/bin/runJArmyTool.sh" stage="never"/>
+            
+            <file targetdir="$INSTALL_PATH/bin" src="../bin/runJArmyTool.bat" os="windows"/>
+            
+           <file targetdir="$INSTALL_PATH/bin" src="../bin/uninstallJArmyTool.sh" os="unix"/>
+            <executable targetfile="$INSTALL_PATH/bin/uninstallJArmyTool.sh" stage="never"/>
+            
+            <file targetdir="$INSTALL_PATH/bin" src="../bin/uninstallJArmyTool.bat" os="windows"/>            
+        </pack>
+
+    </packs>
+</installation>

@@ -1,0 +1,87 @@
+<installation version="1.0">
+    <info>
+        <appname>jArmyTool</appname>
+        <appversion>0.5 dev2 PATCH</appversion>
+        <authors>
+            <author email="pjlehtim@cs.helsinki.fi" name="Pasi Lehtim&#xe4;ki"/>
+        </authors>
+        <url>www.cs.helsinki.fi/u/pjlehtim/jArmyTool</url>
+    </info>
+    <guiprefs height="480" resizable="no" width="640"/>
+    <locale>
+        <langpack iso3="eng"/>
+    </locale>
+    <resources>
+     <res src="shortcutSpec.xml" id="shortcutSpec.xml"/>
+    </resources>
+    <native type="izpack" name="ShellLink.dll"/>
+    <panels>
+        <panel classname="HelloPanel"/>
+        <panel classname="TargetPanel"/>
+        <panel classname="PacksPanel"/>
+        <panel classname="InstallPanel"/>
+  <!--      <panel classname="ShortcutPanel"/>-->
+        <!--panel classname="FinishPanel"/-->
+    </panels>
+    <packs>
+        <pack name="core" required="yes">
+            <description>core software</description>
+            <file targetdir="$INSTALL_PATH" src="../dist/jArmyTool.jar"/>
+           <!-- <fileset dir="../src/armylists" targetdir="$INSTALL_PATH/armylists" exludes="**/CVS">
+            </fileset>-->
+          <!--  <file targetdir="$INSTALL_PATH/armylists/DTD" src="../src/armylists/DTD/armylist.dtd"/>
+            
+            <file targetdir="$INSTALL_PATH/armylists/Warhammer Fantasy Battle" src="../src/armylists/Warhammer Fantasy Battle/Nippon.xml"/>
+            <file targetdir="$INSTALL_PATH/armylists/Warhammer 40.000" src="../src/armylists/Warhammer 40.000/Exodites.xml"/>
+            
+            <file targetdir="$INSTALL_PATH/armylists" src="../src/armylists/armylist.dtd"/>
+
+            <fileset dir="../src/autosave" targetdir="$INSTALL_PATH/autosave" exludes="**/CVS">
+            </fileset>
+
+            <fileset dir="../src/conf" targetdir="$INSTALL_PATH/conf" exludes="**/CVS">
+            </fileset>
+            -->
+            <fileset dir="../src/gameSystems" targetdir="$INSTALL_PATH/gameSystems" exludes="**/CVS">
+            </fileset>                        
+<!--            
+            <fileset dir="../src/images" targetdir="$INSTALL_PATH/images" exludes="**/CVS">
+            </fileset>
+            
+            <fileset dir="../src/rosterTemplates" targetdir="$INSTALL_PATH/rosterTemplates" exludes="**/CVS">
+            </fileset>
+            
+            <fileset dir="../src/user" targetdir="$INSTALL_PATH/user" exludes="**/CVS">
+            </fileset>
+            
+            <fileset dir="../src/tempData" targetdir="$INSTALL_PATH/tempData" exludes="*">
+            </fileset>-->
+            
+            <!--fileset dir="../src/help" targetdir="$INSTALL_PATH/help" exludes="**/CVS">
+            </fileset -->
+            
+<!--            <fileset dir="../lib" targetdir="$INSTALL_PATH/lib" exludes="**/CVS">
+            </fileset>
+            
+            <fileset dir="../src/themepacks" targetdir="$INSTALL_PATH/themepacks" exludes="**/CVS">
+            </fileset>-->
+            
+            <fileset dir="../src/plugins/" targetdir="$INSTALL_PATH/plugins" exludes="**/CVS">
+            </fileset>
+            
+<!--            <fileset dir="../src/log/" targetdir="$INSTALL_PATH/log" exludes="*">
+            </fileset>
+            
+            <file targetdir="$INSTALL_PATH/bin" src="../bin/runJArmyTool.sh" os="unix"/>
+            <executable targetfile="$INSTALL_PATH/bin/runJArmyTool.sh" stage="never"/>
+            
+            <file targetdir="$INSTALL_PATH/bin" src="../bin/runJArmyTool.bat" os="windows"/>
+            
+           <file targetdir="$INSTALL_PATH/bin" src="../bin/uninstallJArmyTool.sh" os="unix"/>
+            <executable targetfile="$INSTALL_PATH/bin/uninstallJArmyTool.sh" stage="never"/>
+            
+            <file targetdir="$INSTALL_PATH/bin" src="../bin/uninstallJArmyTool.bat" os="windows"/>            -->
+        </pack>
+
+    </packs>
+</installation>

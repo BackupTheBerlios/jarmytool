@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : shortcutSpec.xml
+    Created on : 29 July 2003, 16:06
+    Author     : pasi
+    Description:
+        Purpose of the document follows.
+-->
+<shortcuts>
+  <programGroup defaultName="jArmyTool" location="applications"/>
+  <shortcut 
+    name="jArmyTool"
+    target="$INSTALL_PATH/bin/runJArmyTool.bat"
+    
+    workingDirectory="$INSTALL_PATH/bin"
+    description="jArmyTool Launcher"
+    iconFile="$INSTALL_PATH/images/icon.ico" 
+    
+    initialState="noShow"
+    programGroup="no"
+    desktop="yes" 
+    applications="yes" 
+    startMenu="no" 
+    startup="no">
+  </shortcut> 
+  <shortcut 
+    name="uninstall jArmyTool"
+    target="$INSTALL_PATH/bin/uninstallJArmyTool.bat"
+    
+    workingDirectory="$INSTALL_PATH/bin"
+    description="jArmyTool Uninstaller"
+    iconFile="$INSTALL_PATH/images/uninstall.ico" 
+    
+    initialState="noShow"
+    programGroup="no"
+    desktop="no" 
+    applications="yes" 
+    startMenu="no" 
+    startup="no">    
+  <!--
+    <createForPack name="a pack name"/>
+    <createForPack name="another pack name"/> -->
+  </shortcut>
+  
+</shortcuts>
+
+
