@@ -8,7 +8,7 @@
 </comment>
 </armyHeader>
 <wargear>
-<wargearGroup name="One-handed Weapons">
+<wargearGroup name="One-handed Weapons" requiredItems="">
 <wargearItem name="Blast Pistol" pointcost="1.0" weapon="Blast Pistol">
 </wargearItem>
 <wargearItem name="Close Combat Weapon " pointcost="1.0" weapon="">
@@ -20,7 +20,7 @@
 <wargearItem name="Witchblade (visionaries only)" pointcost="15.0" weapon="">
 </wargearItem>
 </wargearGroup>
-<wargearGroup name="Two-handed Weapons">
+<wargearGroup name="Two-handed Weapons" requiredItems="">
 <wargearItem name="Blast Carbine (cavalry only)" pointcost="1.0" weapon="">
 </wargearItem>
 <wargearItem name="Lasblaster" pointcost="2.0" weapon="Lasblaster">
@@ -30,7 +30,7 @@
 <wargearItem name="Singing Spear (visionaries only)" pointcost="18.0" weapon="">
 </wargearItem>
 </wargearGroup>
-<wargearGroup name="Wargear">
+<wargearGroup name="Wargear" requiredItems="">
 <wargearItem name="Haywire Grenade" pointcost="3.0" weapon="">
 </wargearItem>
 <wargearItem name="Plasma Grenade" pointcost="2.0" weapon="">
@@ -46,7 +46,7 @@
 <wargearItem name="Spirit Field (5+)" pointcost="10.0" weapon="">
 </wargearItem>
 </wargearGroup>
-<wargearGroup name="Visionary Wargear">
+<wargearGroup name="Visionary Wargear" requiredItems="">
 <wargearItem name="Ghosthelm" pointcost="5.0" weapon="">
 </wargearItem>
 <wargearItem name="Spirit Stones" pointcost="40.0" weapon="">
@@ -54,7 +54,7 @@
 <wargearItem name="Spirit Token" pointcost="5.0" weapon="">
 </wargearItem>
 </wargearGroup>
-<wargearGroup name="Psychic Powers">
+<wargearGroup name="Psychic Powers" requiredItems="">
 <wargearItem name="Executioner" pointcost="15.0" weapon="">
 </wargearItem>
 <wargearItem name="Fortune" pointcost="20.0" weapon="">
@@ -64,7 +64,7 @@
 <wargearItem name="Improve" pointcost="25.0" weapon="">
 </wargearItem>
 </wargearGroup>
-<wargearGroup name="Exodite Mounts">
+<wargearGroup name="Exodite Mounts" requiredItems="">
 <wargearItem name="Dragon" pointcost="30.0" weapon="">
 </wargearItem>
 <wargearItem name="Dragon w/ Wraithbone helmet" pointcost="35.0" weapon="">
@@ -138,6 +138,14 @@
 </allowedModels>
 <allowedUpdates value="unitUpdate3">
 </allowedUpdates>
+<exclusiveModels modelId="6" otherModelIds="">
+</exclusiveModels>
+<exclusiveModels modelId="7" otherModelIds="">
+</exclusiveModels>
+<exclusiveModels modelId="6" otherModelIds="" inclusive="TRUE">
+</exclusiveModels>
+<exclusiveModels modelId="7" otherModelIds="" inclusive="TRUE">
+</exclusiveModels>
 </unit>
 <unit name="Lethosaur Knights" minCount="0" maxCount="-1" maxUnitSize="10" minUnitSize="4" unitType="Elite">
 <allowedModels value="model8,model9">
@@ -379,9 +387,9 @@
 </modelUpdate>
 <modelUpdate id="modelUpdate59" name="Blast carbine" pointcostPerModel="true" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="Blast Carbine">
 </modelUpdate>
-<modelUpdate id="modelUpdate34" name="Bright Lance" pointcostPerModel="true" pointcost="35.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="Bright Lance">
-</modelUpdate>
 <modelUpdate id="modelUpdate32" name="Starcannon" pointcostPerModel="true" pointcost="35.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="Starcannon">
+</modelUpdate>
+<modelUpdate id="modelUpdate34" name="Bright Lance" pointcostPerModel="true" pointcost="35.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="Bright Lance">
 </modelUpdate>
 <modelUpdate id="modelUpdate41" name="Targeter for Starcannon" pointcostPerModel="true" pointcost="10.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
 </modelUpdate>
@@ -455,9 +463,9 @@
 </modelUpdate>
 <modelUpdate id="modelUpdate52" name="Lasblaster" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
 </modelUpdate>
-<modelUpdate id="modelUpdate24" name="Powerblades" pointcostPerModel="true" pointcost="15.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
-</modelUpdate>
 <modelUpdate id="modelUpdate42" name="Targeter for Scatter Laser" pointcostPerModel="true" pointcost="5.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate24" name="Powerblades" pointcostPerModel="true" pointcost="15.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
 </modelUpdate>
 <modelUpdate id="modelUpdate4" name="Plasma Grenades" pointcostPerModel="true" pointcost="2.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
 </modelUpdate>

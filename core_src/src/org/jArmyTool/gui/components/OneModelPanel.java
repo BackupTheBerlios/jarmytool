@@ -8,10 +8,15 @@ package org.jArmyTool.gui.components;
 
 import java.awt.Dimension;
 import java.util.Iterator;
+import java.util.HashMap;
+import java.util.Map;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import org.jArmyTool.data.dataBeans.army.Model;
+import org.jArmyTool.data.dataBeans.army.ModelUpdate;
+import org.jArmyTool.data.dataBeans.util.ModelStatHolder;
 import org.jArmyTool.data.dataBeans.armylist.ArmylistModelUpdate;
+import org.jArmyTool.data.util.statCalc;
 
 /**
  *
@@ -95,10 +100,6 @@ public class OneModelPanel extends javax.swing.JPanel {
         return true;
     }
     
-    public void showStatModifications()
-    {
-        this.collapsedStatsPanel.showStatModifications();
-    }
     
     public Model getModel()
     {
@@ -143,6 +144,7 @@ public class OneModelPanel extends javax.swing.JPanel {
            this.updatesCollapsed = true;
            this.expandUpdatesButton.setIcon(new ImageIcon(EXPAND_ICON_LOCATION));
         }
+        this.collapsedStatsPanel.showStatModifications();
     }
     
     public void checkExclusivesForThis(){
@@ -151,6 +153,70 @@ public class OneModelPanel extends javax.swing.JPanel {
     
     public void refreshCount(){
         this.collapsedStatsPanel.refreshCount();
+    }
+    
+    // enable the modelUpdate m on this model
+    public void updateStats(ModelUpdate modelUpdate)
+    {
+        System.out.println("reCalculateStats in OneModelPanel called");
+        HashMap modifications = new HashMap(modelUpdate.getArmylistModelUpdate().getStatModifications());
+        Model modeltomodify = this.model;
+        
+        Iterator i = modifications.entrySet().iterator();
+        while(i.hasNext())
+        {
+            Map.Entry entry = (Map.Entry)(i.next());
+            String s = (String)entry.getValue();
+            String stat = (String)entry.getKey();
+            statCalc c = new statCalc("", null);
+            HashMap m = new HashMap();
+            ModelStatHolder modify = null;
+            Iterator i2 = modeltomodify.getStats().iterator();
+            while(i2.hasNext())
+            {
+                ModelStatHolder holder = (ModelStatHolder)i2.next();
+                m.put(holder.getStat().getSymbol(), holder.calcValue());
+                if(holder.getStat().getSymbol().equalsIgnoreCase(stat))
+                    modify = holder;
+            }
+            c.parse(s, m);
+            modify.setCalc(c);
+            modelUpdate.statcalc = c;  //<-- unfortunately this is the best way to do this as the statHolder may reorder updates...            
+             
+        }
+        this.collapsedStatsPanel.showStatModifications();
+    }
+    
+    public void removeStatUpdate(ModelUpdate modelUpdate)
+    {
+        
+        HashMap modifications = new HashMap(modelUpdate.getArmylistModelUpdate().getStatModifications());
+        Model modeltomodify = this.getModel();
+        Iterator i = modifications.entrySet().iterator();
+        while(i.hasNext())
+        {
+            Map.Entry entry = (Map.Entry)(i.next());
+            String stat = (String)entry.getKey();
+            Iterator i2 = modeltomodify.getStats().iterator();
+            while(i2.hasNext())
+            {
+                ModelStatHolder holder = (ModelStatHolder)i2.next();
+                if(holder.getStat().getSymbol().equalsIgnoreCase(stat))
+                {
+//                    System.out.print("removing statupdates from: ");
+//                    System.out.println(stat);
+                    holder.removeCalc(modelUpdate.statcalc);
+                    modelUpdate.statcalc = null; 
+                }
+            }
+        }
+        this.collapsedStatsPanel.showStatModifications();
+    }
+    
+    
+    public void showStatModifications()
+    {
+        this.collapsedStatsPanel.showStatModifications();
     }
     
     /** This method is called from within the constructor to

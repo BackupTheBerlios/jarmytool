@@ -130,6 +130,11 @@ public class ArmylistModelUpdate implements Serializable{
         return Collections.unmodifiableMap(this.statModifications);
     }
     
+    public void removestatModifications()
+    {
+        this.statModifications.clear();
+    }
+    
     /**
      * name of this update
      * @return name

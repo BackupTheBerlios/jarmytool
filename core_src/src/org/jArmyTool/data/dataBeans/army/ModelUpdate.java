@@ -8,6 +8,7 @@ package org.jArmyTool.data.dataBeans.army;
 
 import java.util.*;
 import org.jArmyTool.data.dataBeans.armylist.*;
+import org.jArmyTool.data.util.statCalc;
 import java.io.Serializable;
 /**
  *
@@ -19,11 +20,14 @@ public class ModelUpdate implements Update, Serializable{
     private Model model;
     private String name;
     private int selectedCount;
+    
+    public statCalc statcalc;
    
     public ModelUpdate(ArmylistModelUpdate armylistModelUpdate, Model model){
         this.armylistModelUpdate = armylistModelUpdate;
         this.model = model;
         this.setSelectedCount(this.armylistModelUpdate.getDefaultCount());
+        statcalc = null;
     }
     
     public ModelUpdate(ModelUpdate toClone){
@@ -31,6 +35,7 @@ public class ModelUpdate implements Update, Serializable{
         this.model = toClone.model;
         this.name = toClone.name;
         this.selectedCount = toClone.selectedCount;
+        statcalc = toClone.statcalc;
     }
     
     public String getName(){

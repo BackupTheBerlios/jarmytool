@@ -40,67 +40,14 @@ public class ModelUpdatePanel extends javax.swing.JPanel {
     }
     
     public void applyStatModifications()
-    {
-        
-        System.out.println("applyStatModifications in ModelUpdatePanel called");
-        HashMap modifications = new HashMap(this.modelUpdate.getArmylistModelUpdate().getStatModifications());
-        Model modeltomodify = this.oneModelPanel.getModel();
-        
-        Iterator i = modifications.entrySet().iterator();
-        while(i.hasNext())
-        {
-            Map.Entry entry = (Map.Entry)(i.next());
-            String s = (String)entry.getValue();
-            String stat = (String)entry.getKey();
-            System.out.print("applying mod to: ");
-            System.out.println(stat);
-            statCalc c = new statCalc("", null);
-            HashMap m = new HashMap();
-            ModelStatHolder modify = null;
-            Iterator i2 = modeltomodify.getStats().iterator();
-            while(i2.hasNext())
-            {
-                ModelStatHolder holder = (ModelStatHolder)i2.next();
-                m.put(holder.getStat().getSymbol(), holder.calcValue());
-                if(holder.getStat().getSymbol().equalsIgnoreCase(stat))
-                    modify = holder;
-            }
-            Iterator i3 = this.oneModelPanel.getModel().getArmylistModel().getStats().iterator();
-            while(i3.hasNext())
-            {
-                ModelStatHolder mstat = (ModelStatHolder)i3.next();
-                if(mstat.getStat().getSymbol().equalsIgnoreCase(stat))
-                {
-                    m.put("oldvalue", mstat.getValue());
-                }
-            }
-            c.parse(s, m);
-            modify.setCalc(c);
-
-
-        }
-        this.oneModelPanel.showStatModifications();
-        
+    { 
+        this.oneModelPanel.updateStats(this.modelUpdate);  
     }
     
     public void removeStatModifications()
     {
-        HashMap modifications = new HashMap(this.modelUpdate.getArmylistModelUpdate().getStatModifications());
-        Model modeltomodify = this.oneModelPanel.getModel();
-        Iterator i = modifications.entrySet().iterator();
-        while(i.hasNext())
-        {
-            Map.Entry entry = (Map.Entry)(i.next());
-            String stat = (String)entry.getKey();
-            Iterator i2 = modeltomodify.getStats().iterator();
-            while(i2.hasNext())
-            {
-                ModelStatHolder holder = (ModelStatHolder)i2.next();
-                if(holder.getStat().getSymbol().equalsIgnoreCase(stat))
-                    holder.clearCalc();
-            }
-        }
-        this.oneModelPanel.showStatModifications();
+
+        this.oneModelPanel.removeStatUpdate(this.modelUpdate);
     }
     
     private void initCount(){

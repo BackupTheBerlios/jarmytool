@@ -11,6 +11,7 @@
 package org.jArmyTool.data.util;
 
 import org.jArmyTool.data.dataBeans.util.ModelStat;
+import java.text.NumberFormat;
 import java.io.StreamTokenizer;
 import java.io.StringReader;
 import java.util.Map;
@@ -285,7 +286,7 @@ public class statCalc {
         }
         if(this.numerical)
         {
-            ret = ret.concat(String.valueOf(this.numval));
+            ret = ret.concat(NumberFormat.getIntegerInstance().format(this.numval));
         }
         else
         {

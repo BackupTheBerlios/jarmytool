@@ -34,8 +34,13 @@ public class Model implements Serializable {
         
         this.initUpdates();
         this.initWargear();
-        
-        this.stats = new LinkedList(this.armylistModel.getStats());
+        this.stats = new LinkedList();
+        Iterator i = this.armylistModel.getStats().iterator();
+        while(i.hasNext())
+        {
+            stats.add(new ModelStatHolder((ModelStatHolder)i.next()));
+        }
+       // this.stats = new LinkedList(this.armylistModel.getStats()); <-- leads to shared statlines. which breaks stat updates.
         
         this.selectedModelCount = this.armylistModel.getDefaultSelectedAmount();
     }
@@ -51,7 +56,13 @@ public class Model implements Serializable {
             this.updates.add(new ModelUpdate((ModelUpdate)iterator.next()));
         }   
         this.wargear = (HashMap)toClone.wargear.clone();
-        this.stats = new LinkedList(this.armylistModel.getStats());
+        this.stats = new LinkedList();
+        Iterator i = this.armylistModel.getStats().iterator();
+        while(i.hasNext())
+        {
+            stats.add(new ModelStatHolder((ModelStatHolder)i.next()));
+        }
+        //this.stats = new LinkedList(this.armylistModel.getStats()); <--- same as before, leads to shared statlines
     }
     
    public Collection getStats()

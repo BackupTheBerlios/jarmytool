@@ -40,7 +40,7 @@
 </weaponProfiles>
  
 <modelStatGroups>
-<modelStatGroup name="orbital strike">
+<modelStatGroup name="Orbital strike">
 <modelStat symbol="Str" tooltip="Strength" type="INTEGER">
 </modelStat>
 <modelStat symbol="AP" tooltip="AP value" type="INTEGER">
@@ -48,11 +48,11 @@
 </modelStatGroup> 
   
 <modelStatGroup name="vehicle">
-<modelStat symbol="FA" tooltip="Front Armor" type="INTEGER">
+<modelStat symbol="Front Armour" tooltip="Front Armor" type="INTEGER">
 </modelStat>
-<modelStat symbol="SA" tooltip="Side Armor" type="INTEGER">
+<modelStat symbol="Side Armour" tooltip="Side Armor" type="INTEGER">
 </modelStat>
-<modelStat symbol="RA" tooltip="Rear Armor" type="INTEGER">
+<modelStat symbol="Rear Armour" tooltip="Rear Armor" type="INTEGER">
 </modelStat>
 <modelStat symbol="BS" tooltip="Ballistic Skill" type="INTEGER">
 </modelStat>
@@ -64,11 +64,11 @@
 </modelStat>
 <modelStat symbol="S" tooltip="Strength" type="INTEGER">
 </modelStat>
-<modelStat symbol="FA" tooltip="Front Armor" type="INTEGER">
+<modelStat symbol="Front Armour" tooltip="Front Armor" type="INTEGER">
 </modelStat>
-<modelStat symbol="SA" tooltip="Side Armor" type="INTEGER">
+<modelStat symbol="Side Armour" tooltip="Side Armor" type="INTEGER">
 </modelStat>
-<modelStat symbol="RA" tooltip="Rear Armor" type="INTEGER">
+<modelStat symbol="Rear Armour" tooltip="Rear Armor" type="INTEGER">
 </modelStat>
 <modelStat symbol="I" tooltip="Initiative" type="INTEGER">
 </modelStat>
@@ -93,7 +93,7 @@
 </modelStat>
 <modelStat symbol="LD" tooltip="Leadership" type="INTEGER">
 </modelStat>
-<modelStat symbol="Sv" tooltip="Save" type="STRING">
+<modelStat symbol="Save" tooltip="Save" type="STRING">
 </modelStat>
 </modelStatGroup>
 </modelStatGroups>
