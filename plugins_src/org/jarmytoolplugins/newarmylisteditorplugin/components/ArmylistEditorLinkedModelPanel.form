@@ -31,7 +31,7 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
-                <Property name="text" type="java.lang.String" value="&lt;html&gt;This model is linked form another model. &lt;br&gt; Modifications on this model&lt;br&gt;will also effect the other model.&lt;/html&gt;"/>
+                <Property name="text" type="java.lang.String" value="&lt;html&gt;This model is linked from another model. &lt;br&gt; Modifications on this model&lt;br&gt;will also effect the other model.&lt;/html&gt;"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">

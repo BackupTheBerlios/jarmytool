@@ -59,7 +59,7 @@ public class ArmylistEditorLinkedModelPanel extends javax.swing.JPanel {
 
         jPanel1.setLayout(new java.awt.GridBagLayout());
 
-        jLabel1.setText("<html>This model is linked form another model. <br> Modifications on this model<br>will also effect the other model.</html>");
+        jLabel1.setText("<html>This model is linked from another model. <br> Modifications on this model<br>will also effect the other model.</html>");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
