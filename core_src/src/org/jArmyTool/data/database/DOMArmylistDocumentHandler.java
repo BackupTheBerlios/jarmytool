@@ -303,8 +303,7 @@ public class DOMArmylistDocumentHandler {
         while(st.hasMoreTokens()){
             String name = st.nextToken();
             unitUpdate.addWeapon(this.armyInProgress.getWeaponByName(name));
-        }
-        
+        }    
         
         this.unitUpdates.put(idToSave, unitUpdate);
         return;
@@ -337,6 +336,12 @@ public class DOMArmylistDocumentHandler {
             modelUpdate.addWeapon(this.armyInProgress.getWeaponByName(name));
         }
         
+        StringTokenizer st2 = new StringTokenizer(update.getAttribute("stats"), ",");
+        while(st2.hasMoreTokens()){
+            String stat = st2.nextToken();
+            String updatevalue = st2.nextToken();
+            modelUpdate.addStatModification(stat, updatevalue);
+        }
         
         this.modelUpdates.put(idToSave, modelUpdate);
         return;

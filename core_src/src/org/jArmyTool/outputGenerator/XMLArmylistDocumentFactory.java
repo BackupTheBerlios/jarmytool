@@ -384,6 +384,21 @@ public class XMLArmylistDocumentFactory {
         }
         
         updateEl.setAttribute("weapon", sb.toString());
+        
+        StringBuffer statUpdateStrings = new StringBuffer();
+        Iterator updateStatIterator = update.getStatModifications().entrySet().iterator();
+        while(updateStatIterator.hasNext())
+        {
+            Map.Entry entry = (Map.Entry)updateStatIterator.next();
+            String stat = (String)entry.getKey();
+            String updateString = (String)entry.getValue();
+            if(statUpdateStrings.length() > 0)
+                statUpdateStrings.append(",");
+            statUpdateStrings.append(stat+","+updateString);
+        }
+        
+        updateEl.setAttribute("stats", statUpdateStrings.toString());
+        
         this.rootElement.appendChild(updateEl);
     }
  
