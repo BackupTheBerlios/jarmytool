@@ -73,7 +73,7 @@ public class WargearTreeCellRenderer extends DefaultTreeCellRenderer{
             this.setFont(new java.awt.Font("Lucida Sans Typewriter", 1, 14));
             this.setIcon(GUICommands.getInstance().getWargearGroupIcon());
             
-            JPanel panel = new JPanel();
+/*            JPanel panel = new JPanel();
             FlowLayout layout = new FlowLayout(FlowLayout.LEFT, 0, 0);
             panel.setLayout(layout);
             panel.add(this);
@@ -89,7 +89,8 @@ public class WargearTreeCellRenderer extends DefaultTreeCellRenderer{
             panel.add(newSubGroup);
             panel.add(newItem);
             
-            return panel;
+            return panel;*/
+            return this;
         }else{
             return this;
         }

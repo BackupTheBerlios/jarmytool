@@ -24,10 +24,10 @@ import org.jArmyTool.gui.engine.GUICore;
 public class GUICommands {
     
     
-    public static final ImageIcon WARGEAR_GROUP_ICON = new ImageIcon("images/wargearGroupIcon.jpg");
-    public static final ImageIcon WARGEAR_ITEM_ICON = new ImageIcon("images/wargearItemIcon.jpg");
-    public static final ImageIcon WARGEAR_GROUP_ICON_NEW = new ImageIcon("images/wargearGroupIconNew.jpg");
-    public static final ImageIcon WARGEAR_ITEM_ICON_NEW = new ImageIcon("images/wargearItemIconNew.jpg");
+    public static final ImageIcon WARGEAR_GROUP_ICON = new ImageIcon("images/WargearGroup.png");
+    public static final ImageIcon WARGEAR_ITEM_ICON = new ImageIcon("images/WargearItem.png");
+    public static final ImageIcon WARGEAR_GROUP_ICON_NEW = new ImageIcon("images/WargearGroupNew.png");
+    public static final ImageIcon WARGEAR_ITEM_ICON_NEW = new ImageIcon("images/WargearItemNew.png");
     
     private static GUICommands instance;
     
