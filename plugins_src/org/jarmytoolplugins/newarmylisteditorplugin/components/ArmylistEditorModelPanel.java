@@ -583,7 +583,7 @@ public class ArmylistEditorModelPanel extends javax.swing.JPanel {
         jPanel8.setBorder(new javax.swing.border.TitledBorder("Wargear"));
         wargearPanel.setLayout(new java.awt.GridBagLayout());
 
-        jLabel4.setText("Allowed: ");
+        jLabel4.setText("Allowed Total: ");
         wargearPanel.add(jLabel4, new java.awt.GridBagConstraints());
 
         allowedWargearField.setText("jTextField1");
