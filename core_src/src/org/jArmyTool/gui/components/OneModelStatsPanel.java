@@ -7,9 +7,11 @@
 package org.jArmyTool.gui.components;
 
 import java.util.Collection;
+import java.util.LinkedList;
+import java.util.HashMap;
 import java.util.Iterator;
 import javax.swing.JLabel;
-import org.jArmyTool.data.dataBeans.armylist.ArmylistModel;
+import org.jArmyTool.data.dataBeans.army.Model;
 import org.jArmyTool.data.dataBeans.util.ModelStat;
 import org.jArmyTool.data.dataBeans.util.ModelStatHolder;
 import org.jArmyTool.data.dataBeans.util.StatType;
@@ -20,10 +22,9 @@ import org.jArmyTool.data.dataBeans.util.StatType;
  */
 public class OneModelStatsPanel extends javax.swing.JPanel {
     
-    private ArmylistModel model;
-    
+    private Model model;
     /** Creates new form OneModelStatsPanel */
-    public OneModelStatsPanel(ArmylistModel model) {
+    public OneModelStatsPanel(Model model) {
         this.model = model;
         initComponents();
         
@@ -32,15 +33,48 @@ public class OneModelStatsPanel extends javax.swing.JPanel {
     }
     
     private void initStats(){
-        StatType type = this.model.getArmylistArmy().getGameSystem().getStatType(this.model.getStatTypeName());
+        StatType type = this.model.getArmylistModel().getArmylistArmy().getGameSystem().getStatType(this.model.getArmylistModel().getStatTypeName());
         
-        Collection coll = type.getAllStats();
-        Iterator headers = coll.iterator();
-        this.statsPanel.setLayout(new java.awt.GridLayout(2, coll.size(), 2, 2));
-        
+        LinkedList coll = new LinkedList(type.getAllStats());
+        LinkedList values = new LinkedList(this.model.getStats());
         
         
-        Iterator stats = this.model.getStats().iterator();
+        if(coll.size() != values.size())
+        {
+            //something is wrong...
+            return;
+        }
+        
+        LinkedList coll_short = new LinkedList();
+        LinkedList values_short = new LinkedList();
+        
+        LinkedList coll_long = new LinkedList();
+        LinkedList values_long = new LinkedList();
+        
+        int j = 0;
+        
+        Iterator i = coll.iterator();
+        while(i.hasNext())
+        {
+            ModelStat temp = ((ModelStat)i.next());
+            if(temp.getSymbol().length() > 2)
+            {
+                coll_long.add(temp);
+                values_long.add(values.get(j++));
+            }
+            else
+            {
+                coll_short.add(temp);
+                values_short.add(values.get(j++));
+            }
+        }
+        
+        
+        this.statsPanel.setLayout(new java.awt.GridLayout(2, coll_short.size(), 2, 2));
+        this.statsPanel1.setLayout(new java.awt.GridLayout(coll_long.size(), 2, 2, 2));
+        
+        Iterator headers = coll_short.iterator();
+        
         while(headers.hasNext()){
             ModelStat headerEl = ((ModelStat)headers.next());
             String header = headerEl.getSymbol();
@@ -50,12 +84,32 @@ public class OneModelStatsPanel extends javax.swing.JPanel {
             headerL.setFont(new java.awt.Font("Dialog", 1, 9));
             this.statsPanel.add(headerL);
         }
-        
+        Iterator stats = values_short.iterator();
         while(stats.hasNext()){
             String value = ((ModelStatHolder)stats.next()).getValue();
             JLabel valueL = new JLabel(value);
             valueL.setFont(new java.awt.Font("Dialog", 0, 9));
             this.statsPanel.add(valueL);
+        }
+        
+        // long items placement
+        
+        
+        j = 0;
+        headers = coll_long.iterator();
+        while(headers.hasNext()){
+            ModelStat headerEl = ((ModelStat)headers.next());
+            String header = headerEl.getSymbol();
+            String toolTip = headerEl.getTooltip();
+            JLabel headerL = new JLabel(header);
+            headerL.setToolTipText(toolTip);
+            headerL.setFont(new java.awt.Font("Dialog", 1, 9));
+            this.statsPanel1.add(headerL);
+
+            String value = ((ModelStatHolder)values_long.get(j++)).getValue();
+            JLabel valueL = new JLabel(value);
+            valueL.setFont(new java.awt.Font("Dialog", 0, 9));
+            this.statsPanel1.add(valueL);
         }
         
     }
@@ -67,16 +121,20 @@ public class OneModelStatsPanel extends javax.swing.JPanel {
      */
     private void initComponents() {//GEN-BEGIN:initComponents
         statsPanel = new javax.swing.JPanel();
+        statsPanel1 = new javax.swing.JPanel();
 
-        setLayout(new java.awt.BorderLayout());
+        setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.Y_AXIS));
 
-        add(statsPanel, java.awt.BorderLayout.CENTER);
+        add(statsPanel);
+
+        add(statsPanel1);
 
     }//GEN-END:initComponents
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel statsPanel;
+    private javax.swing.JPanel statsPanel1;
     // End of variables declaration//GEN-END:variables
-    
+ 
 }
