@@ -159,35 +159,55 @@ public class OneModelPanel extends javax.swing.JPanel {
     public void updateStats(ModelUpdate modelUpdate)
     {
         System.out.println("reCalculateStats in OneModelPanel called");
-        HashMap modifications = new HashMap(modelUpdate.getArmylistModelUpdate().getStatModifications());
+        
+        Iterator modificationTreeIterator = modelUpdate.getArmylistModelUpdate().getStatModificationTreeIterator();
         Model modeltomodify = this.model;
         
-        Iterator i = modifications.entrySet().iterator();
-        while(i.hasNext())
+        while(modificationTreeIterator.hasNext())
         {
-            Map.Entry entry = (Map.Entry)(i.next());
-            String s = (String)entry.getValue();
+            Map.Entry entry = (Map.Entry)(modificationTreeIterator.next());
+            statCalc tree = new statCalc((statCalc)entry.getValue());
             String stat = (String)entry.getKey();
-            statCalc c = new statCalc("", null);
             HashMap m = new HashMap();
-            ModelStatHolder modify = null;
+            ModelStatHolder modifyStatHolder = null;
             Iterator i2 = modeltomodify.getStats().iterator();
             while(i2.hasNext())
             {
                 ModelStatHolder holder = (ModelStatHolder)i2.next();
                 m.put(holder.getStat().getSymbol(), holder.calcValue());
-                if(holder.getStat().getSymbol().equalsIgnoreCase(stat))
-                    modify = holder;
+                if( stat.equalsIgnoreCase(holder.getStat().getSymbol()))
+                {
+                    modifyStatHolder = holder;
+                }
             }
-            c.parse(s, m);
-            modify.setCalc(c);
-            modelUpdate.statcalc = c;  //<-- unfortunately this is the best way to do this as the statHolder may reorder updates...            
-             
+            tree.replaceStats(m);
+            modifyStatHolder.setCalc(tree);
+           
+            
+        }
+        
+    }
+    
+    
+    public void updateWithUpgrades()
+    {
+        Iterator statHolders = this.model.getStats().iterator();
+        while(statHolders.hasNext())
+        {
+            ((ModelStatHolder)statHolders.next()).clearCalc();
+        }
+        Iterator updates = this.model.getUpdates().iterator();
+        while(updates.hasNext())
+        {
+            ModelUpdate currentUpdate = (ModelUpdate)updates.next();
+            for(int i = 0; i < currentUpdate.getSelectedCount(); i++)
+            {
+                this.updateStats(currentUpdate);
+            }
         }
         this.collapsedStatsPanel.showStatModifications();
     }
-    
-    public void removeStatUpdate(ModelUpdate modelUpdate)
+ /*   public void removeStatUpdate(ModelUpdate modelUpdate)
     {
         
         HashMap modifications = new HashMap(modelUpdate.getArmylistModelUpdate().getStatModifications());
@@ -212,7 +232,7 @@ public class OneModelPanel extends javax.swing.JPanel {
         }
         this.collapsedStatsPanel.showStatModifications();
     }
-    
+  */  
     
     public void showStatModifications()
     {

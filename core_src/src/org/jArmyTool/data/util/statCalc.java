@@ -36,9 +36,9 @@ public class statCalc {
         this.numval = toClone.numval;
         this.val = toClone.val;
         this.parent = null;
-        if(this.stat1 != null)
+        if(toClone.stat1 != null)
             this.stat1 = new statCalc(toClone.stat1, this);
-        if(this.stat2 != null)
+        if(toClone.stat2 != null)
             this.stat2 = new statCalc(toClone.stat2, this);
     }
     
@@ -49,9 +49,9 @@ public class statCalc {
         this.numval = toClone.numval;
         this.val = toClone.val;
         this.parent = parent;
-        if(this.stat1 != null)
+        if(toClone.stat1 != null)
             this.stat1 = new statCalc(toClone.stat1, this);
-        if(this.stat2 != null)
+        if(toClone.stat2 != null)
             this.stat2 = new statCalc(toClone.stat2, this);
     }
     
@@ -335,23 +335,30 @@ public class statCalc {
     public static void main(String args[])
     {
         statCalc s = new org.jArmyTool.data.util.statCalc("", null);
-        statCalc s2 = new org.jArmyTool.data.util.statCalc(s);
+
         String exp = "oldvalue(oldvalue+1)oldvalue*.2";
         String exp2 = "2+oldvalue*12";
         HashMap map = new java.util.HashMap();
+        HashMap map2 = new java.util.HashMap();
         map.put("oldvalue", "4");
         map.put("Toughness", "3");
         
-        s.parse(exp, map);
-        s2.parse(exp2, map);
+        map2.put("oldvalue", "3");
+        
+        s.parse(exp);
+        
+        statCalc s2 = new org.jArmyTool.data.util.statCalc(s);
+        
+        s.replaceStats(map);
+        s2.replaceStats(map2);
         
         statCalc s3 = new statCalc(s2);
         
         System.out.println(exp);
         System.out.println(s.getStat());
-        System.out.println(exp2);
+        System.out.println(exp);
         System.out.println(s2.getStat());
-        System.out.println(exp2);
+        System.out.println(exp);
         System.out.println(s3.getStat());
     }
 }
