@@ -100,5 +100,30 @@ public class ArmylistWargearGroup implements Serializable{
         return null;
     }
     
+    /**
+     * Add a wargear group to be a subgroup for this one.
+     * Avoid loop references. That can caude infinite loop while
+     * handling groups in UI.
+     * @param subGroup new subgroup
+     */    
+    public void addSubGroup(ArmylistWargearGroup subGroup){
+        this.subGroups.add(subGroup);
+    }
     
+    /**
+     * Get subgroups
+     * @return Collection containing ArmylistWargearGroup objects
+     */    
+    public Collection getSubGroups(){
+        return Collections.unmodifiableCollection(this.subGroups);
+    }
+    
+    /**
+     * Remove subgroup
+     * @param subGroup Group to remove
+     */    
+    public void removeSubGroup(ArmylistWargearGroup subGroup){
+        this.subGroups.remove(subGroup);
+    }
+
 }
