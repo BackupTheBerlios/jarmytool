@@ -138,14 +138,6 @@
 </allowedModels>
 <allowedUpdates value="unitUpdate3">
 </allowedUpdates>
-<exclusiveModels modelId="6" otherModelIds="">
-</exclusiveModels>
-<exclusiveModels modelId="7" otherModelIds="">
-</exclusiveModels>
-<exclusiveModels modelId="6" otherModelIds="" inclusive="TRUE">
-</exclusiveModels>
-<exclusiveModels modelId="7" otherModelIds="" inclusive="TRUE">
-</exclusiveModels>
 </unit>
 <unit name="Lethosaur Knights" minCount="0" maxCount="-1" maxUnitSize="10" minUnitSize="4" unitType="Elite">
 <allowedModels value="model8,model9">
@@ -295,6 +287,18 @@
 <allowedUpdates value="">
 </allowedUpdates>
 <allowedWargear value="100.0">
+<subWGGroupsAllowed groupName="Two-handed Weapons" allowed="-1.0">
+</subWGGroupsAllowed>
+<subWGGroupsAllowed groupName="Visionary Wargear" allowed="-1.0">
+</subWGGroupsAllowed>
+<subWGGroupsAllowed groupName="Wargear" allowed="-1.0">
+</subWGGroupsAllowed>
+<subWGGroupsAllowed groupName="One-handed Weapons" allowed="-1.0">
+</subWGGroupsAllowed>
+<subWGGroupsAllowed groupName="Psychic Powers" allowed="-1.0">
+</subWGGroupsAllowed>
+<subWGGroupsAllowed groupName="Exodite Mounts" allowed="-1.0">
+</subWGGroupsAllowed>
 </allowedWargear>
 <allowedWargearGroups value="One-handed Weapons,Two-handed Weapons,Wargear,Exodite Mounts">
 </allowedWargearGroups>
@@ -347,6 +351,18 @@
 <allowedUpdates value="">
 </allowedUpdates>
 <allowedWargear value="100.0">
+<subWGGroupsAllowed groupName="Two-handed Weapons" allowed="-1.0">
+</subWGGroupsAllowed>
+<subWGGroupsAllowed groupName="Visionary Wargear" allowed="-1.0">
+</subWGGroupsAllowed>
+<subWGGroupsAllowed groupName="Wargear" allowed="-1.0">
+</subWGGroupsAllowed>
+<subWGGroupsAllowed groupName="One-handed Weapons" allowed="-1.0">
+</subWGGroupsAllowed>
+<subWGGroupsAllowed groupName="Psychic Powers" allowed="-1.0">
+</subWGGroupsAllowed>
+<subWGGroupsAllowed groupName="Exodite Mounts" allowed="-1.0">
+</subWGGroupsAllowed>
 </allowedWargear>
 <allowedWargearGroups value="One-handed Weapons,Two-handed Weapons,Wargear,Exodite Mounts">
 </allowedWargearGroups>
@@ -371,130 +387,130 @@
 <allowedUpdates value="modelUpdate1,modelUpdate46">
 </allowedUpdates>
 </model>
-<modelUpdate id="modelUpdate62" name="Blast pistol" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="Blast Pistol">
+<modelUpdate id="modelUpdate62" name="Blast pistol" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="Blast Pistol" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate15" name="Plasma Grenades" pointcostPerModel="true" pointcost="2.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+<modelUpdate id="modelUpdate15" name="Plasma Grenades" pointcostPerModel="true" pointcost="2.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate30" name="Targeter for Scatter Laser" pointcostPerModel="true" pointcost="5.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+<modelUpdate id="modelUpdate30" name="Targeter for Scatter Laser" pointcostPerModel="true" pointcost="5.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate43" name="Targeter for Bright Lance" pointcostPerModel="true" pointcost="5.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+<modelUpdate id="modelUpdate43" name="Targeter for Bright Lance" pointcostPerModel="true" pointcost="5.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate31" name="Targeter for Bright Lance" pointcostPerModel="true" pointcost="5.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+<modelUpdate id="modelUpdate31" name="Targeter for Bright Lance" pointcostPerModel="true" pointcost="5.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate16" name="CCW and Powerblades" pointcostPerModel="true" pointcost="7.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+<modelUpdate id="modelUpdate16" name="CCW and Powerblades" pointcostPerModel="true" pointcost="7.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="" stats="A,oldvalue(oldvalue+1)">
 </modelUpdate>
-<modelUpdate id="modelUpdate48" name="Shock lance" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="Shock Lance">
+<modelUpdate id="modelUpdate48" name="Shock lance" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="Shock Lance" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate59" name="Blast carbine" pointcostPerModel="true" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="Blast Carbine">
+<modelUpdate id="modelUpdate59" name="Blast carbine" pointcostPerModel="true" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="Blast Carbine" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate32" name="Starcannon" pointcostPerModel="true" pointcost="35.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="Starcannon">
+<modelUpdate id="modelUpdate32" name="Starcannon" pointcostPerModel="true" pointcost="35.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="Starcannon" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate34" name="Bright Lance" pointcostPerModel="true" pointcost="35.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="Bright Lance">
+<modelUpdate id="modelUpdate34" name="Bright Lance" pointcostPerModel="true" pointcost="35.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="Bright Lance" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate41" name="Targeter for Starcannon" pointcostPerModel="true" pointcost="10.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+<modelUpdate id="modelUpdate41" name="Targeter for Starcannon" pointcostPerModel="true" pointcost="10.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate60" name="Blast pistol" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+<modelUpdate id="modelUpdate60" name="Blast pistol" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate61" name="ccw" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+<modelUpdate id="modelUpdate61" name="ccw" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate1" name="ccw and powerblades" pointcostPerModel="true" pointcost="10.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+<modelUpdate id="modelUpdate1" name="ccw and powerblades" pointcostPerModel="true" pointcost="10.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="" stats="A,oldvalue(oldvalue+1)">
 </modelUpdate>
-<modelUpdate id="modelUpdate29" name="Targeter for Starcannon" pointcostPerModel="true" pointcost="10.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+<modelUpdate id="modelUpdate29" name="Targeter for Starcannon" pointcostPerModel="true" pointcost="10.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate14" name="Haywire Grenades" pointcostPerModel="true" pointcost="3.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+<modelUpdate id="modelUpdate14" name="Haywire Grenades" pointcostPerModel="true" pointcost="3.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate47" name="Plasma carbine" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="Plasma Carbine">
+<modelUpdate id="modelUpdate47" name="Plasma carbine" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="Plasma Carbine" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate58" name="Blast carbine" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="Blast Carbine">
+<modelUpdate id="modelUpdate58" name="Blast carbine" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="Blast Carbine" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate63" name="ccw" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+<modelUpdate id="modelUpdate63" name="ccw" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate18" name="Salamander" pointcostPerModel="true" pointcost="6.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+<modelUpdate id="modelUpdate18" name="Salamander" pointcostPerModel="true" pointcost="6.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate3" name="Haywire Grenades" pointcostPerModel="true" pointcost="3.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+<modelUpdate id="modelUpdate3" name="Haywire Grenades" pointcostPerModel="true" pointcost="3.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate12" name="Powerblades" pointcostPerModel="true" pointcost="15.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+<modelUpdate id="modelUpdate12" name="Powerblades" pointcostPerModel="true" pointcost="15.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="" stats="A,oldvalue(oldvalue+1)">
 </modelUpdate>
-<modelUpdate id="modelUpdate44" name="Spirit Armour" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+<modelUpdate id="modelUpdate44" name="Spirit Armour" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate27" name="Scatter Laser" pointcostPerModel="true" pointcost="25.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="Scatter Laser">
+<modelUpdate id="modelUpdate27" name="Scatter Laser" pointcostPerModel="true" pointcost="25.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="Scatter Laser" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate64" name="Blast pistol" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="Blast Pistol">
+<modelUpdate id="modelUpdate64" name="Blast pistol" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="Blast Pistol" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate17" name="Salamander" pointcostPerModel="true" pointcost="6.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+<modelUpdate id="modelUpdate17" name="Salamander" pointcostPerModel="true" pointcost="6.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate13" name="Salamander" pointcostPerModel="true" pointcost="6.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+<modelUpdate id="modelUpdate13" name="Salamander" pointcostPerModel="true" pointcost="6.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate38" name="Starcannon" pointcostPerModel="true" pointcost="35.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="Starcannon">
+<modelUpdate id="modelUpdate38" name="Starcannon" pointcostPerModel="true" pointcost="35.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="Starcannon" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate28" name="Bright Lance" pointcostPerModel="true" pointcost="35.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="Bright Lance">
+<modelUpdate id="modelUpdate28" name="Bright Lance" pointcostPerModel="true" pointcost="35.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="Bright Lance" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate57" name="ccw" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+<modelUpdate id="modelUpdate57" name="ccw" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate37" name="Targeter for Bright Lance" pointcostPerModel="true" pointcost="5.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+<modelUpdate id="modelUpdate37" name="Targeter for Bright Lance" pointcostPerModel="true" pointcost="5.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate51" name="Lasblaster" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+<modelUpdate id="modelUpdate51" name="Lasblaster" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate8" name="Blast Carbine" pointcostPerModel="true" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="Blast Carbine">
+<modelUpdate id="modelUpdate8" name="Blast Carbine" pointcostPerModel="true" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="Blast Carbine" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate23" name="Plasma Grenades" pointcostPerModel="true" pointcost="2.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+<modelUpdate id="modelUpdate23" name="Plasma Grenades" pointcostPerModel="true" pointcost="2.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate40" name="Bright Lance" pointcostPerModel="true" pointcost="35.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="Bright Lance">
+<modelUpdate id="modelUpdate40" name="Bright Lance" pointcostPerModel="true" pointcost="35.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="Bright Lance" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate35" name="Targeter for Starcannon" pointcostPerModel="true" pointcost="10.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+<modelUpdate id="modelUpdate35" name="Targeter for Starcannon" pointcostPerModel="true" pointcost="10.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate7" name="Blast Carbine" pointcostPerModel="true" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="Blast Carbine">
+<modelUpdate id="modelUpdate7" name="Blast Carbine" pointcostPerModel="true" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="Blast Carbine" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate54" name="Laser lance" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="Laser Lance">
+<modelUpdate id="modelUpdate54" name="Laser lance" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="Laser Lance" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate49" name="Plasma carbine" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="Plasma Carbine">
+<modelUpdate id="modelUpdate49" name="Plasma carbine" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="Plasma Carbine" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate22" name="Haywire Grenades" pointcostPerModel="true" pointcost="3.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+<modelUpdate id="modelUpdate22" name="Haywire Grenades" pointcostPerModel="true" pointcost="3.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate53" name="Blast pistol" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+<modelUpdate id="modelUpdate53" name="Blast pistol" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate9" name="ccw and powerblades" pointcostPerModel="true" pointcost="15.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+<modelUpdate id="modelUpdate9" name="ccw and powerblades" pointcostPerModel="true" pointcost="15.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="" stats="A,oldvalue(oldvalue+1)">
 </modelUpdate>
-<modelUpdate id="modelUpdate21" name="Neuro Disruptor" pointcostPerModel="true" pointcost="20.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="Neuro Disruptor">
+<modelUpdate id="modelUpdate21" name="Neuro Disruptor" pointcostPerModel="true" pointcost="20.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="Neuro Disruptor" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate33" name="Scatter Laser" pointcostPerModel="true" pointcost="25.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="Scatter Laser">
+<modelUpdate id="modelUpdate33" name="Scatter Laser" pointcostPerModel="true" pointcost="25.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="Scatter Laser" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate6" name="Salamander" pointcostPerModel="true" pointcost="6.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+<modelUpdate id="modelUpdate6" name="Salamander" pointcostPerModel="true" pointcost="6.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate52" name="Lasblaster" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+<modelUpdate id="modelUpdate52" name="Lasblaster" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate42" name="Targeter for Scatter Laser" pointcostPerModel="true" pointcost="5.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+<modelUpdate id="modelUpdate42" name="Targeter for Scatter Laser" pointcostPerModel="true" pointcost="5.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate24" name="Powerblades" pointcostPerModel="true" pointcost="15.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+<modelUpdate id="modelUpdate24" name="Powerblades" pointcostPerModel="true" pointcost="15.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="" stats="A,oldvalue(oldvalue+1)">
 </modelUpdate>
-<modelUpdate id="modelUpdate4" name="Plasma Grenades" pointcostPerModel="true" pointcost="2.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+<modelUpdate id="modelUpdate4" name="Plasma Grenades" pointcostPerModel="true" pointcost="2.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate19" name="Powerblades" pointcostPerModel="true" pointcost="15.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+<modelUpdate id="modelUpdate19" name="Powerblades" pointcostPerModel="true" pointcost="15.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="" stats="A,oldvalue(oldvalue+1)">
 </modelUpdate>
-<modelUpdate id="modelUpdate36" name="Targeter for Scatter Laser" pointcostPerModel="true" pointcost="5.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+<modelUpdate id="modelUpdate36" name="Targeter for Scatter Laser" pointcostPerModel="true" pointcost="5.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate26" name="Starcannon" pointcostPerModel="true" pointcost="35.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="Starcannon">
+<modelUpdate id="modelUpdate26" name="Starcannon" pointcostPerModel="true" pointcost="35.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="Starcannon" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate55" name="Laser lance" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="Laser Lance">
+<modelUpdate id="modelUpdate55" name="Laser lance" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="Laser Lance" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate11" name="Salamander" pointcostPerModel="true" pointcost="6.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+<modelUpdate id="modelUpdate11" name="Salamander" pointcostPerModel="true" pointcost="6.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate50" name="Shock lance" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="0" weapon="Shock Lance">
+<modelUpdate id="modelUpdate50" name="Shock lance" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="0" weapon="Shock Lance" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate39" name="Scatter Laser" pointcostPerModel="true" pointcost="25.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="Scatter Laser">
+<modelUpdate id="modelUpdate39" name="Scatter Laser" pointcostPerModel="true" pointcost="25.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="Scatter Laser" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate45" name="Lasblaster" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="Lasblaster">
+<modelUpdate id="modelUpdate45" name="Lasblaster" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="Lasblaster" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate20" name="Powerblades" pointcostPerModel="true" pointcost="15.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+<modelUpdate id="modelUpdate20" name="Powerblades" pointcostPerModel="true" pointcost="15.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="" stats="A,oldvalue(oldvalue+1)">
 </modelUpdate>
-<modelUpdate id="modelUpdate46" name="Lasblaster" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="Lasblaster">
+<modelUpdate id="modelUpdate46" name="Lasblaster" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="Lasblaster" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate25" name="Salamander" pointcostPerModel="true" pointcost="6.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+<modelUpdate id="modelUpdate25" name="Salamander" pointcostPerModel="true" pointcost="6.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate10" name="Neuro Disruptor" pointcostPerModel="true" pointcost="20.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+<modelUpdate id="modelUpdate10" name="Neuro Disruptor" pointcostPerModel="true" pointcost="20.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate56" name="Blast pistol" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="Blast Pistol">
+<modelUpdate id="modelUpdate56" name="Blast pistol" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="Blast Pistol" stats="">
 </modelUpdate>
-<modelUpdate id="modelUpdate5" name="CCW and Powerblades" pointcostPerModel="true" pointcost="0.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+<modelUpdate id="modelUpdate5" name="CCW and Powerblades" pointcostPerModel="true" pointcost="0.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="" stats="A,oldvalue(oldvalue+1)">
 </modelUpdate>
 </armylist>
