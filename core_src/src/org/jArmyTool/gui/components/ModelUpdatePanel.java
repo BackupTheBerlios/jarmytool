@@ -218,6 +218,7 @@ public class ModelUpdatePanel extends javax.swing.JPanel {
 
     private void updateCountSpinnerStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_updateCountSpinnerStateChanged
         this.modelUpdate.setSelectedCount(((Integer)this.updateCountSpinner.getValue()).intValue());
+        this.applyStatModifications();
         this.refreshPointcost();
         this.oneModelPanel.refrashParentPointcost();
         this.oneModelPanel.refreshPointcost();
