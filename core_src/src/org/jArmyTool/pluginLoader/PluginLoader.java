@@ -65,30 +65,37 @@ public class PluginLoader {
         LinkedList urls = new LinkedList();
         
         //If plugins dir not found -> nullpointer (files)  FIX this!
-        
-        for(int i = 0; i < files.length; ++i){
-            if(files[i].endsWith(".jar") || files[i].endsWith(".JAR")){
-                try{
-                    URL url = new File(pluginDir, files[i]).toURL();
-                    urls.add(url);
-                    System.out.println("URL added to class loader: "+url);
-                }catch(java.net.MalformedURLException ex){
-                    System.out.println("found crappy plugin file");
+        try{
+
+
+            for(int i = 0; i < files.length; ++i){
+                if(files[i].endsWith(".jar") || files[i].endsWith(".JAR")){
+                    try{
+                        URL url = new File(pluginDir, files[i]).toURL();
+                        urls.add(url);
+                        //System.out.println("URL added to class loader: "+url);
+                    }catch(java.net.MalformedURLException ex){
+                        //System.out.println("found crappy plugin file");
+                    }
                 }
             }
+            
+        }catch(Exception e){
+
         }
+
         URL[] urlArray = new URL[urls.size()];
-        
+
         Iterator iterator = urls.iterator();
         int i = 0;
         while(iterator.hasNext()){
             urlArray[i] = (URL)iterator.next();
             ++i;
         }
-        
+
         this.classLoader = new URLClassLoader(urlArray);
-        
-        
+
+
     }
     
     public void loadPlugins(){
