@@ -41,14 +41,14 @@ public class ModelUpdatePanel extends javax.swing.JPanel {
     
     public void applyStatModifications()
     { 
-        this.oneModelPanel.updateStats(this.modelUpdate);  
+        this.oneModelPanel.updateWithUpgrades();  
     }
     
-    public void removeStatModifications()
-    {
-
-        this.oneModelPanel.removeStatUpdate(this.modelUpdate);
-    }
+ //   public void removeStatModifications()
+ //   {
+//
+//        this.oneModelPanel.removeStatUpdate(this.modelUpdate);
+//    }
     
     private void initCount(){
         if(this.modelUpdate.getArmylistModelUpdate().getMinCount() == 1 && this.modelUpdate.getArmylistModelUpdate().getMaxCount() == 1){
@@ -204,15 +204,13 @@ public class ModelUpdatePanel extends javax.swing.JPanel {
 
     private void modelUpdateCountCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modelUpdateCountCheckBoxActionPerformed
         if(this.modelUpdateCountCheckBox.isSelected())
-        {
-            this.applyStatModifications();
+        { 
             this.modelUpdate.setSelectedCount(1);
         }else
         {
             this.modelUpdate.setSelectedCount(0);
-            this.removeStatModifications();
         }
-        
+        this.applyStatModifications();
         this.refreshPointcost();
         this.oneModelPanel.refrashParentPointcost();
         this.oneModelPanel.refreshPointcost();
