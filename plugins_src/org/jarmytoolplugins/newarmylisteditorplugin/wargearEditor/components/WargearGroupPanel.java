@@ -15,12 +15,13 @@ import org.jArmyTool.data.dataBeans.armylist.ArmylistWargearGroup;
 public class WargearGroupPanel extends javax.swing.JPanel {
     
     private ArmylistWargearGroup group;
+    private WargearEditorMainWindow parent;
     
     
     /** Creates new form WargearGroupPanel */
-    public WargearGroupPanel(ArmylistWargearGroup group) {
+    public WargearGroupPanel(ArmylistWargearGroup group, WargearEditorMainWindow parent) {
         this.group = group;
-        
+        this.parent = parent;
         initComponents();
         this.initData();
     }
@@ -45,6 +46,7 @@ public class WargearGroupPanel extends javax.swing.JPanel {
 
         nameField = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+        deleteButton = new javax.swing.JButton();
 
         setLayout(new java.awt.GridBagLayout());
 
@@ -63,10 +65,28 @@ public class WargearGroupPanel extends javax.swing.JPanel {
         gridBagConstraints.gridy = 0;
         add(jLabel1, gridBagConstraints);
 
+        deleteButton.setText("del");
+        deleteButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
+        deleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteButtonActionPerformed(evt);
+            }
+        });
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        add(deleteButton, gridBagConstraints);
+
     }//GEN-END:initComponents
+
+    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
+        this.parent.deleteCurrentGroup();
+    }//GEN-LAST:event_deleteButtonActionPerformed
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton deleteButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField nameField;
     // End of variables declaration//GEN-END:variables

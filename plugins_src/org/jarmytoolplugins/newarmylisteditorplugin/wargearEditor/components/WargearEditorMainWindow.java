@@ -176,7 +176,8 @@ public class WargearEditorMainWindow extends javax.swing.JFrame {
         if(this.currentContainer != null)
             this.currentContainer.unHighlightPath();
         
-        WargearGroupPanel panel = new WargearGroupPanel(container.getGroup());
+        
+        WargearGroupPanel panel = new WargearGroupPanel(container.getGroup(), this );
         this.currentGroupPanel = panel;
         this.currentContainer = container;
         
@@ -232,6 +233,31 @@ public class WargearEditorMainWindow extends javax.swing.JFrame {
         this.currentContainer = null;
         this.currentItemPanel = null;
     }
+
+    
+    public void deleteCurrentGroup(){
+        System.out.println("Deleting group "+this.currentContainer.getGroup().getName());
+        
+        if(this.currentContainer == null || this.currentGroupPanel == null)
+            return;
+        
+        if(this.currentContainer.getParent().getUserObject() instanceof WargearTreeUserObjectContainer){
+            ArmylistWargearGroup parent = ((WargearTreeUserObjectContainer)this.currentContainer.getParent().getUserObject()).getGroup();
+            parent.removeSubGroup(this.currentContainer.getGroup());
+        }else{
+            this.armylistArmy.removeargearGroup(this.currentContainer.getGroup());
+        }
+        
+        
+        this.editorPane.removeAll();
+        this.editorPane.updateUI();
+        
+        this.currentContainer.getParent().remove(this.currentContainer.getNode());
+        this.wargearTree.updateUI();
+        
+        this.currentContainer = null;
+        this.currentItemPanel = null;
+    }    
     
 
     private void newRootGroup(){
