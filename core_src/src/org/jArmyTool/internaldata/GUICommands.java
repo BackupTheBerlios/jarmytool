@@ -26,7 +26,8 @@ public class GUICommands {
     
     public static final ImageIcon WARGEAR_GROUP_ICON = new ImageIcon("images/wargearGroupIcon.jpg");
     public static final ImageIcon WARGEAR_ITEM_ICON = new ImageIcon("images/wargearItemIcon.jpg");
-    
+    public static final ImageIcon WARGEAR_GROUP_ICON_NEW = new ImageIcon("images/wargearGroupIconNew.jpg");
+    public static final ImageIcon WARGEAR_ITEM_ICON_NEW = new ImageIcon("images/wargearItemIconNew.jpg");
     
     private static GUICommands instance;
     
@@ -132,5 +133,14 @@ public class GUICommands {
     public ImageIcon getWargearItemIcon(){
         return WARGEAR_ITEM_ICON;
     }    
+    
+    
+    public ImageIcon getWargearGroupIconNew(){
+        return WARGEAR_GROUP_ICON_NEW;
+    }
+    
+    public ImageIcon getWargearItemIconNew(){
+        return WARGEAR_ITEM_ICON_NEW;
+    }        
     
 }
