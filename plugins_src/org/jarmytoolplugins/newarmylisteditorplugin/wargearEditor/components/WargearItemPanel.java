@@ -35,6 +35,8 @@ public class WargearItemPanel extends javax.swing.JPanel {
         this.item = item;
         this.parent = parent;
         
+        logger.debug("Created object: group: "+group +" item: "+item);
+        
         initComponents();
         
         this.initData();

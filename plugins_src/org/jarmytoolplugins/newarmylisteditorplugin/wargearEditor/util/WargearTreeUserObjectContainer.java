@@ -7,6 +7,7 @@
 package org.jarmytoolplugins.newarmylisteditorplugin.wargearEditor.util;
 
 import javax.swing.tree.DefaultMutableTreeNode;
+import org.apache.log4j.Logger;
 import org.jArmyTool.data.dataBeans.armylist.ArmylistWargearGroup;
 import org.jArmyTool.data.dataBeans.armylist.ArmylistWargearItem;
 
@@ -25,8 +26,12 @@ public class WargearTreeUserObjectContainer {
     
     private boolean highlighted = false;
     
+    private static Logger logger = Logger.getLogger(WargearTreeUserObjectContainer.class);
+    
     /** Creates a new instance of WargearTreeUserObjectContainer */
     public WargearTreeUserObjectContainer(Object groupOrItem, DefaultMutableTreeNode node, DefaultMutableTreeNode parent) {
+        logger.debug("Created object: groupOrItem: "+groupOrItem+" node: "+node+" parent:"+parent);
+
         if(groupOrItem instanceof ArmylistWargearGroup){
             this.group = (ArmylistWargearGroup)groupOrItem;
         }else if(groupOrItem instanceof ArmylistWargearItem){
@@ -35,6 +40,8 @@ public class WargearTreeUserObjectContainer {
         
         this.node = node;
         this.parent = parent;
+        
+        
     }
     
     public ArmylistWargearGroup getGroup(){

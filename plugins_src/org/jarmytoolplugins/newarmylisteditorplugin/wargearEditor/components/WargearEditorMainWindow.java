@@ -92,11 +92,15 @@ public class WargearEditorMainWindow extends javax.swing.JFrame {
         
     }
     
-    private void addItemToNode(DefaultMutableTreeNode node, ArmylistWargearItem item){
+    private void addItemToNode(DefaultMutableTreeNode node, ArmylistWargearItem item, ArmylistWargearGroup group){
         DefaultMutableTreeNode newNode = new DefaultMutableTreeNode();
-        newNode.setUserObject(new WargearTreeUserObjectContainer(item, newNode, node));
-        node.add(newNode);
         
+        WargearTreeUserObjectContainer container = new WargearTreeUserObjectContainer(item, newNode, node);
+        container.setItemGroup(group);
+        newNode.setUserObject(container);
+        
+        node.add(newNode);
+
         /*Iterator subGroups = group.getSubGroups().iterator();
         while(subGroups.hasNext()){
             ArmylistWargearGroup subGroup = (ArmylistWargearGroup)subGroups.next();
@@ -275,7 +279,7 @@ public class WargearEditorMainWindow extends javax.swing.JFrame {
         
         parentGroup.addItem(newItem);
         
-        this.addItemToNode(node, newItem);
+        this.addItemToNode(node, newItem, parentGroup);
         
         this.wargearTree.updateUI();        
     }
