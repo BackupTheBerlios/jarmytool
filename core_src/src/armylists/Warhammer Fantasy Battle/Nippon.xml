@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE armylist SYSTEM "../DTD/armylist.dtd">
+<armylist>
+<armyHeader id="header" gameSystem="Warhammer Fantasy Battle">
+<name value="Nippon">
+</name>
+<comment value="" writer="Mikael &quot;Murhe&quot; Mustonen" email="" web="">
+</comment>
+</armyHeader>
+<wargear>
+</wargear>
+<weapons>
+</weapons>
+<unit name="Peasant Soldiers" minCount="0" maxCount="-1" maxUnitSize="-1" minUnitSize="10" unitType="Core Units">
+<allowedModels value="model1,model2,model3,model4">
+</allowedModels>
+<allowedUpdates value="unitUpdate1">
+</allowedUpdates>
+</unit>
+<unit name="Peasant Archers" minCount="0" maxCount="-1" maxUnitSize="-1" minUnitSize="10" unitType="Core Units">
+<allowedModels value="model5,model6,model7,model8">
+</allowedModels>
+<allowedUpdates value="">
+</allowedUpdates>
+</unit>
+<unit name="Peasant Mob" minCount="0" maxCount="-1" maxUnitSize="15" minUnitSize="5" unitType="Core Units">
+<allowedModels value="model9">
+</allowedModels>
+<allowedUpdates value="">
+</allowedUpdates>
+</unit>
+<unit name="Samurai" minCount="0" maxCount="-1" maxUnitSize="-1" minUnitSize="10" unitType="Core Units">
+<allowedModels value="model10,model11,model13,model12">
+</allowedModels>
+<allowedUpdates value="unitUpdate2,unitUpdate3">
+</allowedUpdates>
+</unit>
+<unit name="Samurai" minCount="0" maxCount="-1" maxUnitSize="-1" minUnitSize="10" unitType="Special Units">
+<allowedModels value="model10,model11,model13,model12">
+</allowedModels>
+<allowedUpdates value="unitUpdate4,unitUpdate5">
+</allowedUpdates>
+</unit>
+<unit name="Mounted Samurai" minCount="0" maxCount="-1" maxUnitSize="-1" minUnitSize="5" unitType="Special Units">
+<allowedModels value="model14,model15,model16,model17,model18">
+</allowedModels>
+<allowedUpdates value="">
+</allowedUpdates>
+</unit>
+<unit name="Scouts" minCount="0" maxCount="-1" maxUnitSize="15" minUnitSize="5" unitType="Special Units">
+<allowedModels value="model19,model20">
+</allowedModels>
+<allowedUpdates value="">
+</allowedUpdates>
+</unit>
+<unit name="Samuraiko Light Cavalry" minCount="0" maxCount="-1" maxUnitSize="-1" minUnitSize="5" unitType="Special Units">
+<allowedModels value="model21,model22,model24,model25,model23">
+</allowedModels>
+<allowedUpdates value="unitUpdate6,unitUpdate7">
+</allowedUpdates>
+</unit>
+<unit name="Assasin Trainees" minCount="0" maxCount="-1" maxUnitSize="10" minUnitSize="5" unitType="Special Units">
+<allowedModels value="model26">
+</allowedModels>
+<allowedUpdates value="unitUpdate8">
+</allowedUpdates>
+</unit>
+<unit name="Dragon Cannon" minCount="0" maxCount="-1" maxUnitSize="-1" minUnitSize="0" unitType="Rare Units">
+<allowedModels value="model27,model28">
+</allowedModels>
+<allowedUpdates value="">
+</allowedUpdates>
+</unit>
+<unit name="Celestial Monks" minCount="0" maxCount="-1" maxUnitSize="10" minUnitSize="5" unitType="Rare Units">
+<allowedModels value="model29,model30">
+</allowedModels>
+<allowedUpdates value="">
+</allowedUpdates>
+</unit>
+<unit name="Emperors Samurai" minCount="0" maxCount="-1" maxUnitSize="-1" minUnitSize="10" unitType="Rare Units">
+<allowedModels value="model31,model32,model33,model34">
+</allowedModels>
+<allowedUpdates value="unitUpdate9,unitUpdate10">
+</allowedUpdates>
+</unit>
+<unitUpdate id="unitUpdate2" name="No-Dachis" pointcostPerModel="true" pointcost="2.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</unitUpdate>
+<unitUpdate id="unitUpdate4" name="No-Dachis" pointcostPerModel="true" pointcost="2.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</unitUpdate>
+<unitUpdate id="unitUpdate8" name="poisonated weapons and throwing stars" pointcostPerModel="true" pointcost="3.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</unitUpdate>
+<unitUpdate id="unitUpdate9" name="exchange Katanas for No-Dachi" pointcostPerModel="true" pointcost="2.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</unitUpdate>
+<unitUpdate id="unitUpdate6" name="bows" pointcostPerModel="true" pointcost="6.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</unitUpdate>
+<unitUpdate id="unitUpdate1" name="Naginatas" pointcostPerModel="true" pointcost="4.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</unitUpdate>
+<unitUpdate id="unitUpdate3" name="Naginatas" pointcostPerModel="true" pointcost="4.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</unitUpdate>
+<unitUpdate id="unitUpdate7" name="swap naginatas for bows" pointcostPerModel="true" pointcost="5.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</unitUpdate>
+<unitUpdate id="unitUpdate10" name="exchange Katanas for Naginatas" pointcostPerModel="true" pointcost="4.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</unitUpdate>
+<unitUpdate id="unitUpdate5" name="Naginatas" pointcostPerModel="true" pointcost="4.0" minCount="0" maxCount="1" defaultSelectedAmount="0" weapon="">
+</unitUpdate>
+<model id="model15" name="Musician" pointcost="29.0" minCount="0" maxCount="1" defaultSelectedAmount="0" counted="true" isLinked="false" statType="infantry" statValues="4,5,3,3,3,1,3,1,8">
+<allowedUpdates value="modelUpdate44,modelUpdate45,modelUpdate46">
+</allowedUpdates>
+</model>
+<model id="model30" name="Venerable Monk" pointcost="16.0" minCount="0" maxCount="1" defaultSelectedAmount="0" counted="true" isLinked="false" statType="infantry" statValues="5,5,3,3,4,1,5,2,10">
+<allowedUpdates value="modelUpdate76">
+</allowedUpdates>
+</model>
+<model id="model8" name="Champion" pointcost="19.0" minCount="0" maxCount="1" defaultSelectedAmount="0" counted="true" isLinked="false" statType="infantry" statValues="4,3,3,3,3,1,3,2,7">
+<allowedUpdates value="modelUpdate22,modelUpdate23,modelUpdate24">
+</allowedUpdates>
+</model>
+<model id="model23" name="Mount" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" counted="false" isLinked="false" statType="infantry" statValues="8,3,0,3,3,1,3,1,6">
+<allowedUpdates value="">
+</allowedUpdates>
+</model>
+<model id="model16" name="Standard Bearer" pointcost="34.0" minCount="0" maxCount="1" defaultSelectedAmount="0" counted="true" isLinked="false" statType="infantry" statValues="4,5,3,3,3,1,3,1,8">
+<allowedUpdates value="modelUpdate47,modelUpdate48,modelUpdate49">
+</allowedUpdates>
+</model>
+<model id="model31" name="Emperors Samurai" pointcost="14.0" minCount="7" maxCount="-1" defaultSelectedAmount="10" counted="true" isLinked="false" statType="infantry" statValues="4,5,3,4,4,1,4,1,9">
+<allowedUpdates value="modelUpdate77,modelUpdate78,modelUpdate79">
+</allowedUpdates>
+</model>
+<model id="model7" name="Standard Bearer" pointcost="19.0" minCount="0" maxCount="1" defaultSelectedAmount="0" counted="true" isLinked="false" statType="infantry" statValues="4,3,3,3,3,1,3,1,7">
+<allowedUpdates value="modelUpdate19,modelUpdate20,modelUpdate21">
+</allowedUpdates>
+</model>
+<model id="model22" name="Maiden Warrior" pointcost="30.0" minCount="0" maxCount="1" defaultSelectedAmount="0" counted="true" isLinked="false" statType="infantry" statValues="4,4,4,3,3,1,4,1,8">
+<allowedUpdates value="modelUpdate63,modelUpdate64,modelUpdate65">
+</allowedUpdates>
+</model>
+<model id="model32" name="Chosen Champion" pointcost="28.0" minCount="0" maxCount="1" defaultSelectedAmount="0" counted="true" isLinked="false" statType="infantry" statValues="4,5,3,4,4,1,4,2,9">
+<allowedUpdates value="modelUpdate80,modelUpdate81,modelUpdate82">
+</allowedUpdates>
+</model>
+<model id="model34" name="Standard Bearer" pointcost="28.0" minCount="0" maxCount="1" defaultSelectedAmount="0" counted="true" isLinked="false" statType="infantry" statValues="4,5,3,4,4,1,4,1,9">
+<allowedUpdates value="modelUpdate86,modelUpdate87,modelUpdate88">
+</allowedUpdates>
+</model>
+<model id="model9" name="Peasant" pointcost="5.0" minCount="5" maxCount="15" defaultSelectedAmount="10" counted="true" isLinked="false" statType="infantry" statValues="4,3,3,3,3,1,3,1,6">
+<allowedUpdates value="modelUpdate25,modelUpdate26">
+</allowedUpdates>
+</model>
+<model id="model21" name="Samuraiko" pointcost="16.0" minCount="2" maxCount="-1" defaultSelectedAmount="5" counted="true" isLinked="false" statType="infantry" statValues="4,4,3,3,3,1,4,1,8">
+<allowedUpdates value="modelUpdate60,modelUpdate61,modelUpdate62">
+</allowedUpdates>
+</model>
+<model id="model33" name="Musician" pointcost="21.0" minCount="0" maxCount="1" defaultSelectedAmount="0" counted="true" isLinked="false" statType="infantry" statValues="4,5,3,4,4,1,4,1,9">
+<allowedUpdates value="modelUpdate83,modelUpdate84,modelUpdate85">
+</allowedUpdates>
+</model>
+<model id="model6" name="Musician" pointcost="14.0" minCount="0" maxCount="1" defaultSelectedAmount="0" counted="true" isLinked="false" statType="infantry" statValues="4,3,3,3,3,1,3,1,7">
+<allowedUpdates value="modelUpdate16,modelUpdate17,modelUpdate18">
+</allowedUpdates>
+</model>
+<model id="model1" name="Soldier" pointcost="7.0" minCount="7" maxCount="-1" defaultSelectedAmount="10" counted="true" isLinked="false" statType="infantry" statValues="4,3,3,3,3,1,3,1,7">
+<allowedUpdates value="modelUpdate1,modelUpdate2,modelUpdate3">
+</allowedUpdates>
+</model>
+<model id="model29" name="Celestial Monk" pointcost="16.0" minCount="4" maxCount="10" defaultSelectedAmount="5" counted="true" isLinked="false" statType="infantry" statValues="5,5,3,3,4,1,5,1,10">
+<allowedUpdates value="modelUpdate75">
+</allowedUpdates>
+</model>
+<model id="model14" name="Samurai" pointcost="24.0" minCount="2" maxCount="-1" defaultSelectedAmount="10" counted="true" isLinked="false" statType="infantry" statValues="4,5,3,3,3,1,3,1,8">
+<allowedUpdates value="modelUpdate39,modelUpdate40,modelUpdate41">
+</allowedUpdates>
+</model>
+<model id="model24" name="Musician" pointcost="23.0" minCount="0" maxCount="1" defaultSelectedAmount="0" counted="true" isLinked="false" statType="infantry" statValues="4,4,3,3,3,1,4,1,8">
+<allowedUpdates value="modelUpdate66,modelUpdate67,modelUpdate68">
+</allowedUpdates>
+</model>
+<model id="model4" name="Champion" pointcost="17.0" minCount="0" maxCount="1" defaultSelectedAmount="0" counted="true" isLinked="false" statType="infantry" statValues="4,3,3,3,3,1,3,2,7">
+<allowedUpdates value="modelUpdate10,modelUpdate11,modelUpdate12">
+</allowedUpdates>
+</model>
+<model id="model19" name="Scout" pointcost="12.0" minCount="4" maxCount="15" defaultSelectedAmount="10" counted="true" isLinked="false" statType="infantry" statValues="4,4,3,3,3,1,3,1,8">
+<allowedUpdates value="modelUpdate53,modelUpdate54,modelUpdate55">
+</allowedUpdates>
+</model>
+<model id="model26" name="Assasiin Trainee" pointcost="14.0" minCount="5" maxCount="10" defaultSelectedAmount="5" counted="true" isLinked="false" statType="infantry" statValues="4,3,4,3,3,1,4,1,7">
+<allowedUpdates value="modelUpdate72,modelUpdate73">
+</allowedUpdates>
+</model>
+<model id="model11" name="Musician" pointcost="15.0" minCount="0" maxCount="1" defaultSelectedAmount="0" counted="true" isLinked="true" statType="infantry" statValues="4,5,3,3,3,1,3,1,8">
+<allowedUpdates value="modelUpdate30,modelUpdate31,modelUpdate32">
+</allowedUpdates>
+</model>
+<model id="model18" name="Mount" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" counted="false" isLinked="false" statType="infantry" statValues="8,3,0,3,3,1,3,1,6">
+<allowedUpdates value="modelUpdate43">
+</allowedUpdates>
+</model>
+<model id="model3" name="Standard Bearer" pointcost="17.0" minCount="0" maxCount="1" defaultSelectedAmount="0" counted="true" isLinked="false" statType="infantry" statValues="4,3,3,3,3,1,3,1,7">
+<allowedUpdates value="modelUpdate7,modelUpdate8,modelUpdate9">
+</allowedUpdates>
+</model>
+<model id="model12" name="Samurai Champion" pointcost="20.0" minCount="0" maxCount="1" defaultSelectedAmount="0" counted="true" isLinked="true" statType="infantry" statValues="4,5,3,3,3,1,3,2,8">
+<allowedUpdates value="modelUpdate36,modelUpdate37,modelUpdate38">
+</allowedUpdates>
+</model>
+<model id="model27" name="Dragon Cannon" pointcost="120.0" minCount="1" maxCount="1" defaultSelectedAmount="1" counted="true" isLinked="false" statType="infantry" statValues="-,-,-,-,7,3,-,-,-">
+<allowedUpdates value="">
+</allowedUpdates>
+</model>
+<model id="model17" name="Samurai Champion" pointcost="34.0" minCount="0" maxCount="1" defaultSelectedAmount="0" counted="true" isLinked="false" statType="infantry" statValues="4,5,3,3,3,1,3,2,8">
+<allowedUpdates value="modelUpdate50,modelUpdate51,modelUpdate52">
+</allowedUpdates>
+</model>
+<model id="model2" name="Musician" pointcost="13.0" minCount="0" maxCount="1" defaultSelectedAmount="0" counted="true" isLinked="false" statType="infantry" statValues="4,3,3,3,3,1,3,1,7">
+<allowedUpdates value="modelUpdate4,modelUpdate5,modelUpdate6">
+</allowedUpdates>
+</model>
+<model id="model13" name="Standard Bearer" pointcost="20.0" minCount="0" maxCount="1" defaultSelectedAmount="0" counted="true" isLinked="true" statType="infantry" statValues="4,5,3,3,3,1,3,1,8">
+<allowedUpdates value="modelUpdate33,modelUpdate34,modelUpdate35">
+</allowedUpdates>
+</model>
+<model id="model28" name="Crew" pointcost="0.0" minCount="3" maxCount="3" defaultSelectedAmount="3" counted="false" isLinked="false" statType="infantry" statValues="4,3,3,3,3,1,3,1,7">
+<allowedUpdates value="modelUpdate74">
+</allowedUpdates>
+</model>
+<model id="model20" name="Champion" pointcost="24.0" minCount="0" maxCount="1" defaultSelectedAmount="0" counted="true" isLinked="false" statType="infantry" statValues="4,4,4,3,3,1,3,1,8">
+<allowedUpdates value="modelUpdate56,modelUpdate57,modelUpdate58">
+</allowedUpdates>
+</model>
+<model id="model25" name="Standard Bearer" pointcost="30.0" minCount="0" maxCount="1" defaultSelectedAmount="0" counted="true" isLinked="false" statType="infantry" statValues="4,4,3,3,3,1,4,1,8">
+<allowedUpdates value="modelUpdate69,modelUpdate70,modelUpdate71">
+</allowedUpdates>
+</model>
+<model id="model10" name="Samurai" pointcost="10.0" minCount="7" maxCount="-1" defaultSelectedAmount="10" counted="true" isLinked="true" statType="infantry" statValues="4,5,3,3,3,1,3,1,8">
+<allowedUpdates value="modelUpdate27,modelUpdate28,modelUpdate29">
+</allowedUpdates>
+</model>
+<model id="model5" name="Archer" pointcost="9.0" minCount="7" maxCount="-1" defaultSelectedAmount="10" counted="true" isLinked="false" statType="infantry" statValues="4,3,3,3,3,1,3,1,7">
+<allowedUpdates value="modelUpdate13,modelUpdate14,modelUpdate15">
+</allowedUpdates>
+</model>
+<modelUpdate id="modelUpdate62" name="light armour" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate15" name="light armour" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate79" name="heavy armour" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate30" name="katana" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate43" name="barding" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate31" name="wakizashi" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate16" name="hand weapon" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate48" name="no-dachi" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate80" name="katana" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate86" name="katana" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate34" name="wakizashi" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate32" name="heavy armour" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate73" name="throwin stars" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate41" name="heavy armour" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate70" name="naginata" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate85" name="heavy armour" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate60" name="wakizashi" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate61" name="naginata" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate1" name="hand weapon" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate29" name="heavy armour" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate14" name="long bow" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate83" name="katana" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate47" name="wakizashi" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate68" name="light armour" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate75" name="two headed naginata" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate82" name="heavy armour" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate58" name="light armour" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate18" name="light armour" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate63" name="wakizashi" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate3" name="light armour" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate66" name="wakizashi" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate81" name="wakizashi" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate12" name="light armour" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="0" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate44" name="wakizashi" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate27" name="katana" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate64" name="naginata" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate17" name="long bow" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate2" name="spear" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate13" name="hand weapon" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate77" name="katana" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate38" name="heavy armour" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate28" name="wakizashi" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate84" name="wakizashi" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate57" name="shortbow" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate37" name="wakizashi" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate51" name="no-dachi" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate8" name="spear" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate40" name="no-dachi" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate23" name="long bow" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate87" name="wakizashi" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate72" name="two hand weapons" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate35" name="heavy armour" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate7" name="hand weapon" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate54" name="shortbow" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate71" name="light armour" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate49" name="heavy armour" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate22" name="hand weapon" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate53" name="wakizashi" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate9" name="light armour" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate65" name="light armour" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate21" name="light armour" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate33" name="katana" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate6" name="light armour" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate78" name="wakizashi" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate52" name="heavy armour" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate24" name="light armour" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate88" name="heavy armour" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate4" name="hand weapon" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate36" name="katana" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate19" name="hand weapon" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate55" name="light armour" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate26" name="spear" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate11" name="spear" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="0" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate50" name="wakizashi" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate67" name="naginata" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate39" name="wakizashi" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate76" name="two headed naginata" pointcostPerModel="false" pointcost="30.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate45" name="no-dachi" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate74" name="hand weapons" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate46" name="heavy armour" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate20" name="long bow" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate25" name="hand weapon" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate10" name="hand weapon" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="0" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate56" name="wakizashi" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate5" name="spear" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+<modelUpdate id="modelUpdate69" name="wakizashi" pointcostPerModel="false" pointcost="0.0" minCount="1" maxCount="1" defaultSelectedAmount="1" weapon="">
+</modelUpdate>
+</armylist>
