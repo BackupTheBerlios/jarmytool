@@ -4,7 +4,7 @@
  * Created on 21 March 2003, 00:26
  */
 
-package core_src.src.org.jArmyTool.outputGenerator;
+package org.jArmyTool.outputGenerator;
 
 import org.w3c.dom.*;
 import java.io.*;

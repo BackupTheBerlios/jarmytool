@@ -4,7 +4,7 @@
  * Created on 14 October 2003, 16:09
  */
 
-package plugins_src.org.jarmytoolplugins.newarmylisteditorplugin.weaponeditor.components;
+package org.jarmytoolplugins.newarmylisteditorplugin.weaponeditor.components;
 
 import javax.swing.JScrollPane;
 import org.jarmytoolplugins.newarmylisteditorplugin.weaponeditor.engine.WeaponEditorCore;

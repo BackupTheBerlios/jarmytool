@@ -4,7 +4,7 @@
  * Created on 14 October 2003, 16:12
  */
 
-package plugins_src.org.jarmytoolplugins.newarmylisteditorplugin.weaponeditor.engine;
+package org.jarmytoolplugins.newarmylisteditorplugin.weaponeditor.engine;
 
 import java.awt.Dimension;
 import java.util.Iterator;

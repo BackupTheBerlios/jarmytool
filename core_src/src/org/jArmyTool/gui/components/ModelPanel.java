@@ -4,7 +4,7 @@
  * Created on 26 December 2002, 01:57
  */
 
-package core_src.src.org.jArmyTool.gui.components;
+package org.jArmyTool.gui.components;
 
 
 import org.jArmyTool.data.dataBeans.army.*;

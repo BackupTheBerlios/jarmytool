@@ -4,7 +4,7 @@
  * Created on 25 October 2003, 23:08
  */
 
-package core_src.src.org.jArmyTool.gui.util;
+package org.jArmyTool.gui.util;
 
 import java.awt.Component;
 import javax.swing.ImageIcon;

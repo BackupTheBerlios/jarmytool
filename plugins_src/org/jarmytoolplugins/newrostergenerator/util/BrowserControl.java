@@ -1,4 +1,4 @@
-package plugins_src.org.jarmytoolplugins.newrostergenerator.util;
+package org.jarmytoolplugins.newrostergenerator.util;
 
 /*
  * Based on Steven Spencer's Java Tip in JavaWorld:

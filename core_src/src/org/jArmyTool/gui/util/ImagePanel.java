@@ -4,7 +4,7 @@
  * Created on 10 July 2003, 23:15
  */
 
-package core_src.src.org.jArmyTool.gui.util;
+package org.jArmyTool.gui.util;
 
 import java.awt.*;
 import java.awt.event.*;

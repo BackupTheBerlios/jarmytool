@@ -4,7 +4,7 @@
  * Created on 04 January 2004, 01:24
  */
 
-package core_src.src.org.jArmyTool.internaldata;
+package org.jArmyTool.internaldata;
 
 import org.jArmyTool.gui.engine.GUICore;
 

@@ -1,4 +1,4 @@
-package core_src.src.org.jArmyTool.data.dataBeans.army;
+package org.jArmyTool.data.dataBeans.army;
 
 /*
  * Update.java

@@ -1,4 +1,4 @@
-package core_src.src.org.jArmyTool.data.factories;
+package org.jArmyTool.data.factories;
 
 import org.jArmyTool.data.dataBeans.army.*;
 import java.util.*;

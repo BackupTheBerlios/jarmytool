@@ -4,7 +4,7 @@
  * Created on 19 January 2003, 02:51
  */
 
-package core_src.src.org.jArmyTool.gui.listeners;
+package org.jArmyTool.gui.listeners;
 
 import java.awt.event.*;
 import org.jArmyTool.gui.engine.*;

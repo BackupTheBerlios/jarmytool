@@ -4,7 +4,7 @@
  * Created on 04 December 2003, 17:34
  */
 
-package plugins_src.org.jarmytoolplugins.newrostergenerator.guiComponents;
+package org.jarmytoolplugins.newrostergenerator.guiComponents;
 
 import org.jarmytoolplugins.newarmylisteditorplugin.util.VerticalFlowLayout;
 import org.jarmytoolplugins.newrostergenerator.engine.RosterGeneratorCore;

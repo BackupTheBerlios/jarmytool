@@ -4,7 +4,7 @@
  * Created on 11 July 2003, 00:47
  */
 
-package core_src.src.org.jArmyTool.gui.splashScreen;
+package org.jArmyTool.gui.splashScreen;
 
 import org.jArmyTool.gui.engine.GUICore;
 import org.jArmyTool.gui.util.ImagePanel;

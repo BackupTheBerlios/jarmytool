@@ -4,7 +4,7 @@
  * Created on 17 January 2004, 00:24
  */
 
-package core_src.src.org.jArmyTool.data.database;
+package org.jArmyTool.data.database;
 
 import java.io.File;
 import java.util.HashMap;

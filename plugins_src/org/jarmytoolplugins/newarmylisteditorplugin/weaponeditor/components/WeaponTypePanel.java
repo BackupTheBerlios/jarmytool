@@ -4,7 +4,7 @@
  * Created on 14 October 2003, 16:14
  */
 
-package plugins_src.org.jarmytoolplugins.newarmylisteditorplugin.weaponeditor.components;
+package org.jarmytoolplugins.newarmylisteditorplugin.weaponeditor.components;
 
 import java.util.Collection;
 import java.util.Iterator;

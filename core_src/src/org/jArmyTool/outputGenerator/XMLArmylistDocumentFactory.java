@@ -4,7 +4,7 @@
  * Created on 25 March 2003, 18:02
  */
 
-package core_src.src.org.jArmyTool.outputGenerator;
+package org.jArmyTool.outputGenerator;
 
 import org.jArmyTool.data.dataBeans.armylist.*;
 import org.jArmyTool.data.dataBeans.util.*;

@@ -4,7 +4,7 @@
  * Created on 22 September 2003, 15:35
  */
 
-package core_src.src.org.jArmyTool.pluginLoader;
+package org.jArmyTool.pluginLoader;
 
 import java.io.File;
 import java.net.URL;

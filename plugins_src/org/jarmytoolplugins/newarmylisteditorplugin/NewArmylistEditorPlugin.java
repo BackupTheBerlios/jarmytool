@@ -4,7 +4,7 @@
  * Created on 06 October 2003, 16:26
  */
 
-package plugins_src.org.jarmytoolplugins.newarmylisteditorplugin;
+package org.jarmytoolplugins.newarmylisteditorplugin;
 
 import javax.swing.JMenuItem;
 import org.jArmyTool.plugininterface.JArmyToolPluginInterface;

@@ -4,7 +4,7 @@
  * Created on 22 September 2003, 14:50
  */
 
-package core_src.src.org.jArmyTool.internaldata;
+package org.jArmyTool.internaldata;
 
 import java.awt.Cursor;
 import java.awt.Dimension;

@@ -4,7 +4,7 @@
  * Created on 03 January 2004, 02:06
  */
 
-package plugins_src.org.jarmytoolplugins.newrostergenerator.generators;
+package org.jarmytoolplugins.newrostergenerator.generators;
 
 import java.util.HashMap;
 import java.util.Iterator;

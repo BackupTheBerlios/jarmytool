@@ -4,7 +4,7 @@
  * Created on 27 October 2003, 20:02
  */
 
-package plugins_src.org.jarmytoolplugins.newarmylisteditorplugin.components;
+package org.jarmytoolplugins.newarmylisteditorplugin.components;
 
 import java.awt.Component;
 import java.util.Collection;
@@ -425,44 +425,6 @@ public class ArmylistEditorUnitPanel extends javax.swing.JPanel {
             }
         }
     }    
-
-    
-    public void moveUpdateUp(ArmylistEditorUnitUpdatePanel updatePanel){
-        if(this.unit.moveUpdateUp(updatePanel.getUnitUpdate())){
-            Component[] components = this.unitUpdatesPanel.getComponents();
-            int index = -1;
-            for(int i = 0; i < components.length; ++i){
-                if(components[i] == updatePanel){
-                    index = i;
-                    break;
-                }
-            }
-            if(index > 0){
-                this.unitUpdatesPanel.remove(index);
-                this.unitUpdatesPanel.add(updatePanel, index - 1);
-                this.updateUI();
-            }
-        }
-    }
- 
-    public void moveUpdateDown(ArmylistEditorUnitUpdatePanel updatePanel){
-        if(this.unit.moveUpdateDown(updatePanel.getUnitUpdate())){
-            Component[] components = this.unitUpdatesPanel.getComponents();
-            int index = -1;
-            for(int i = 0; i < components.length; ++i){
-                if(components[i] == updatePanel){
-                    index = i;
-                    break;
-                }
-            }
-            if(index < components.length - 1 && index != -1){
-                this.unitUpdatesPanel.remove(index);
-                this.unitUpdatesPanel.add(updatePanel, index + 1);
-                this.updateUI();
-            }
-        }
-    }    
-    
     
     public Collection getAllModelPanels(){
         return Collections.unmodifiableCollection(this.modelPanels);

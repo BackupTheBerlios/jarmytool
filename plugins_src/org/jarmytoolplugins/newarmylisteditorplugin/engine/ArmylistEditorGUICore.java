@@ -4,7 +4,7 @@
  * Created on 27 October 2003, 19:09
  */
 
-package plugins_src.org.jarmytoolplugins.newarmylisteditorplugin.engine;
+package org.jarmytoolplugins.newarmylisteditorplugin.engine;
 
 import java.awt.Dimension;
 import java.util.Iterator;

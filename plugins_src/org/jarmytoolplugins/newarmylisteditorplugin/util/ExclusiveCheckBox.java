@@ -4,7 +4,7 @@
  * Created on 07 December 2003, 13:09
  */
 
-package plugins_src.org.jarmytoolplugins.newarmylisteditorplugin.util;
+package org.jarmytoolplugins.newarmylisteditorplugin.util;
 
 import javax.swing.JCheckBox;
 import org.jArmyTool.data.dataBeans.armylist.ArmylistModel;

@@ -4,7 +4,7 @@
  * Created on 20 May 2003, 16:24
  */
 
-package plugins_src.org.jarmytoolplugins.newarmylisteditorplugin.wargearEditor.engine;
+package org.jarmytoolplugins.newarmylisteditorplugin.wargearEditor.engine;
 
 import org.jArmyTool.data.dataBeans.armylist.*;
 import org.jArmyTool.internaldata.GUICommands;

@@ -1,4 +1,4 @@
-package core_src.src.org.jArmyTool.data.database;
+package org.jArmyTool.data.database;
 
 import org.jArmyTool.data.dataBeans.armylist.*;
 import org.jArmyTool.data.dataBeans.gameSystem.*;

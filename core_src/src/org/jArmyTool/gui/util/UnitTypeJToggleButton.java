@@ -4,7 +4,7 @@
  * Created on 11 July 2003, 02:12
  */
 
-package core_src.src.org.jArmyTool.gui.util;
+package org.jArmyTool.gui.util;
 
 import java.awt.Image;
 import java.awt.Insets;

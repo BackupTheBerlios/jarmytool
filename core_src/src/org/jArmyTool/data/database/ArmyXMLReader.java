@@ -4,7 +4,7 @@
  * Created on 25 March 2003, 16:08
  */
 
-package core_src.src.org.jArmyTool.data.database;
+package org.jArmyTool.data.database;
 
 import org.jArmyTool.data.dataBeans.army.*;
 import org.jArmyTool.data.dataBeans.armylist.*;

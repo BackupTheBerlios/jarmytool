@@ -4,7 +4,7 @@
  * Created on 30 November 2003, 00:58
  */
 
-package core_src.src.org.jArmyTool.gui.components;
+package org.jArmyTool.gui.components;
 
 import java.util.Collection;
 import java.util.Iterator;

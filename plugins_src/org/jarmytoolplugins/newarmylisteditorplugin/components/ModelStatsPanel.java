@@ -4,7 +4,7 @@
  * Created on 07 January 2004, 01:32
  */
 
-package plugins_src.org.jarmytoolplugins.newarmylisteditorplugin.components;
+package org.jarmytoolplugins.newarmylisteditorplugin.components;
 
 import java.awt.BorderLayout;
 import java.lang.StringBuffer;

@@ -4,7 +4,7 @@
  * Created on 24 December 2003, 02:32
  */
 
-package plugins_src.org.jarmytoolplugins.newrostergenerator.generators;
+package org.jarmytoolplugins.newrostergenerator.generators;
 
 import org.jArmyTool.data.dataBeans.army.Army;
 

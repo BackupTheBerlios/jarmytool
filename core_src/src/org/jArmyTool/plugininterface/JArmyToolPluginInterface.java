@@ -5,7 +5,7 @@
   * Distributed under GPL
  */
 
-package core_src.src.org.jArmyTool.plugininterface;
+package org.jArmyTool.plugininterface;
 
 /**
  * This interface defines methods for jArmyTool plugins

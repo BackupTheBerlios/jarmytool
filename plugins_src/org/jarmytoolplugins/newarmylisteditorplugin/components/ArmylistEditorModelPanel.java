@@ -4,7 +4,7 @@
  * Created on 27 October 2003, 21:17
  */
 
-package plugins_src.org.jarmytoolplugins.newarmylisteditorplugin.components;
+package org.jarmytoolplugins.newarmylisteditorplugin.components;
 
 import java.awt.Component;
 import java.util.Collection;

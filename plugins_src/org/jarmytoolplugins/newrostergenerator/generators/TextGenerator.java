@@ -4,7 +4,7 @@
  * Created on 16 January 2004, 02:19
  */
 
-package plugins_src.org.jarmytoolplugins.newrostergenerator.generators;
+package org.jarmytoolplugins.newrostergenerator.generators;
 
 import java.lang.StringBuffer;
 import java.util.Collection;

@@ -4,7 +4,7 @@
  * Created on 06 October 2003, 17:36
  */
 
-package plugins_src.org.jarmytoolplugins.newrostergenerator;
+package org.jarmytoolplugins.newrostergenerator;
 
 import javax.swing.JFileChooser;
 import javax.swing.JMenuItem;

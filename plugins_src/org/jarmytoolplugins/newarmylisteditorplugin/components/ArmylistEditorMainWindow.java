@@ -4,7 +4,7 @@
  * Created on 27 October 2003, 19:12
  */
 
-package plugins_src.org.jarmytoolplugins.newarmylisteditorplugin.components;
+package org.jarmytoolplugins.newarmylisteditorplugin.components;
 
 import java.awt.Color;
 import java.awt.event.ActionListener;

@@ -4,7 +4,7 @@
  * Created on 12 January 2004, 12:53
  */
 
-package plugins_src.org.jarmytoolplugins.newarmylisteditorplugin.wargearEditor.components;
+package org.jarmytoolplugins.newarmylisteditorplugin.wargearEditor.components;
 
 import java.util.Iterator;
 import javax.swing.DefaultComboBoxModel;

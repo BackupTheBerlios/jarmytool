@@ -4,7 +4,7 @@
  * Created on 21 May 2003, 11:35
  */
 
-package core_src.src.org.jArmyTool.gui.components;
+package org.jArmyTool.gui.components;
 
 import org.jArmyTool.data.database.*;
 import javax.swing.*;

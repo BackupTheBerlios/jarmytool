@@ -4,7 +4,7 @@
  * Created on 22 December 2002, 03:43
  */
 
-package core_src.src.org.jArmyTool.gui.listeners;
+package org.jArmyTool.gui.listeners;
 
 import java.awt.event.*;
 import org.apache.log4j.Logger;

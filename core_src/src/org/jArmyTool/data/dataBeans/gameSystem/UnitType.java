@@ -4,7 +4,7 @@
  * Created on 01 July 2003, 21:30
  */
 
-package core_src.src.org.jArmyTool.data.dataBeans.gameSystem;
+package org.jArmyTool.data.dataBeans.gameSystem;
 
 import java.awt.Image;
 import java.awt.Toolkit;

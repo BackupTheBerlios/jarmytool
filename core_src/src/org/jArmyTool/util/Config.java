@@ -4,7 +4,7 @@
  * Created on 30 December 2002, 18:11
  */
 
-package core_src.src.org.jArmyTool.util;
+package org.jArmyTool.util;
 
 
 import java.util.*;

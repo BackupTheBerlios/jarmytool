@@ -4,7 +4,7 @@
  * Created on 18 October 2003, 22:06
  */
 
-package plugins_src.org.jarmytoolplugins.newarmylisteditorplugin.components;
+package org.jarmytoolplugins.newarmylisteditorplugin.components;
 
 import java.awt.Font;
 import java.awt.event.MouseAdapter;

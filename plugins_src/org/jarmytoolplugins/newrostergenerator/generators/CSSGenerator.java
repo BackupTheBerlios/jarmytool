@@ -4,7 +4,7 @@
  * Created on 28 December 2003, 23:30
  */
 
-package plugins_src.org.jarmytoolplugins.newrostergenerator.generators;
+package org.jarmytoolplugins.newrostergenerator.generators;
 
 /**
  *

@@ -4,7 +4,7 @@
  * Created on 10 November 2003, 21:50
  */
 
-package core_src.src.org.jArmyTool.gui.components;
+package org.jArmyTool.gui.components;
 
 import java.awt.Cursor;
 import java.awt.Dimension;

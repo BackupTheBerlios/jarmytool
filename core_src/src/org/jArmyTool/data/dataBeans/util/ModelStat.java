@@ -1,4 +1,4 @@
-package core_src.src.org.jArmyTool.data.dataBeans.util;
+package org.jArmyTool.data.dataBeans.util;
 
 /*
  * ModelStat.java

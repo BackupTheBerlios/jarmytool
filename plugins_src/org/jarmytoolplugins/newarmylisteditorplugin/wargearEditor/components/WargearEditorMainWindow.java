@@ -4,7 +4,7 @@
  * Created on 20 May 2003, 16:23
  */
 
-package plugins_src.org.jarmytoolplugins.newarmylisteditorplugin.wargearEditor.components;
+package org.jarmytoolplugins.newarmylisteditorplugin.wargearEditor.components;
 
 import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;

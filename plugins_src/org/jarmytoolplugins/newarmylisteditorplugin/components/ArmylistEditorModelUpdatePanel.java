@@ -4,7 +4,7 @@
  * Created on 28 October 2003, 00:25
  */
 
-package plugins_src.org.jarmytoolplugins.newarmylisteditorplugin.components;
+package org.jarmytoolplugins.newarmylisteditorplugin.components;
 
 import java.util.Iterator;
 import org.jArmyTool.data.dataBeans.armylist.ArmylistModelUpdate;

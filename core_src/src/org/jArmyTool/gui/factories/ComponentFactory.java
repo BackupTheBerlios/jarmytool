@@ -4,7 +4,7 @@
  * Created on 22 December 2002, 00:41
  */
 
-package core_src.src.org.jArmyTool.gui.factories;
+package org.jArmyTool.gui.factories;
 
 
 

@@ -4,7 +4,7 @@
  * Created on 12 January 2004, 14:40
  */
 
-package plugins_src.org.jarmytoolplugins.newarmylisteditorplugin.wargearEditor.util;
+package org.jarmytoolplugins.newarmylisteditorplugin.wargearEditor.util;
 
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;

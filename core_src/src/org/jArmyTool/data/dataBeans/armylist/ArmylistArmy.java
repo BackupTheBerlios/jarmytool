@@ -1,4 +1,4 @@
-package core_src.src.org.jArmyTool.data.dataBeans.armylist;
+package org.jArmyTool.data.dataBeans.armylist;
 
 import java.util.*;
 import java.io.Serializable;

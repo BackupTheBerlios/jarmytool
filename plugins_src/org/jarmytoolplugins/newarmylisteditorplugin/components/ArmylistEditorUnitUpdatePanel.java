@@ -4,12 +4,11 @@
  * Created on 28 October 2003, 00:25
  */
 
-package plugins_src.org.jarmytoolplugins.newarmylisteditorplugin.components;
+package org.jarmytoolplugins.newarmylisteditorplugin.components;
 
 import java.util.Iterator;
 import org.jArmyTool.data.dataBeans.armylist.ArmylistUnitUpdate;
 import org.jArmyTool.data.dataBeans.armylist.ArmylistWeapon;
-import org.jArmyTool.internaldata.GUICommands;
 import org.jarmytoolplugins.newarmylisteditorplugin.components.WeaponPanel;
 
 /**
@@ -28,9 +27,6 @@ public class ArmylistEditorUnitUpdatePanel extends javax.swing.JPanel {
         this.update = update;
         initComponents();
         this.initData();
-        
-        this.moveDownButton.setIcon(GUICommands.getInstance().getMovedDownArrow());
-        this.moveUpButton.setIcon(GUICommands.getInstance().getMoveUpArrow());
     }
     
     private void initData(){
@@ -110,9 +106,6 @@ public class ArmylistEditorUnitUpdatePanel extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         pointcostPerModelCheckbox = new javax.swing.JCheckBox();
         delButton = new javax.swing.JButton();
-        moveButtonsPanel = new javax.swing.JPanel();
-        moveUpButton = new javax.swing.JButton();
-        moveDownButton = new javax.swing.JButton();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -142,49 +135,49 @@ public class ArmylistEditorUnitUpdatePanel extends javax.swing.JPanel {
         nameField.setMinimumSize(new java.awt.Dimension(200, 23));
         nameField.setPreferredSize(new java.awt.Dimension(200, 23));
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         dataPanel.add(nameField, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         dataPanel.add(minCounterSpinner, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         dataPanel.add(maxCounterSpinner, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         dataPanel.add(defaultCounterSpinner, gridBagConstraints);
 
         jLabel1.setText("min");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         dataPanel.add(jLabel1, gridBagConstraints);
 
         jLabel2.setText("max");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         dataPanel.add(jLabel2, gridBagConstraints);
 
         jLabel3.setText("default");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 4);
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 4);
         dataPanel.add(jLabel3, gridBagConstraints);
 
         pointcostField.setText("jTextField1");
@@ -192,19 +185,16 @@ public class ArmylistEditorUnitUpdatePanel extends javax.swing.JPanel {
         pointcostField.setMinimumSize(new java.awt.Dimension(30, 23));
         pointcostField.setPreferredSize(new java.awt.Dimension(30, 23));
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 5;
+        gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 1;
         dataPanel.add(pointcostField, gridBagConstraints);
 
         jLabel4.setText("points");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 5;
-        gridBagConstraints.gridy = 0;
-        dataPanel.add(jLabel4, gridBagConstraints);
+        dataPanel.add(jLabel4, new java.awt.GridBagConstraints());
 
         pointcostPerModelCheckbox.setText("per model");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridx = 5;
         gridBagConstraints.gridy = 1;
         dataPanel.add(pointcostPerModelCheckbox, gridBagConstraints);
 
@@ -217,56 +207,15 @@ public class ArmylistEditorUnitUpdatePanel extends javax.swing.JPanel {
         });
 
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 7;
+        gridBagConstraints.gridx = 6;
         gridBagConstraints.gridy = 1;
         dataPanel.add(delButton, gridBagConstraints);
-
-        moveButtonsPanel.setLayout(new java.awt.GridBagLayout());
-
-        moveUpButton.setMaximumSize(new java.awt.Dimension(35, 35));
-        moveUpButton.setMinimumSize(new java.awt.Dimension(35, 35));
-        moveUpButton.setPreferredSize(new java.awt.Dimension(35, 35));
-        moveUpButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                moveUpButtonActionPerformed(evt);
-            }
-        });
-
-        moveButtonsPanel.add(moveUpButton, new java.awt.GridBagConstraints());
-
-        moveDownButton.setMaximumSize(new java.awt.Dimension(35, 35));
-        moveDownButton.setMinimumSize(new java.awt.Dimension(35, 35));
-        moveDownButton.setPreferredSize(new java.awt.Dimension(35, 35));
-        moveDownButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                moveDownButtonActionPerformed(evt);
-            }
-        });
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        moveButtonsPanel.add(moveDownButton, gridBagConstraints);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridheight = 2;
-        dataPanel.add(moveButtonsPanel, gridBagConstraints);
 
         jPanel1.add(dataPanel, java.awt.BorderLayout.WEST);
 
         add(jPanel1, java.awt.BorderLayout.NORTH);
 
     }//GEN-END:initComponents
-
-    private void moveDownButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moveDownButtonActionPerformed
-        this.unitPanel.moveUpdateDown(this);
-    }//GEN-LAST:event_moveDownButtonActionPerformed
-
-    private void moveUpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moveUpButtonActionPerformed
-        this.unitPanel.moveUpdateUp(this);
-    }//GEN-LAST:event_moveUpButtonActionPerformed
 
     private void isWeaponCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_isWeaponCheckBoxActionPerformed
         this.saveData();
@@ -291,9 +240,6 @@ public class ArmylistEditorUnitUpdatePanel extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSpinner maxCounterSpinner;
     private javax.swing.JSpinner minCounterSpinner;
-    private javax.swing.JPanel moveButtonsPanel;
-    private javax.swing.JButton moveDownButton;
-    private javax.swing.JButton moveUpButton;
     private javax.swing.JTextField nameField;
     private javax.swing.JTextField pointcostField;
     private javax.swing.JCheckBox pointcostPerModelCheckbox;

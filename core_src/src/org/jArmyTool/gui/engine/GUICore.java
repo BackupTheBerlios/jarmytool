@@ -4,7 +4,7 @@
  * Created on 21 December 2002, 00:07
  */
 
-package core_src.src.org.jArmyTool.gui.engine;
+package org.jArmyTool.gui.engine;
 
 import com.l2fprod.gui.plaf.skin.*;
 

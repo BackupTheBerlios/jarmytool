@@ -4,7 +4,7 @@
  * Created on 09 June 2003, 14:11
  */
 
-package core_src.src.org.jArmyTool.data.dataBeans.util;
+package org.jArmyTool.data.dataBeans.util;
 
 /**
  *

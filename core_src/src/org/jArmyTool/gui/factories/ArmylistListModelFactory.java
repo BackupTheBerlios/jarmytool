@@ -4,7 +4,7 @@
  * Created on 20 December 2002, 23:39
  */
 
-package core_src.src.org.jArmyTool.gui.factories;
+package org.jArmyTool.gui.factories;
 
 import javax.swing.*;
 import org.jArmyTool.data.dataBeans.army.*;

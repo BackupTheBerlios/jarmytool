@@ -4,7 +4,7 @@
  * Created on 06 October 2003, 20:48
  */
 
-package core_src.src.org.jArmyTool.internaldata;
+package org.jArmyTool.internaldata;
 
 import java.util.*;
 

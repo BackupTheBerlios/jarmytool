@@ -4,7 +4,7 @@
  * Created on 24 December 2003, 02:13
  */
 
-package plugins_src.org.jarmytoolplugins.newrostergenerator.engine;
+package org.jarmytoolplugins.newrostergenerator.engine;
 
 import java.io.File;
 import java.io.FileOutputStream;

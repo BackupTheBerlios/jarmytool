@@ -4,7 +4,7 @@
  * Created on 30 June 2003, 16:30
  */
 
-package core_src.src.org.jArmyTool.gui.user;
+package org.jArmyTool.gui.user;
 
 import java.util.*;
 import java.io.*;

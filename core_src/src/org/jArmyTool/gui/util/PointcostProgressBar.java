@@ -4,7 +4,7 @@
  * Created on 17 December 2003, 10:12
  */
 
-package core_src.src.org.jArmyTool.gui.util;
+package org.jArmyTool.gui.util;
 
 import java.awt.Color;
 import java.awt.Font;

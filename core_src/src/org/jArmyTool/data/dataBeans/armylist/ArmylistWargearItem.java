@@ -4,7 +4,7 @@
  * Created on 16 January 2003, 00:02
  */
 
-package core_src.src.org.jArmyTool.data.dataBeans.armylist;
+package org.jArmyTool.data.dataBeans.armylist;
 
 import java.io.Serializable;
 import java.util.Collection;

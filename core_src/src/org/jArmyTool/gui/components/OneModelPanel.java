@@ -4,7 +4,7 @@
  * Created on 10 November 2003, 20:11
  */
 
-package core_src.src.org.jArmyTool.gui.components;
+package org.jArmyTool.gui.components;
 
 import java.awt.Dimension;
 import java.util.Iterator;
