@@ -3,7 +3,7 @@ import java.util.*;
 import java.io.Serializable;
 /**
  * This class describes
- * @author Pasi Lehtimäki
+ * @author Pasi Lehtim?ki
  */
 public class ArmylistModelUpdate implements Serializable{
     
@@ -32,6 +32,7 @@ public class ArmylistModelUpdate implements Serializable{
         this.name = name;
         this.maxCount = -1;
         this.weapons = new LinkedList();
+        this.statModifications = new HashMap();
     }
     
     /**
@@ -112,8 +113,13 @@ public class ArmylistModelUpdate implements Serializable{
      * @param stat not working yet
      * @param modification not working yet
      */    
-    public void addStatModification(String stat, int modification){
-        this.statModifications.put(stat, new Integer(modification));
+    public void addStatModification(String stat, String modification){
+        this.statModifications.put(stat, modification);
+    }
+    
+    public void addStatModification(Map map)
+    {
+            this.statModifications.putAll(map);
     }
     
     /**
