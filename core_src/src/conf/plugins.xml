@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : plugins.xml
+    Created on : 29 September 2003, 20:28
+    Author     : pasi
+    Description:
+        Purpose of the document follows.
+-->
+
+<!DOCTYPE plugins SYSTEM "plugins.dtd">
+<plugins>
+
+ <plugin name="newRosterPlugin" version="1.0">    
+    <classes>
+      <mainPluginClass name="org.jarmytoolplugins.newrostergenerator.RosterWriterPlugin"/>
+    </classes>
+  </plugin>    
+  
+  
+ <plugin name="newArmylistEditorPlugin" version="1.0">    
+    <classes>
+      <mainPluginClass name="org.jarmytoolplugins.newarmylisteditorplugin.NewArmylistEditorPlugin"/>
+    </classes>
+  </plugin>    
+  
+   
+</plugins>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : plugins.dtd
+    Created on : 29 September 2003, 20:21
+    Author     : pasi
+    Description:
+        Purpose of the document follows.
+-->
+
+<!ELEMENT plugins (plugin)*>
+ <!ELEMENT plugin (classes,configuration?)>
+  <!ATTLIST plugin name CDATA #REQUIRED>
+  <!ATTLIST plugin version CDATA #REQUIRED>
+  
+  <!ELEMENT classes (mainPluginClass)>
+  <!ELEMENT mainPluginClass EMPTY>
+   <!ATTLIST mainPluginClass name CDATA #REQUIRED>
+   
+   <!ELEMENT configuration (property)*>
+   <!ELEMENT property EMPTY>
+    <!ATTLIST property name CDATA #REQUIRED>
+    <!ATTLIST property value CDATA #REQUIRED>
+   
+  
