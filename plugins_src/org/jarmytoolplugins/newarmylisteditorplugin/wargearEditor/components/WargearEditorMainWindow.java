@@ -92,6 +92,31 @@ public class WargearEditorMainWindow extends javax.swing.JFrame {
         
     }
     
+    private void addItemToNode(DefaultMutableTreeNode node, ArmylistWargearItem item){
+        DefaultMutableTreeNode newNode = new DefaultMutableTreeNode();
+        newNode.setUserObject(new WargearTreeUserObjectContainer(item, newNode, node));
+        node.add(newNode);
+        
+        /*Iterator subGroups = group.getSubGroups().iterator();
+        while(subGroups.hasNext()){
+            ArmylistWargearGroup subGroup = (ArmylistWargearGroup)subGroups.next();
+            this.addGroupToNode(newNode, subGroup);
+        }
+        
+        Iterator items = group.getItems().iterator();
+        while(items.hasNext()){
+            DefaultMutableTreeNode temp = new DefaultMutableTreeNode();
+            ArmylistWargearItem item = (ArmylistWargearItem)items.next();
+            WargearTreeUserObjectContainer container = new WargearTreeUserObjectContainer(item, temp, newNode);
+            container.setItemGroup(group);
+            temp.setUserObject(container);
+            newNode.add(temp);
+        }*/
+        
+    }    
+    
+    
+    
     private void initData(){
         this.wargearTreeRootNode = new DefaultMutableTreeNode("root");
         
@@ -229,7 +254,30 @@ public class WargearEditorMainWindow extends javax.swing.JFrame {
     }
     
     private void newItem(){
+        this.saveData();
+        if(this.currentContainer == null)
+            return;
+        DefaultMutableTreeNode node = null;
         
+        ArmylistWargearItem newItem = new ArmylistWargearItem("no name", this.armylistArmy);
+        
+        ArmylistWargearGroup parentGroup = null;
+        if(this.currentContainer.getGroup() != null){
+            parentGroup = this.currentContainer.getGroup();
+            node = this.currentContainer.getNode();
+        }
+        if(parentGroup == null && this.currentContainer.getItemGroup() != null){
+            parentGroup = this.currentContainer.getItemGroup();
+            node = this.currentContainer.getParent();
+        }
+        if(parentGroup == null)
+            return;
+        
+        parentGroup.addItem(newItem);
+        
+        this.addItemToNode(node, newItem);
+        
+        this.wargearTree.updateUI();        
     }
     
     

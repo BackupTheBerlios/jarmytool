@@ -270,7 +270,7 @@ public class OneModelWargearPanel extends javax.swing.JPanel {
                 
                // new JCheckBox(item.getName()+ " " + (item.getPointcost() == ((int)item.getPointcost()) ? ((int)item.getPointcost()) : (int)item.getPointcost())  );
                  //= new JLabel(item.getName() + " " + (item.getPointcost()== ((int)item.getPointcost()) ? ((int)item.getPointcost()) : (int)item.getPointcost())  );
-                if(selectedInGroup.contains(item)){
+                if(selectedInGroup != null && selectedInGroup.contains(item)){
                     selectedWGPanelSub.add(selectedLabel);
                     selectedLabel.addMouseListener(new MouseAdapter(){
                             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -290,7 +290,7 @@ public class OneModelWargearPanel extends javax.swing.JPanel {
                 box.addActionListener(new ActionListener(){
                     public void actionPerformed(java.awt.event.ActionEvent evt) {
                         if(box.isSelected()){
-                            addWG(path + group.getName(), item, selectedParent, box);
+                            addWG(path + group.getName(), item, selectedWGPanelSub, box);
                         }else{
                             removeWG(selectedWGPanelSub, selectedLabel, path + group.getName(), item, box);
                         }
@@ -309,8 +309,11 @@ public class OneModelWargearPanel extends javax.swing.JPanel {
                 JPanel subAllParentPanel = new JPanel();
 
                 this.initSubWGGroups(path+ group.getName()+".", depth+1, subGroup, subSelectedParentPanel, subAllParentPanel);
-                allWGPanelSub.add(subAllParentPanel);
-                selectedWGPanelSub.add(subSelectedParentPanel);
+                //allWGPanelSub.add(subAllParentPanel);
+                //selectedWGPanelSub.add(subSelectedParentPanel);
+                
+                selectedParent.add(subSelectedParentPanel, BorderLayout.SOUTH);    
+                allParent.add(subAllParentPanel, BorderLayout.SOUTH);
             }            
         
     }
