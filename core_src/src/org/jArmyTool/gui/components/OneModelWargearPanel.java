@@ -6,8 +6,10 @@
 
 package org.jArmyTool.gui.components;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Cursor;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -31,6 +33,15 @@ import org.jArmyTool.gui.layout.VerticalFlowLayout;
 public class OneModelWargearPanel extends javax.swing.JPanel {
     private static final int MAX_NAME_LENGTH = 24;
     private static final int SEARCH_START_INDEX = 15;
+    
+    private static final int SUB_WG_GROUP_TAB = 5;
+    
+    public static final int WG_GROUP_ROOT_COLOR_R =  52;
+    public static final int WG_GROUP_ROOT_COLOR_G =  152;
+    public static final int WG_GROUP_ROOT_COLOR_B =  204;
+    public static final int WG_GROUP_ROOT_COLOR_SHIFT =  15;
+    
+    
     
     private OneModelUpdatesExpanded updatesPanel;
     private Model model;
@@ -71,12 +82,12 @@ public class OneModelWargearPanel extends javax.swing.JPanel {
                 continue;
             JPanel groupHeaderPanelAll = new JPanel();
             groupHeaderPanelAll.add(new JLabel(group.getName()));
-            groupHeaderPanelAll.setBackground(MainWindow.TITLE_BACKGROUND);
+            groupHeaderPanelAll.setBackground(new Color(WG_GROUP_ROOT_COLOR_R, WG_GROUP_ROOT_COLOR_G, WG_GROUP_ROOT_COLOR_B));
             groupHeaderPanelAll.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0)));
             
             JPanel groupHeaderPanelSelected = new JPanel();
             groupHeaderPanelSelected.add(new JLabel(group.getName()));
-            groupHeaderPanelSelected.setBackground(MainWindow.TITLE_BACKGROUND);
+            groupHeaderPanelSelected.setBackground(new Color(WG_GROUP_ROOT_COLOR_R, WG_GROUP_ROOT_COLOR_G, WG_GROUP_ROOT_COLOR_B));
             groupHeaderPanelSelected.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0)));
             
             this.allWG.add(groupHeaderPanelAll);
@@ -157,15 +168,150 @@ public class OneModelWargearPanel extends javax.swing.JPanel {
                     }                    
                 });
                 
-                this.allWG.add(box);
-                
+                this.allWG.add(box); 
+            }
+            //Process subGroups:
+            Iterator subGroups = group.getSubGroups().iterator();
+            while(subGroups.hasNext()){
+                ArmylistWargearGroup subGroup = (ArmylistWargearGroup)subGroups.next();
+                JPanel subSelectedParentPanel = new JPanel();
+                JPanel subAllParentPanel = new JPanel();
+
+                this.initSubWGGroups(group.getName()+".", 1, subGroup, subSelectedParentPanel, subAllParentPanel);
+                this.allWG.add(subAllParentPanel);
+                this.selectedWG.add(subSelectedParentPanel);
             }
         }
        
     }
     
     
-    private void initSubWGGroups(String path, int depth, ArmylistWargearGroup group){
+    private void initSubWGGroups(final String path, int depth, final ArmylistWargearGroup group, final JPanel selectedParent, JPanel allParent){
+            final JPanel allWGPanelSub = new JPanel();
+            JPanel tabPanel = new JPanel();
+            tabPanel.setPreferredSize(new Dimension(depth * SUB_WG_GROUP_TAB , 0));
+            tabPanel.setMaximumSize(new Dimension(depth * SUB_WG_GROUP_TAB , 0));
+            tabPanel.setMinimumSize(new Dimension(depth * SUB_WG_GROUP_TAB , 0));
+            
+            allParent.setLayout(new BorderLayout());
+            allParent.add(tabPanel, BorderLayout.WEST);
+            allParent.add(allWGPanelSub, BorderLayout.CENTER);
+            allWGPanelSub.setLayout(new VerticalFlowLayout());
+        
+            final JPanel selectedWGPanelSub = new JPanel();
+            
+            JPanel tabPanel2 = new JPanel();
+            tabPanel2.setPreferredSize(new Dimension(depth * SUB_WG_GROUP_TAB , 0));
+            tabPanel2.setMaximumSize(new Dimension(depth * SUB_WG_GROUP_TAB , 0));
+            tabPanel2.setMinimumSize(new Dimension(depth * SUB_WG_GROUP_TAB , 0));
+            
+            selectedParent.setLayout(new BorderLayout());
+            selectedParent.add(tabPanel2, BorderLayout.WEST);
+            selectedParent.add(selectedWGPanelSub, BorderLayout.CENTER);            
+            selectedWGPanelSub.setLayout(new VerticalFlowLayout());
+            
+            
+            JPanel groupHeaderPanelAll = new JPanel();
+            groupHeaderPanelAll.add(new JLabel(group.getName()));
+            groupHeaderPanelAll.setBackground(new Color(WG_GROUP_ROOT_COLOR_R + WG_GROUP_ROOT_COLOR_SHIFT*depth, WG_GROUP_ROOT_COLOR_G + WG_GROUP_ROOT_COLOR_SHIFT*depth, WG_GROUP_ROOT_COLOR_B + WG_GROUP_ROOT_COLOR_SHIFT*depth));
+            groupHeaderPanelAll.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0)));
+            
+            allWGPanelSub.add(groupHeaderPanelAll);
+            
+            
+            JPanel groupHeaderPanelSelected = new JPanel();
+            groupHeaderPanelSelected.add(new JLabel(group.getName()));
+            groupHeaderPanelSelected.setBackground(new Color(WG_GROUP_ROOT_COLOR_R + WG_GROUP_ROOT_COLOR_SHIFT*depth, WG_GROUP_ROOT_COLOR_G + WG_GROUP_ROOT_COLOR_SHIFT*depth, WG_GROUP_ROOT_COLOR_B + WG_GROUP_ROOT_COLOR_SHIFT*depth));
+            groupHeaderPanelSelected.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0)));            
+            
+            selectedWGPanelSub.add(groupHeaderPanelSelected);
+            
+            
+            Collection selectedInGroup = this.model.getSelectedWargear(path + group.getName());
+            
+            Iterator itemsInGroup = group.getItems().iterator();
+            while(itemsInGroup.hasNext()){
+                final ArmylistWargearItem item = (ArmylistWargearItem)itemsInGroup.next();
+                String name;
+                
+                boolean needEndHTML = false;
+                if(item.getName().length() > MAX_NAME_LENGTH){
+                    int space = item.getName().substring(SEARCH_START_INDEX, MAX_NAME_LENGTH).lastIndexOf(" ") + SEARCH_START_INDEX;
+                    if(space != -1){
+                        name = "<html>"+ item.getName().substring(0, space) +"<p>" +item.getName().substring(space+1, item.getName().length());
+                        needEndHTML = true;
+                    }else{
+                        name = item.getName().substring(0, MAX_NAME_LENGTH) + "..";
+                    }
+                }else{
+                    name = item.getName();
+                }
+                final JCheckBox box;
+                final JLabel selectedLabel;
+                
+                if(item.getPointcost() == (int)item.getPointcost()){
+                    box = new JCheckBox(name+ " " + ((int)item.getPointcost()));
+                    if(needEndHTML){
+                        selectedLabel = new JLabel(name+ " " + ((int)item.getPointcost()) + "</html>");
+                    }else{
+                        selectedLabel = new JLabel(name+ " " + ((int)item.getPointcost()));
+                    }
+                }else{
+                    box = new JCheckBox(name+ " " + item.getPointcost());
+                    if(needEndHTML){
+                        selectedLabel = new JLabel(name + " " + item.getPointcost() + "</html>");
+                    }else{
+                        selectedLabel = new JLabel(name + " " + item.getPointcost());
+                    }
+                }
+                    
+                box.setToolTipText(item.getName());
+                selectedLabel.setToolTipText(item.getName());
+                
+               // new JCheckBox(item.getName()+ " " + (item.getPointcost() == ((int)item.getPointcost()) ? ((int)item.getPointcost()) : (int)item.getPointcost())  );
+                 //= new JLabel(item.getName() + " " + (item.getPointcost()== ((int)item.getPointcost()) ? ((int)item.getPointcost()) : (int)item.getPointcost())  );
+                if(selectedInGroup.contains(item)){
+                    selectedWGPanelSub.add(selectedLabel);
+                    selectedLabel.addMouseListener(new MouseAdapter(){
+                            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                removeWG(selectedWGPanelSub, selectedLabel, path + group.getName(), item, box);
+                            }       
+                            
+                            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                                selectedLabel.setFont(new Font(selectedLabel.getFont().getName(), Font.BOLD, selectedLabel.getFont().getSize()));
+                            }        
+                            public void mouseExited(java.awt.event.MouseEvent evt) {
+                                selectedLabel.setFont(new Font(selectedLabel.getFont().getName(), Font.PLAIN, selectedLabel.getFont().getSize()));
+                            }   
+                    });         
+                    selectedLabel.setCursor(MainWindow.DEL_CURSOR);
+                    box.setSelected(true);
+                }
+                box.addActionListener(new ActionListener(){
+                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        if(box.isSelected()){
+                            addWG(path + group.getName(), item, selectedParent, box);
+                        }else{
+                            removeWG(selectedWGPanelSub, selectedLabel, path + group.getName(), item, box);
+                        }
+                    }                    
+                });
+                
+                allWGPanelSub.add(box);
+                
+            }     
+            
+            //Process subGroups:
+            Iterator subGroups = group.getSubGroups().iterator();
+            while(subGroups.hasNext()){
+                ArmylistWargearGroup subGroup = (ArmylistWargearGroup)subGroups.next();
+                JPanel subSelectedParentPanel = new JPanel();
+                JPanel subAllParentPanel = new JPanel();
+
+                this.initSubWGGroups(path+ group.getName()+".", depth+1, subGroup, subSelectedParentPanel, subAllParentPanel);
+                allWGPanelSub.add(subAllParentPanel);
+                selectedWGPanelSub.add(subSelectedParentPanel);
+            }            
         
     }
     
