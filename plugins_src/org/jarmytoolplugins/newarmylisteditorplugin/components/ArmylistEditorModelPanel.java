@@ -126,10 +126,7 @@ public class ArmylistEditorModelPanel extends javax.swing.JPanel {
         Iterator wgGroups = this.allWargearGroups.iterator();
         this.model.emptyWargearGroups();
         while(wgGroups.hasNext()){
-            JCheckBox box = (JCheckBox)wgGroups.next();
-            if(box.isSelected()){
-                this.model.addWargearGroup(box.getText());
-            }
+            ((WargearGroupPanel)wgGroups.next()).saveData();
         }
         
         Iterator iterator = this.updatePanels.iterator();
@@ -237,17 +234,43 @@ public class ArmylistEditorModelPanel extends javax.swing.JPanel {
     private void initWargearGroups(){
         this.wargearGroupsPanel.setLayout(new VerticalFlowLayout());
         this.allWargearGroups = new LinkedList();
+        
         Iterator iterator = this.model.getArmylistArmy().getWargearGroups().iterator();
         Collection selectedWargearGroups = this.model.getAllowedWargearGroups();
         while(iterator.hasNext()){
+            
             ArmylistWargearGroup wgGroup = (ArmylistWargearGroup)iterator.next();
-            JCheckBox box = new JCheckBox(wgGroup.getName());
-            if(selectedWargearGroups.contains(wgGroup.getName()))
-                box.setSelected(true);
-            this.wargearGroupsPanel.add(box);
-            this.allWargearGroups.add(box);
+            WargearGroupPanel groupPanel = new WargearGroupPanel(wgGroup, this.model.getSubWGGroupAllowedAmount(wgGroup.getName()), 0 , selectedWargearGroups.contains(wgGroup.getName()), wgGroup.getName(), this.model);
+            
+            this.wargearGroupsPanel.add(groupPanel);
+            
+            this.allWargearGroups.add(groupPanel);
+            
+            Iterator subGroups = wgGroup.getSubGroups().iterator();
+            while(subGroups.hasNext()){
+                ArmylistWargearGroup subGroup = (ArmylistWargearGroup)subGroups.next();
+                this.initSubWGGroup(wgGroup.getName()+".", 1, subGroup);
+            }
+            
+            
+            
         }
     }    
+    
+    private void initSubWGGroup(String hierarchyName, int depth, ArmylistWargearGroup wgGroup){
+        Collection selectedWargearGroups = this.model.getAllowedWargearGroups();
+        WargearGroupPanel groupPanel = new WargearGroupPanel(wgGroup, this.model.getSubWGGroupAllowedAmount(hierarchyName+wgGroup.getName()), depth , selectedWargearGroups.contains(hierarchyName+wgGroup.getName()), hierarchyName+wgGroup.getName(), this.model);
+
+        this.wargearGroupsPanel.add(groupPanel);
+
+        this.allWargearGroups.add(groupPanel);  
+        
+        Iterator subGroups = wgGroup.getSubGroups().iterator();
+        while(subGroups.hasNext()){
+            ArmylistWargearGroup subGroup = (ArmylistWargearGroup)subGroups.next();
+            this.initSubWGGroup(hierarchyName + wgGroup.getName()+".", depth + 1, subGroup);
+        }    
+    }
     
     public ArmylistModel getModel(){
         return this.model;

@@ -78,11 +78,18 @@ public class DOMArmylistDocumentHandler {
         this.parseWeapons((Element)document.getElementsByTagName("weapons").item(0), army);
         
         
-        NodeList wargearGroups = document.getElementsByTagName("wargearGroup");
-        for(int i = 0; i < wargearGroups.getLength(); ++i){
-            this.parseWargearGroup((Element)wargearGroups.item(i), army);
+        NodeList wargear = document.getElementsByTagName("wargear");
+        for(int i = 0; i < wargear.getLength(); ++i){
+            NodeList wargearGroups = ((Element)wargear.item(i)).getChildNodes();
+            
+            
+            for(int j = 0; j < wargearGroups.getLength(); ++j){
+                if(! (wargearGroups.item(j) instanceof Element) )
+                    continue;
+                this.parseWargearGroup((Element)wargearGroups.item(j), army, null);
+            }
         }
-       
+        
         this.parseUnits(army);
         
         Iterator iterator = this.unitUpdates.keySet().iterator();
@@ -150,13 +157,22 @@ public class DOMArmylistDocumentHandler {
         }
     }
     
-    private void parseWargearGroup(Element group, ArmylistArmy army){
+    private void parseWargearGroup(Element group, ArmylistArmy army, ArmylistWargearGroup parent){
         ArmylistWargearGroup grp = new ArmylistWargearGroup(group.getAttribute("name"));
         
-        NodeList list = group.getElementsByTagName("wargearGroup");
+        NodeList list = group.getChildNodes();
+
         for(int i = 0; i < list.getLength(); ++i){
-            Element group_el = (Element)list.item(i);
-            this.parseWargearGroup(group_el, army);
+            Element group_el;
+            try{
+                group_el = (Element)list.item(i);
+            }catch(ClassCastException e){
+                continue;
+            }
+            if(!group_el.getNodeName().equalsIgnoreCase("wargearGroup"))
+                continue;
+            
+            this.parseWargearGroup(group_el, army, grp);
         }        
         
         
@@ -176,7 +192,12 @@ public class DOMArmylistDocumentHandler {
             grp.addItem(aItem);
         }
         
-        army.addWargearGroup(grp);
+        if(parent != null){
+            parent.addSubGroup(grp);
+            
+        }else{
+            army.addWargearGroup(grp);
+        }
     }
     
     private void parseUnits(ArmylistArmy army){
