@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE armylist SYSTEM "gameSystem.dtd">
+<!--
+    Document   : Dirtside 2.xml
+    Created on : july sometime 2004
+    Author     : Oscar Almer
+    Description:
+        Purpose of the document follows.
+-->
+
+<gameSystem>
+ <gameSystemHeader id="header">
+    <name complete="Dirtside 2" short="DS2">
+    </name> 
+    <points defaultTargetPointcost="1500"/>
+ </gameSystemHeader>
+
+
+<weaponProfiles>
+ <weaponProfile name="Ranged">
+   <weaponStatHeader name="Close Range"/>
+   <weaponStatHeader name="Die"/>
+   <weaponStatHeader name="Valid Damage Chits"/>
+   <weaponStatHeader name="Medium Range"/>
+   <weaponStatHeader name="Die"/>
+   <weaponStatHeader name="Valid Damage Chits"/>
+   <weaponStatHeader name="Long Range"/>
+   <weaponStatHeader name="Die"/>
+   <weaponStatHeader name="Valid Damage Chits"/>
+   <weaponStatHeader name="Notes"/>
+ </weaponProfile> 
+
+</weaponProfiles>
+
+<modelStatGroups>
+
+<modelStatGroup name="vehicle">
+<modelStat symbol="Size" tooltip="The size of the vehicle (1-5)" type="INTEGER">
+</modelStat>
+<modelStat symbol="Basic Sig." tooltip="The basic die to roll for defense" type="STRING">
+</modelStat>
+
+<modelStat symbol="Stealth" tooltip="modifier to the basic roll for defense" type="INTEGER">
+</modelStat>
+<modelStat symbol="ETD" tooltip="Effective Target Die" type="STRING">
+</modelStat>
+
+<modelStat symbol="Mobility" tooltip="" type="STRING">
+</modelStat>
+<modelStat symbol="Movement" tooltip="" type="INTEGER">
+</modelStat>
+
+<modelStat symbol="FC" tooltip="Fire Control Value" type="STRING">
+</modelStat>
+<!--<modelStat symbol="ECM" tooltip="Electronic Counter Measures" type="STRING">
+</modelStat>
+ECM is a fixed value stat, so can be applied as an upgrade
+-->
+
+<modelStat symbol="FA" tooltip="Front Armour" type="INTEGER">
+</modelStat>
+<modelStat symbol="SA" tooltip="Side Armour" type="INTEGER">
+</modelStat>
+
+</modelStatGroup>
+
+
+<modelStatGroup name="infantry">
+<modelStat symbol="Type" tooltip="The type of the infantry" type="STRING">
+</modelStat>
+<modelStat symbol="Range" tooltip="The maximum range of the Element" type="STRING">
+</modelStat>
+
+<modelStat symbol="Damage" tooltip="Maximum amount of damage element can take in one go" type="INTEGER">
+</modelStat>
+
+
+<modelStat symbol="Mobility" tooltip="" type="STRING">
+</modelStat>
+<modelStat symbol="Movement" tooltip="" type="INTEGER">
+</modelStat>
+
+<!--<modelStat symbol="ECM" tooltip="Electronic Counter Measures" type="STRING">
+</modelStat>
+ECM is a fixed value stat, so can be applied as an upgrade
+-->
+</modelStatGroup>
+
+</modelStatGroups>
+
+<unitTypes>
+<unitType name="Elements" largePic="DS2/group_32" smallPic="DS2/group_16" postfix=".jpg"/>
+<unitType name="Platoons" largePic="DS2/platoon_32" smallPic="DS2/platoon_16" postfix=".jpg"/>
+ 
+</unitTypes>
+ 
+</gameSystem>
