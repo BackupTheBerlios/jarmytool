@@ -105,8 +105,9 @@ public class WargearItemPanel extends javax.swing.JPanel {
         weaponPanel = new javax.swing.JPanel();
         isWeaponCheckBox = new javax.swing.JCheckBox();
         delButton = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        requiresPanel = new javax.swing.JPanel();
+        advancedPanel = new javax.swing.JPanel();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -118,7 +119,7 @@ public class WargearItemPanel extends javax.swing.JPanel {
         name.setMinimumSize(new java.awt.Dimension(250, 28));
         name.setPreferredSize(new java.awt.Dimension(250, 28));
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         jPanel1.add(name, gridBagConstraints);
@@ -128,11 +129,12 @@ public class WargearItemPanel extends javax.swing.JPanel {
         points.setMinimumSize(new java.awt.Dimension(50, 28));
         points.setPreferredSize(new java.awt.Dimension(50, 28));
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         jPanel1.add(points, gridBagConstraints);
 
+        weaponPanel.setBorder(new javax.swing.border.TitledBorder("Weapon"));
         isWeaponCheckBox.setText("is weapon");
         isWeaponCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,9 +145,10 @@ public class WargearItemPanel extends javax.swing.JPanel {
         weaponPanel.add(isWeaponCheckBox);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         jPanel1.add(weaponPanel, gridBagConstraints);
 
         delButton.setText("del");
@@ -157,26 +160,33 @@ public class WargearItemPanel extends javax.swing.JPanel {
         });
 
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridheight = 3;
         jPanel1.add(delButton, gridBagConstraints);
-
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 14));
-        jLabel1.setText("Item Name: ");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        jPanel1.add(jLabel1, gridBagConstraints);
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 14));
         jLabel3.setText("Pointcost: ");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         jPanel1.add(jLabel3, gridBagConstraints);
+
+        requiresPanel.setBorder(new javax.swing.border.TitledBorder("Requires"));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        jPanel1.add(requiresPanel, gridBagConstraints);
+
+        advancedPanel.setBorder(new javax.swing.border.TitledBorder("Advanced Options"));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        jPanel1.add(advancedPanel, gridBagConstraints);
 
         add(jPanel1, java.awt.BorderLayout.WEST);
 
@@ -193,13 +203,14 @@ public class WargearItemPanel extends javax.swing.JPanel {
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel advancedPanel;
     private javax.swing.JButton delButton;
     private javax.swing.JCheckBox isWeaponCheckBox;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField name;
     private javax.swing.JTextField points;
+    private javax.swing.JPanel requiresPanel;
     private javax.swing.JPanel weaponPanel;
     // End of variables declaration//GEN-END:variables
     
