@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE armylist SYSTEM "gameSystem.dtd">
+<gameSystem>
+ <gameSystemHeader id="header">
+    <name complete="Warmaster" short="WM">
+    </name> 
+    <points defaultTargetPointcost="2000"/>
+ </gameSystemHeader>
+ 
+ <weaponProfiles>
+</weaponProfiles>
+ 
+<modelStatGroups>
+<modelStatGroup name="infantry">
+<modelStat symbol="S" tooltip="Size" type="INTEGER">
+</modelStat>
+<modelStat symbol="A" tooltip="Attacks" type="INTEGER">
+</modelStat>
+<modelStat symbol="H" tooltip="Hits" type="INTEGER">
+</modelStat>
+<modelStat symbol="Ar" tooltip="Armor" type="INTEGER">
+</modelStat>
+<modelStat symbol="C" tooltip="Command" type="INTEGER">
+</modelStat>
+</modelStatGroup>
+</modelStatGroups>
+ 
+<unitTypes>
+ <unitType name="Infantry" largePic="whfb/lord" smallPic="whfb/lord_16" postfix=".jpg"/>
+ <unitType name="Cavalry" largePic="whfb/hero" smallPic="whfb/hero_16" postfix=".jpg"/>
+ <unitType name="Chariot" largePic="whfb/core" smallPic="whfb/core_16" postfix=".jpg"/>
+ <unitType name="Artillery" largePic="whfb/spec" smallPic="whfb/spec_16" postfix=".jpg"/>
+ <unitType name="Monster" largePic="whfb/rare" smallPic="whfb/rare_16" postfix=".jpg"/>
+ <unitType name="Command" largePic="whfb/rare" smallPic="whfb/rare_16" postfix=".jpg"/>
+</unitTypes>
+ 
+</gameSystem>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE armylist SYSTEM "gameSystem.dtd">
+<!--
+    Document   : whfb.xml
+    Author     : pasi
+    Description:
+        Purpose of the document follows.
+-->
+
+<gameSystem>
+ <gameSystemHeader id="header">
+    <name complete="Warhammer Fantasy Battle" short="WHFB">
+    </name> 
+    <points defaultTargetPointcost="2000"/>
+ </gameSystemHeader>
+ 
+ <weaponProfiles>
+ <weaponProfile name="Ranged">
+   <weaponStatHeader name="Range"/>
+   <weaponStatHeader name="Str."/>
+   <weaponStatHeader name="Wounds"/>
+   <weaponStatHeader name="Save"/>
+   <weaponStatHeader name="Notes"/>
+ </weaponProfile>  
+
+ <weaponProfile name="Melee">
+   <weaponStatHeader name="Str."/>
+   <weaponStatHeader name="Wounds"/>
+   <weaponStatHeader name="Save"/>
+   <weaponStatHeader name="Notes"/>
+ </weaponProfile>   
+ 
+</weaponProfiles>
+ 
+<modelStatGroups>
+<modelStatGroup name="infantry">
+<modelStat symbol="M" tooltip="Move" type="INTEGER">
+</modelStat>
+<modelStat symbol="WS" tooltip="Weapon Skill" type="INTEGER">
+</modelStat>
+<modelStat symbol="BS" tooltip="Ballistic Skill" type="INTEGER">
+</modelStat>
+<modelStat symbol="S" tooltip="Strength" type="INTEGER">
+</modelStat>
+<modelStat symbol="T" tooltip="Toughness" type="INTEGER">
+</modelStat>
+<modelStat symbol="W" tooltip="Wounds" type="INTEGER">
+</modelStat>
+<modelStat symbol="I" tooltip="Initiative" type="INTEGER">
+</modelStat>
+<modelStat symbol="A" tooltip="Attacks" type="INTEGER">
+</modelStat>
+<modelStat symbol="Ld" tooltip="Leadership" type="INTEGER">
+</modelStat>
+</modelStatGroup>
+</modelStatGroups>
+ 
+<unitTypes>
+ <unitType name="Lords" largePic="whfb/lord" smallPic="whfb/lord_16" postfix=".jpg"/>
+ <unitType name="Heroes" largePic="whfb/hero" smallPic="whfb/hero_16" postfix=".jpg"/>
+ <unitType name="Core Units" largePic="whfb/core" smallPic="whfb/core_16" postfix=".jpg"/>
+ <unitType name="Special Units" largePic="whfb/spec" smallPic="whfb/spec_16" postfix=".jpg"/>
+ <unitType name="Rare Units" largePic="whfb/rare" smallPic="whfb/rare_16" postfix=".jpg"/>
+</unitTypes>
+ 
+</gameSystem>

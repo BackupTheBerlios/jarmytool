@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE armylist SYSTEM "gameSystem.dtd">
+<!--
+    Document   : LOTR.xml
+    Author     : Matt
+    Description:
+        A new system of LOTR for jARMY tool.
+-->
+
+<gameSystem>
+ <gameSystemHeader id="header">
+    <name complete="Lord of The Rings" short="LOTR">
+    </name> 
+    <points defaultTargetPointcost="1000"/>
+ </gameSystemHeader>
+ 
+ <weaponProfiles>
+ <weaponProfile name="Melee">
+   <weaponStatHeader name="Str."/>
+   <weaponStatHeader name="Wounds"/>
+   <weaponStatHeader name="Save"/>
+   <weaponStatHeader name="Notes"/>
+ </weaponProfile>   
+ 
+</weaponProfiles>
+ 
+<modelStatGroups>
+
+<modelStatGroup name="warriors">
+<modelStat symbol="F" tooltip="Fight Skill" type="INTEGER">
+</modelStat>
+<modelStat symbol="S" tooltip="Strength" type="INTEGER">
+</modelStat>
+<modelStat symbol="D" tooltip="Defence" type="INTEGER">
+</modelStat>
+<modelStat symbol="A" tooltip="Attacks" type="INTEGER">
+</modelStat>
+<modelStat symbol="W" tooltip="Wounds" type="INTEGER">
+</modelStat>
+<modelStat symbol="C" tooltip="Courage" type="INTEGER">
+</modelStat>
+</modelStatGroup>
+
+<modelStatGroup name="heroes">
+<modelStat symbol="F" tooltip="Fight Skill" type="INTEGER">
+</modelStat>
+<modelStat symbol="S" tooltip="Strength" type="INTEGER">
+</modelStat>
+<modelStat symbol="D" tooltip="Defence" type="INTEGER">
+</modelStat>
+<modelStat symbol="A" tooltip="Attacks" type="INTEGER">
+</modelStat>
+<modelStat symbol="W" tooltip="Wounds" type="INTEGER">
+</modelStat>
+<modelStat symbol="C" tooltip="Courage" type="INTEGER">
+</modelStat>
+<modelStat symbol="M" tooltip="Might" type="INTEGER">
+</modelStat>
+<modelStat symbol="Wi" tooltip="Will" type="INTEGER">
+</modelStat>
+<modelStat symbol="Fa" tooltip="Fate" type="INTEGER">
+</modelStat>
+</modelStatGroup>
+
+</modelStatGroups>
+ 
+<unitTypes>
+  <unitType name="Heroes" largePic="whfb/hero" smallPic="whfb/hero_16" postfix=".jpg"/>
+ <unitType name="Warriors" largePic="whfb/core" smallPic="whfb/core_16" postfix=".jpg"/>
+</unitTypes>
+ 
+</gameSystem>

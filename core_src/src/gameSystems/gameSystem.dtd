@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : gameSystem.dtd
+    Created on : 01 July 2003, 13:27
+    Author     : pasi
+    Description:
+        Purpose of the document follows.
+-->
+
+<!ELEMENT gameSystem ANY>
+<!ELEMENT gameSystemHeader (name,points)>
+ <!ATTLIST gameSystemHeader id ID #REQUIRED>
+
+ <!ELEMENT name EMPTY>
+  <!ATTLIST name complete CDATA ""> 
+  <!ATTLIST name short CDATA "">
+  
+ <!ELEMENT points EMPTY>
+  <!ATTLIST points defaultTargetPointcost CDATA "1500"> 
+  
+<!ELEMENT weaponProfiles (weaponProfile)*>  
+
+ <!ELEMENT weaponProfile (weaponStatHeader)*>  
+  <!ATTLIST weaponStatHeaders name CDATA #REQUIRED>
+  
+  <!ELEMENT weaponStatHeader EMPTY>
+   <!ATTLIST weaponStatHeader name CDATA "">
+  
+<!ELEMENT modelStatGroups (modelStatGroup)* >
+ <!ELEMENT modelStatGroup (modelStat)*>
+  <!ATTLIST modelStatGroup name CDATA "">
+   <!ELEMENT modelStat EMPTY>  
+    <!ATTLIST modelStat symbol CDATA "">
+    <!ATTLIST modelStat tooltip CDATA "">
+    <!ATTLIST modelStat type CDATA "">  
+    
+<!ELEMENT unitTypes (unitType)* > 
+   
+ <!ELEMENT unitType EMPTY>
+  <!ATTLIST unitType name CDATA "">
+  <!ATTLIST unitType largePic CDATA "">
+  <!ATTLIST unitType smallPic CDATA "">
+  <!ATTLIST unitType postfix CDATA ".jpg">

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE armylist SYSTEM "gameSystem.dtd">
+<!--
+    Document   : wh40k.xml
+    Created on : 01 July 2003, 13:26
+    Author     : pasi
+    Description:
+        Purpose of the document follows.
+-->
+
+<gameSystem>
+ <gameSystemHeader id="header">
+    <name complete="Warhammer 40.000" short="WH40k">
+    </name> 
+    <points defaultTargetPointcost="1500"/>
+ </gameSystemHeader>
+
+
+<weaponProfiles>
+ <weaponProfile name="Ranged">
+   <weaponStatHeader name="Range"/>
+   <weaponStatHeader name="Str."/>
+   <weaponStatHeader name="AP"/>
+   <weaponStatHeader name="Type"/>
+   <weaponStatHeader name="Notes"/>
+ </weaponProfile> 
+ <weaponProfile name="Ordnance">
+   <weaponStatHeader name="Range"/>
+   <weaponStatHeader name="Str."/>
+   <weaponStatHeader name="AP"/>
+   <weaponStatHeader name="Type"/>
+   <weaponStatHeader name="Notes"/>
+ </weaponProfile>  
+ <weaponProfile name="Melee">
+    <weaponStatHeader name="Range"/>
+   <weaponStatHeader name="Modifiers"/>
+   <weaponStatHeader name="Notes"/>
+ </weaponProfile>   
+ 
+</weaponProfiles>
+ 
+<modelStatGroups>
+<modelStatGroup name="orbital strike">
+<modelStat symbol="Str" tooltip="Strength" type="INTEGER">
+</modelStat>
+<modelStat symbol="AP" tooltip="AP value" type="INTEGER">
+</modelStat>
+</modelStatGroup> 
+  
+<modelStatGroup name="vehicle">
+<modelStat symbol="FA" tooltip="Front Armor" type="INTEGER">
+</modelStat>
+<modelStat symbol="SA" tooltip="Side Armor" type="INTEGER">
+</modelStat>
+<modelStat symbol="RA" tooltip="Rear Armor" type="INTEGER">
+</modelStat>
+<modelStat symbol="BS" tooltip="Ballistic Skill" type="INTEGER">
+</modelStat>
+</modelStatGroup>
+<modelStatGroup name="walker">
+<modelStat symbol="WS" tooltip="Weapon Skill" type="INTEGER">
+</modelStat>
+<modelStat symbol="BS" tooltip="Ballistic Skill" type="INTEGER">
+</modelStat>
+<modelStat symbol="S" tooltip="Strength" type="INTEGER">
+</modelStat>
+<modelStat symbol="FA" tooltip="Front Armor" type="INTEGER">
+</modelStat>
+<modelStat symbol="SA" tooltip="Side Armor" type="INTEGER">
+</modelStat>
+<modelStat symbol="RA" tooltip="Rear Armor" type="INTEGER">
+</modelStat>
+<modelStat symbol="I" tooltip="Initiative" type="INTEGER">
+</modelStat>
+<modelStat symbol="A" tooltip="Attacks" type="INTEGER">
+</modelStat>
+
+</modelStatGroup>
+<modelStatGroup name="infantry">
+<modelStat symbol="WS" tooltip="Weapon Skill" type="INTEGER">
+</modelStat>
+<modelStat symbol="BS" tooltip="Ballistic Skill" type="INTEGER">
+</modelStat>
+<modelStat symbol="S" tooltip="Strength" type="INTEGER">
+</modelStat>
+<modelStat symbol="T" tooltip="Toughness" type="INTEGER">
+</modelStat>
+<modelStat symbol="W" tooltip="Wounds" type="INTEGER">
+</modelStat>
+<modelStat symbol="I" tooltip="Initiative" type="INTEGER">
+</modelStat>
+<modelStat symbol="A" tooltip="Attacks" type="INTEGER">
+</modelStat>
+<modelStat symbol="LD" tooltip="Leadership" type="INTEGER">
+</modelStat>
+<modelStat symbol="Sv" tooltip="Save" type="STRING">
+</modelStat>
+</modelStatGroup>
+</modelStatGroups>
+ 
+<unitTypes>
+ <unitType name="HQ" largePic="wh40k/hq_30" smallPic="wh40k/hq_16" postfix=".jpg"/>
+ <unitType name="Elite" largePic="wh40k/elite_30" smallPic="wh40k/elite_16" postfix=".jpg"/>
+ <unitType name="Troop" largePic="wh40k/troop_30" smallPic="wh40k/troop_16" postfix=".jpg"/>
+ <unitType name="Fast Attack" largePic="wh40k/fastAttack_30" smallPic="wh40k/fastAttack_16" postfix=".jpg"/>
+ <unitType name="Heavy Support" largePic="wh40k/heavySupport_30" smallPic="wh40k/heavySupport_16" postfix=".jpg"/>
+</unitTypes>
+ 
+</gameSystem>
