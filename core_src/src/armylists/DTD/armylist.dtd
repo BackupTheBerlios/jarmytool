@@ -30,7 +30,7 @@
   <!ATTLIST weapon profile CDATA "">
 
 <!ELEMENT wargear (wargearGroup)* >
- <!ELEMENT wargearGroup (wargearItem)* >
+ <!ELEMENT wargearGroup (wargearItem|wargearGroup)* >
   <!ELEMENT wargearItem EMPTY>
    <!ATTLIST wargearItem name CDATA "">
    <!ATTLIST wargearItem pointcost CDATA "">

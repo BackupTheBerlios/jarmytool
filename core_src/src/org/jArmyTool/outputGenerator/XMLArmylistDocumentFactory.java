@@ -122,7 +122,15 @@ public class XMLArmylistDocumentFactory {
     private void createWargearGroup(Element node, ArmylistWargearGroup group){
         Element wgGroup = this.document.createElement("wargearGroup");
         wgGroup.setAttribute("name", group.getName());
-        Iterator iterator = group.getItems().iterator();
+        
+        Iterator iterator = group.getSubGroups().iterator();
+        while(iterator.hasNext()){
+            ArmylistWargearGroup subGroup = (ArmylistWargearGroup)iterator.next();
+            this.createWargearGroup(wgGroup, subGroup);
+        }
+        
+        
+        iterator = group.getItems().iterator();
         while(iterator.hasNext()){
             ArmylistWargearItem item = (ArmylistWargearItem)iterator.next();
             Element itemEl = this.document.createElement("wargearItem");

@@ -153,7 +153,14 @@ public class DOMArmylistDocumentHandler {
     private void parseWargearGroup(Element group, ArmylistArmy army){
         ArmylistWargearGroup grp = new ArmylistWargearGroup(group.getAttribute("name"));
         
-        NodeList list = group.getElementsByTagName("wargearItem");
+        NodeList list = group.getElementsByTagName("wargearGroup");
+        for(int i = 0; i < list.getLength(); ++i){
+            Element group_el = (Element)list.item(i);
+            this.parseWargearGroup(group_el, army);
+        }        
+        
+        
+        list = group.getElementsByTagName("wargearItem");
         
         for(int i = 0; i < list.getLength(); ++i){
             Element item = (Element)list.item(i);
